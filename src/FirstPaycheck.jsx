@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { C, FONT, BRAND } from "./brand.js";
 import Hero from "./Hero.jsx";
 import RealityCheck from "./RealityCheck.jsx";
+import ScamSmellTest from "./ScamSmellTest.jsx";
 
 /* The three core surfaces, in the order the search data says people want them
    (handoff 5b): gauge it -> pick a real path -> prove it pays. Reality Check
@@ -23,7 +24,7 @@ const SURFACES = [
     body: "Paste the pitch or recruiter message you got. It flags the MLM and funnel red flags, from pay-to-join to recruit-to-earn to vague “systems” and upfront fees, then tells you plainly whether to walk away.",
     chip: "FTC-aligned, the #1 anxiety question",
     accent: C.rose,
-    live: false,
+    live: true,
   },
   {
     id: "paths",
@@ -84,25 +85,26 @@ function SurfaceCard({ s, i, onOpen }) {
         {s.chip}
       </span>
       {clickable && (
-        <span style={{ marginTop: 2, fontSize: 13.5, fontWeight: 600, color: s.accent }}>Open Reality Check →</span>
+        <span style={{ marginTop: 2, fontSize: 13.5, fontWeight: 600, color: s.accent }}>Open {s.title} →</span>
       )}
     </div>
   );
 }
 
 export default function FirstPaycheck() {
-  const [view, setView] = useState("home"); // home | reality
+  const [view, setView] = useState("home"); // home | reality | scam
   const toolsRef = useRef(null);
   const scrollToTools = () => toolsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  const openReality = () => { setView("reality"); window.scrollTo(0, 0); };
+  const go = (v) => { setView(v); window.scrollTo(0, 0); };
+  const home = () => go("home");
+  const openSurface = (id) => go(id === "scam" ? "scam" : "reality");
 
-  if (view === "reality") {
-    return <RealityCheck onBack={() => { setView("home"); window.scrollTo(0, 0); }} />;
-  }
+  if (view === "reality") return <RealityCheck onBack={home} />;
+  if (view === "scam") return <ScamSmellTest onBack={home} />;
 
   return (
     <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight }}>
-      <Hero onStart={openReality} onPaths={scrollToTools} />
+      <Hero onStart={() => go("reality")} onPaths={scrollToTools} />
 
       {/* BELOW THE FOLD */}
       <section ref={toolsRef} style={{ padding: "84px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
@@ -124,11 +126,11 @@ export default function FirstPaycheck() {
         </div>
 
         <div style={{ display: "grid", gap: 18, gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-          {SURFACES.map((s, i) => <SurfaceCard key={s.id} s={s} i={i} onOpen={openReality} />)}
+          {SURFACES.map((s, i) => <SurfaceCard key={s.id} s={s} i={i} onOpen={() => openSurface(s.id)} />)}
         </div>
 
         <div style={{ marginTop: 26, textAlign: "center" }}>
-          <button onClick={openReality} style={{
+          <button onClick={() => go("reality")} style={{
             cursor: "pointer", border: "none", borderRadius: 999, padding: "14px 28px",
             fontSize: 16, fontWeight: 600, color: "#fff", fontFamily: FONT.body,
             background: `linear-gradient(135deg, ${C.cta}, ${C.coral})`,
