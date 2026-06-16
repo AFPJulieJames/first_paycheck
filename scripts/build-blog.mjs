@@ -139,7 +139,7 @@ const footer = `<footer class="site"><div class="wrap" style="flex-direction:col
 const ctaBlock = `<div class="cta"><h3>Not sure if an opportunity is real?</h3><p>Run it through the free Reality Check and Scam Smell Test. Honest pay ranges, real scam flags, no hype.</p><a class="btn" href="/">Try the free tools &rarr;</a></div>`;
 
 /* ---------- render one post ---------- */
-function renderPost(meta, bodyHtml) {
+function renderPost(meta, bodyHtml, related = []) {
   const url = `${SITE}/blog/${meta.slug}`;
   const ld = {
     "@context": "https://schema.org", "@type": "Article",
@@ -149,6 +149,17 @@ function renderPost(meta, bodyHtml) {
     publisher: { "@type": "Organization", name: BRAND },
     mainEntityOfPage: url,
   };
+  const breadcrumb = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: meta.title, item: url },
+    ],
+  };
+  const relatedHtml = related.length
+    ? `<div style="margin:36px 0 8px"><div class="kicker">Keep reading</div><div class="cards">${related.map((r) => `<a class="card" href="/blog/${r.slug}"><span class="k">Guide</span><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p></a>`).join("")}</div></div>`
+    : "";
   return `<!doctype html><html lang="en"><head>
 ${GA}
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -160,14 +171,16 @@ ${meta.keywords ? `<meta name="keywords" content="${esc(meta.keywords)}">` : ""}
 <meta property="og:description" content="${esc(meta.description)}"><meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
 ${FONTS}${STYLE}</head><body>
 ${header}
 <main class="wrap"><article>
-<div style="margin-top:36px" class="kicker">First Paycheck Guide</div>
+<nav style="margin-top:24px;font-size:13px" class="meta"><a href="/" style="color:var(--dim)">Home</a> &rsaquo; <a href="/blog" style="color:var(--dim)">Blog</a></nav>
 <h1>${esc(meta.title)}</h1>
 <div class="meta">Updated ${esc(meta.date)} &middot; ${BRAND}</div>
 <div style="margin-top:22px">${bodyHtml}</div>
 ${ctaBlock}
+${relatedHtml}
 </article></main>
 ${footer}</body></html>`;
 }
@@ -239,17 +252,23 @@ if (existsSync(PAGES_DIR)) {
 }
 
 const files = readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
-const posts = [];
+/* pass 1: parse all so we can build internal "related" links */
+const parsedPosts = [];
 for (const f of files) {
-  const raw = readFileSync(join(POSTS_DIR, f), "utf8");
-  const { meta, body } = parse(raw);
+  const { meta, body } = parse(readFileSync(join(POSTS_DIR, f), "utf8"));
   if (!meta.slug || !meta.title) { console.warn(`skip ${f}: missing slug/title`); continue; }
-  const html = renderPost(meta, mdToHtml(body));
-  const dir = join(OUT_DIR, meta.slug);
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), html);
-  posts.push(meta);
+  parsedPosts.push({ meta, bodyHtml: mdToHtml(body) });
 }
+/* pass 2: render each with 3 rotating related guides for internal linking */
+const posts = parsedPosts.map((x) => x.meta);
+parsedPosts.forEach((p, i) => {
+  const related = [parsedPosts[(i + 1) % parsedPosts.length], parsedPosts[(i + 2) % parsedPosts.length], parsedPosts[(i + 3) % parsedPosts.length]]
+    .filter((r) => r && r.meta.slug !== p.meta.slug)
+    .map((r) => r.meta);
+  const dir = join(OUT_DIR, p.meta.slug);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "index.html"), renderPost(p.meta, p.bodyHtml, related));
+});
 posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 writeFileSync(join(OUT_DIR, "index.html"), renderIndex(posts));
 
