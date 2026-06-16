@@ -56,9 +56,8 @@ function Kinetic({ text, delay = 0, color }) {
   return (
     <span style={{ color }}>
       {words.map((wd, i) => (
-        <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom" }}>
+        <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom", marginRight: "0.26em" }}>
           <span style={{ display: "inline-block", animation: "fpRise 0.8s cubic-bezier(.18,.7,.2,1) both", animationDelay: `${delay + i * 0.07}s` }}>{wd}</span>
-          {i < words.length - 1 ? " " : ""}
         </span>
       ))}
     </span>
