@@ -2,6 +2,8 @@ import React, { useState, useMemo } from "react";
 import { C, FONT } from "./brand.js";
 import { SIGNALS, SMELL_VERDICT, scanMessage, SAMPLES } from "./scamsignals.js";
 import EmailCapture from "./EmailCapture.jsx";
+import ShareButton from "./ShareButton.jsx";
+import { logStat } from "./track.js";
 
 /* ============================================================
    SCAM SMELL TEST
@@ -67,6 +69,7 @@ export default function ScamSmellTest({ onBack }) {
     if (!input.trim()) return;
     setAi(""); setAiErr("");
     setResult({ ...scanMessage(input), input });
+    logStat("scam");
   };
 
   const secondOpinion = async () => {
@@ -202,6 +205,12 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
               {aiErr && <div style={{ ...card, color: C.onLightDim, fontSize: 13.5 }}>{aiErr}</div>}
             </div>
 
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <ShareButton
+                label="Share this result"
+                text={`I ran a message through First Paycheck's free Scam Smell Test. Verdict: ${v.label} (${result.triggered.length} red flag${result.triggered.length === 1 ? "" : "s"}).`}
+              />
+            </div>
             <EmailCapture
               source="scam-smell-test"
               title="Get the free scam-spotting checklist"

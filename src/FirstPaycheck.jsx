@@ -5,7 +5,10 @@ import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
 import RealPaths from "./RealPaths.jsx";
 import EmailCapture from "./EmailCapture.jsx";
+import HomeHook from "./HomeHook.jsx";
+import Quiz from "./Quiz.jsx";
 import { AFFILIATE_DISCLOSURE } from "./paths.js";
+import { getStats } from "./track.js";
 
 /* The three core surfaces, in the order the search data says people want them
    (handoff 5b): gauge it -> pick a real path -> prove it pays. Reality Check
@@ -95,23 +98,60 @@ function SurfaceCard({ s, i, onOpen }) {
 }
 
 export default function FirstPaycheck() {
-  const [view, setView] = useState("home"); // home | reality | scam
+  const [view, setView] = useState("home"); // home | reality | scam | paths | quiz
+  const [realityQuery, setRealityQuery] = useState("");
+  const [pathId, setPathId] = useState(null);
+  const [stats, setStats] = useState(null);
   const toolsRef = useRef(null);
   const scrollToTools = () => toolsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   const go = (v) => { setView(v); window.scrollTo(0, 0); };
   const home = () => go("home");
   const openSurface = (id) => go(id);
+  const openReality = (query) => { setRealityQuery(query || ""); go("reality"); };
+  const openPath = (id) => { setPathId(id); go("paths"); };
 
-  if (view === "reality") return <RealityCheck onBack={home} />;
+  useEffect(() => { getStats().then((s) => s && setStats(s)); }, []);
+
+  if (view === "reality") return <RealityCheck onBack={home} initialQuery={realityQuery} />;
   if (view === "scam") return <ScamSmellTest onBack={home} />;
-  if (view === "paths") return <RealPaths onBack={home} />;
+  if (view === "paths") return <RealPaths onBack={home} initialPathId={pathId} />;
+  if (view === "quiz") return <Quiz onBack={home} onPick={openPath} />;
+
+  const totalActivity = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
 
   return (
     <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight }}>
       <Hero onStart={() => go("reality")} onPaths={() => go("paths")} />
 
       {/* BELOW THE FOLD */}
-      <section ref={toolsRef} style={{ padding: "84px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
+      <section ref={toolsRef} style={{ padding: "64px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
+        {/* interactive hook */}
+        <div style={{ maxWidth: 640, margin: "0 auto 28px" }}>
+          <HomeHook onOpenReality={openReality} />
+        </div>
+
+        {/* live counters (only when there is real activity) */}
+        {totalActivity > 0 && (
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginBottom: 40 }}>
+            {[["checks run", stats.checks], ["scams flagged", stats.scams], ["plans built", stats.paths]].filter(([, n]) => n > 0).map(([label, n]) => (
+              <div key={label} style={{ background: "#fff", border: `1px solid ${C.creamDim}`, borderRadius: 12, padding: "12px 18px", textAlign: "center", minWidth: 110 }}>
+                <div style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 24, color: C.onLight }}>{n.toLocaleString()}</div>
+                <div style={{ fontFamily: FONT.mono, fontSize: 10.5, letterSpacing: 1, color: C.onLightDim, textTransform: "uppercase" }}>{label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* quiz CTA */}
+        <div style={{ maxWidth: 640, margin: "0 auto 44px", textAlign: "center", background: "#13302B", borderRadius: 18, padding: "26px 24px" }}>
+          <div style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 24, color: C.onDark }}>Not sure where to start?</div>
+          <p style={{ fontSize: 14.5, color: C.onDarkDim, margin: "6px 0 16px" }}>Take the free 60-second quiz and we'll point you to the right path. No email required for your answer.</p>
+          <button onClick={() => go("quiz")} style={{
+            cursor: "pointer", border: "none", borderRadius: 999, padding: "13px 26px", fontSize: 15.5, fontWeight: 600, color: "#fff",
+            fontFamily: FONT.body, background: `linear-gradient(135deg, ${C.cta}, ${C.coral})`,
+          }}>Find my path →</button>
+        </div>
+
         <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 44px" }}>
           <span style={{ fontFamily: FONT.mono, fontSize: 11.5, letterSpacing: 2, color: C.evergreen }}>
             WHAT YOU'LL DO HERE

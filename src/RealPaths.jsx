@@ -3,6 +3,7 @@ import { C, FONT } from "./brand.js";
 import { PATHS, PLATFORM_TAGS, PATH_LEGIT, PLATFORM_URLS, AFFILIATE_DISCLOSURE, pathPrompt } from "./paths.js";
 import WorthItTracker from "./WorthItTracker.jsx";
 import EmailCapture from "./EmailCapture.jsx";
+import { logStat } from "./track.js";
 
 const platformUrl = (pl) =>
   pl.url || PLATFORM_URLS[pl.name] || `https://www.google.com/search?q=${encodeURIComponent(pl.name + " work from home")}`;
@@ -166,8 +167,8 @@ function PathDetail({ path, keyId }) {
   );
 }
 
-export default function RealPaths({ onBack }) {
-  const [activeId, setActiveId] = useState(PATHS[0].id);
+export default function RealPaths({ onBack, initialPathId }) {
+  const [activeId, setActiveId] = useState(initialPathId || PATHS[0].id);
   const [q, setQ] = useState("");
   const [generated, setGenerated] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -191,6 +192,7 @@ export default function RealPaths({ onBack }) {
       const parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
       setGenerated(parsed);
       setActiveId("custom");
+      logStat("path");
     } catch (e) {
       setErr("Could not build that one right now. Try a built-in path above, or rephrase the job in a few words. (Typed plans need the AI key set in Vercel.)");
     } finally { setLoading(false); }

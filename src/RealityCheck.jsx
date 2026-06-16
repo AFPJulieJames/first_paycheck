@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { C, FONT } from "./brand.js";
 import { OPPORTUNITIES, VERDICT, matchOpportunity, FEATURED } from "./opportunities.js";
 import EmailCapture from "./EmailCapture.jsx";
+import ShareButton from "./ShareButton.jsx";
+import { logStat } from "./track.js";
 
 /* ============================================================
    REALITY CHECK
@@ -128,7 +130,7 @@ function Scorecard({ data }) {
   );
 }
 
-export default function RealityCheck({ onBack }) {
+export default function RealityCheck({ onBack, initialQuery }) {
   const [q, setQ] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -143,7 +145,7 @@ export default function RealityCheck({ onBack }) {
 
     // 1) instant seed match
     const seed = matchOpportunity(query);
-    if (seed) { setData(seed); return; }
+    if (seed) { setData(seed); logStat("check"); return; }
 
     // 2) grade anything else with the AI, grounded in the honest rubric
     setLoading(true);
@@ -169,12 +171,18 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
       const text = (raw.content || []).filter((c) => c.type === "text").map((c) => c.text).join("\n");
       const parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
       setData(parsed);
+      logStat("check");
     } catch (e) {
       setErr("Could not check that one right now. Try one of the examples below, or rephrase it in a few words.");
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (initialQuery && initialQuery.trim()) check(initialQuery.trim());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div style={{ minHeight: "100vh", background: C.cream, color: C.onLight, fontFamily: FONT.body }}>
@@ -256,6 +264,12 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
         {data && !loading && (
           <div style={{ marginTop: 22, display: "grid", gap: 16 }}>
             <Scorecard data={data} />
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <ShareButton
+                label="Share this verdict"
+                text={`Is ${data.name} legit? First Paycheck says: ${(VERDICT[data.verdict] || VERDICT.real).label}. Real pay: ${data.pay}.`}
+              />
+            </div>
             <EmailCapture
               source="reality-check"
               title="Get the free scam-spotting checklist"
