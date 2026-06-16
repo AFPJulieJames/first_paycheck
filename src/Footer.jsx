@@ -38,6 +38,13 @@ export default function Footer({ onNav }) {
             <a href="/blog/how-much-can-you-make-working-from-home" style={{ ...linkBtn, textDecoration: "none" }}>How much can you make?</a>
           </Group>
 
+          <Group title="Company">
+            <a href="/about" style={{ ...linkBtn, textDecoration: "none" }}>About</a>
+            <a href="/contact" style={{ ...linkBtn, textDecoration: "none" }}>Contact</a>
+            <a href="/privacy" style={{ ...linkBtn, textDecoration: "none" }}>Privacy</a>
+            <a href="/terms" style={{ ...linkBtn, textDecoration: "none" }}>Terms</a>
+          </Group>
+
           <Group title="Get updates">
             <button onClick={() => onNav("home")} style={linkBtn}>Join the newsletter</button>
             <span style={{ fontSize: 13, color: C.onLightDim }}>firstpaycheck.co</span>

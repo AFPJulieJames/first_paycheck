@@ -15,6 +15,7 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const POSTS_DIR = join(ROOT, "posts");
+const PAGES_DIR = join(ROOT, "pages");
 const OUT_DIR = join(ROOT, "public", "blog");
 const PUBLIC_DIR = join(ROOT, "public");
 
@@ -130,7 +131,10 @@ footer.site b{font-family:Fraunces,serif;color:var(--onLight)}
 </style>`;
 
 const header = `<header class="site"><div class="wrap"><a class="logo" href="/"><span class="mark"></span><b>${BRAND}</b></a><a href="/blog" style="font-size:14px;text-decoration:none;color:var(--dim)">Blog</a></div></header>`;
-const footer = `<footer class="site"><div class="wrap"><b>${BRAND}</b><span>${TAGLINE} &middot; firstpaycheck.co</span></div></footer>`;
+const footerLinks = ["/", "Home", "/blog", "Blog", "/about", "About", "/contact", "Contact", "/privacy", "Privacy", "/terms", "Terms"];
+let footerLinksHtml = "";
+for (let i = 0; i < footerLinks.length; i += 2) footerLinksHtml += `<a href="${footerLinks[i]}" style="color:var(--dim);text-decoration:none">${footerLinks[i + 1]}</a>`;
+const footer = `<footer class="site"><div class="wrap" style="flex-direction:column;align-items:flex-start;gap:10px"><div style="display:flex;gap:18px;flex-wrap:wrap">${footerLinksHtml}</div><span><b>${BRAND}</b> &middot; ${TAGLINE} &middot; firstpaycheck.co</span></div></footer>`;
 
 const ctaBlock = `<div class="cta"><h3>Not sure if an opportunity is real?</h3><p>Run it through the free Reality Check and Scam Smell Test. Honest pay ranges, real scam flags, no hype.</p><a class="btn" href="/">Try the free tools &rarr;</a></div>`;
 
@@ -192,9 +196,47 @@ ${ctaBlock}
 ${footer}</body></html>`;
 }
 
+/* ---------- render a static page (about, contact, privacy, terms) ---------- */
+function renderPage(meta, bodyHtml) {
+  const url = `${SITE}/${meta.slug}`;
+  const ld = { "@context": "https://schema.org", "@type": "WebPage", name: meta.title, description: meta.description, url };
+  const cta = (meta.slug === "privacy" || meta.slug === "terms") ? "" : ctaBlock;
+  return `<!doctype html><html lang="en"><head>
+${GA}
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(meta.title)} | ${BRAND}</title>
+<meta name="description" content="${esc(meta.description)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(meta.title)}">
+<meta property="og:description" content="${esc(meta.description)}"><meta property="og:url" content="${url}">
+<script type="application/ld+json">${JSON.stringify(ld)}</script>
+${FONTS}${STYLE}</head><body>
+${header}
+<main class="wrap"><article>
+<div style="margin-top:36px" class="kicker">First Paycheck</div>
+<h1>${esc(meta.title)}</h1>
+<div style="margin-top:22px">${bodyHtml}</div>
+${cta}
+</article></main>
+${footer}</body></html>`;
+}
+
 /* ---------- build ---------- */
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true, force: true });
 mkdirSync(OUT_DIR, { recursive: true });
+
+/* static pages */
+const pageMetas = [];
+if (existsSync(PAGES_DIR)) {
+  for (const f of readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md"))) {
+    const { meta, body } = parse(readFileSync(join(PAGES_DIR, f), "utf8"));
+    if (!meta.slug || !meta.title) { console.warn(`skip page ${f}: missing slug/title`); continue; }
+    const dir = join(PUBLIC_DIR, meta.slug);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), renderPage(meta, mdToHtml(body)));
+    pageMetas.push(meta);
+  }
+}
 
 const files = readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
 const posts = [];
@@ -212,7 +254,7 @@ posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 writeFileSync(join(OUT_DIR, "index.html"), renderIndex(posts));
 
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/blog`, ...posts.map((p) => `${SITE}/blog/${p.slug}`)];
+const urls = [`${SITE}/`, `${SITE}/blog`, ...pageMetas.map((p) => `${SITE}/${p.slug}`), ...posts.map((p) => `${SITE}/blog/${p.slug}`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`;
 writeFileSync(join(PUBLIC_DIR, "sitemap.xml"), sitemap);
 writeFileSync(join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
