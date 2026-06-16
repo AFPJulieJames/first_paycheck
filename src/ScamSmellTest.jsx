@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { C, FONT } from "./brand.js";
 import { SIGNALS, SMELL_VERDICT, scanMessage, SAMPLES } from "./scamsignals.js";
+import EmailCapture from "./EmailCapture.jsx";
 
 /* ============================================================
    SCAM SMELL TEST
@@ -200,6 +201,14 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
               )}
               {aiErr && <div style={{ ...card, color: C.onLightDim, fontSize: 13.5 }}>{aiErr}</div>}
             </div>
+
+            <EmailCapture
+              source="scam-smell-test"
+              title="Get the free scam-spotting checklist"
+              blurb="We will email you the 7-flag checklist so you can spot the next one before it costs you. Plus honest alerts, no hype."
+              cta="Email me the checklist"
+              variant="inline"
+            />
           </div>
         )}
       </div>

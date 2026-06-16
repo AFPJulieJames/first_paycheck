@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { C, FONT } from "./brand.js";
 import { OPPORTUNITIES, VERDICT, matchOpportunity, FEATURED } from "./opportunities.js";
+import EmailCapture from "./EmailCapture.jsx";
 
 /* ============================================================
    REALITY CHECK
@@ -253,8 +254,15 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
         )}
 
         {data && !loading && (
-          <div style={{ marginTop: 22 }}>
+          <div style={{ marginTop: 22, display: "grid", gap: 16 }}>
             <Scorecard data={data} />
+            <EmailCapture
+              source="reality-check"
+              title="Get the free scam-spotting checklist"
+              blurb="We will email you the 7-flag checklist plus honest pay updates and new scam alerts. No hype, unsubscribe anytime."
+              cta="Email me the checklist"
+              variant="inline"
+            />
           </div>
         )}
       </div>

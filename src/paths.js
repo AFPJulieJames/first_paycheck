@@ -27,6 +27,27 @@ export const PATH_LEGIT = {
   scam:    { label: "Mostly a trap", c: "#B91C1C", bg: "#FBE3E3", line: "#F0AEAE" },
 };
 
+/* Where platform links point. These are the normal sites for now; swap each
+   value for your affiliate/referral link as you get accepted into programs.
+   Only legit platforms ever go here. Unknown/generated platforms fall back
+   to a search. */
+export const PLATFORM_URLS = {
+  "The Mom Project": "https://themomproject.com",
+  "HireMyMom": "https://www.hiremymom.com",
+  "Time Etc": "https://www.timeetc.com",
+  "Belay": "https://belaysolutions.com",
+  "Boldly": "https://boldly.com",
+  "Upwork": "https://www.upwork.com",
+  "Superpath community": "https://www.superpath.co",
+  "ProBlogger Job Board": "https://problogger.com/jobs",
+  "Contently": "https://contently.com",
+  "QuickBooks Live": "https://quickbooks.intuit.com/live",
+};
+
+/* One transparent line, shown wherever we link out. Keeps us honest. */
+export const AFFILIATE_DISCLOSURE =
+  "Some links may be partner links. If you sign up, we may earn a small commission at no cost to you. We only ever point to legitimate platforms, never pay-to-join schemes.";
+
 export const PATHS = [
   {
     id: "va",

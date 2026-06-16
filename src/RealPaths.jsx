@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { C, FONT } from "./brand.js";
-import { PATHS, PLATFORM_TAGS, PATH_LEGIT, pathPrompt } from "./paths.js";
+import { PATHS, PLATFORM_TAGS, PATH_LEGIT, PLATFORM_URLS, AFFILIATE_DISCLOSURE, pathPrompt } from "./paths.js";
 import WorthItTracker from "./WorthItTracker.jsx";
+import EmailCapture from "./EmailCapture.jsx";
+
+const platformUrl = (pl) =>
+  pl.url || PLATFORM_URLS[pl.name] || `https://www.google.com/search?q=${encodeURIComponent(pl.name + " work from home")}`;
 
 /* ============================================================
    REAL PATHS
@@ -125,14 +129,16 @@ function PathDetail({ path, keyId }) {
             {path.platforms.map((pl, i) => {
               const t = tagOf(pl.tag);
               return (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "10px 12px", background: C.cream, borderRadius: 10, border: `1px solid ${C.creamDim}` }}>
-                  <span style={{ fontWeight: 600, fontSize: 14.5, color: C.onLight }}>{pl.name}</span>
+                <a key={i} href={platformUrl(pl)} target="_blank" rel="sponsored noopener noreferrer"
+                  style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "10px 12px", background: C.cream, borderRadius: 10, border: `1px solid ${C.creamDim}`, textDecoration: "none" }}>
+                  <span style={{ fontWeight: 600, fontSize: 14.5, color: "#B5481F" }}>{pl.name} ↗</span>
                   <span style={{ fontSize: 11, fontWeight: 600, color: t.c, background: t.bg, borderRadius: 999, padding: "3px 10px" }}>{t.label}</span>
                   <span style={{ fontSize: 13, color: C.onLightDim, flex: 1, minWidth: 140 }}>{pl.note}</span>
-                </div>
+                </a>
               );
             })}
           </div>
+          <div style={{ fontSize: 11.5, color: C.onLightDim, marginTop: 10, lineHeight: 1.5 }}>{AFFILIATE_DISCLOSURE}</div>
         </div>
       )}
 
@@ -256,6 +262,16 @@ export default function RealPaths({ onBack }) {
 
         <div style={{ marginTop: 28 }}>
           <WorthItTracker />
+        </div>
+
+        <div style={{ marginTop: 18 }}>
+          <EmailCapture
+            source="real-paths"
+            title="Want this plan in your inbox?"
+            blurb="We will send your path plan plus honest tips, real openings, and scam alerts. No hype, unsubscribe anytime."
+            cta="Email me my plan"
+            variant="inline"
+          />
         </div>
       </div>
     </div>

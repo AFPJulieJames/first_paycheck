@@ -4,6 +4,8 @@ import Hero from "./Hero.jsx";
 import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
 import RealPaths from "./RealPaths.jsx";
+import EmailCapture from "./EmailCapture.jsx";
+import { AFFILIATE_DISCLOSURE } from "./paths.js";
 
 /* The three core surfaces, in the order the search data says people want them
    (handoff 5b): gauge it -> pick a real path -> prove it pays. Reality Check
@@ -141,6 +143,15 @@ export default function FirstPaycheck() {
             Try a Reality Check →
           </button>
         </div>
+
+        <div style={{ marginTop: 48, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
+          <EmailCapture
+            source="homepage"
+            title="The honest work-from-home newsletter"
+            blurb="Real openings, fresh scam alerts, and what is actually working. Free, no hype, unsubscribe anytime."
+            cta="Send it to me"
+          />
+        </div>
       </section>
 
       <footer style={{
@@ -153,6 +164,9 @@ export default function FirstPaycheck() {
           <span>{BRAND.tagline} · firstpaycheck.co</span>
         </span>
       </footer>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px 28px", fontSize: 11.5, lineHeight: 1.5, color: C.onLightDim }}>
+        {AFFILIATE_DISCLOSURE} First Paycheck shares honest information, not financial advice.
+      </div>
     </div>
   );
 }
