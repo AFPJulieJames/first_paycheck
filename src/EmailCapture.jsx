@@ -43,7 +43,7 @@ export default function EmailCapture({
         borderRadius: 14, padding: variant === "inline" ? "14px 16px" : "20px 22px",
         background: "#E2F5EC", border: "1px solid #9FE1C6", color: "#14241F",
       }}>
-        <div style={{ fontWeight: 700, fontSize: 15 }}>You are in. Check your inbox soon.</div>
+        <div style={{ fontWeight: 700, fontSize: 15 }}>You are on the list.</div>
         <div style={{ fontSize: 13.5, color: C.onLightDim, marginTop: 4 }}>Thanks for trusting us with your email. We will only send things worth your time.</div>
       </div>
     );

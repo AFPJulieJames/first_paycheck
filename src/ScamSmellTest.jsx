@@ -206,9 +206,9 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
             </div>
             <EmailCapture
               source="scam-smell-test"
-              title="Get the free scam-spotting checklist"
-              blurb="We will email you the 7-flag checklist so you can spot the next one before it costs you. Plus honest alerts, no hype."
-              cta="Email me the checklist"
+              title="Get fresh scam alerts, no hype"
+              blurb="Join the newsletter for honest scam alerts so you can spot the next one before it costs you. Free, unsubscribe anytime."
+              cta="Join the newsletter"
               variant="inline"
             />
           </div>

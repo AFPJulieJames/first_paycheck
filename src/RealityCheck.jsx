@@ -259,9 +259,9 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
             </div>
             <EmailCapture
               source="reality-check"
-              title="Get the free scam-spotting checklist"
-              blurb="We will email you the 7-flag checklist plus honest pay updates and new scam alerts. No hype, unsubscribe anytime."
-              cta="Email me the checklist"
+              title="Get honest pay updates and scam alerts"
+              blurb="Join the no-hype newsletter for honest pay ranges and fresh scam alerts. Free, unsubscribe anytime."
+              cta="Join the newsletter"
               variant="inline"
             />
           </div>

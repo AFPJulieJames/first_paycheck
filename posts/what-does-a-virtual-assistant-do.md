@@ -12,12 +12,12 @@ A virtual assistant (VA) does the everyday tasks that keep a business running, r
 
 VA work is varied, but common tasks include:
 
-- **Inbox management** — sorting, replying to routine emails, flagging what matters.
-- **Calendar and scheduling** — booking meetings, sending reminders, avoiding conflicts.
-- **Data entry and organization** — spreadsheets, CRM updates, filing.
-- **Travel and logistics** — booking flights, hotels, itineraries.
-- **Customer follow-ups** — answering common questions, chasing replies.
-- **Light social media and admin** — scheduling posts, formatting documents.
+- **Inbox management**: sorting, replying to routine emails, flagging what matters.
+- **Calendar and scheduling**: booking meetings, sending reminders, avoiding conflicts.
+- **Data entry and organization**: spreadsheets, CRM updates, filing.
+- **Travel and logistics**: booking flights, hotels, itineraries.
+- **Customer follow-ups**: answering common questions, chasing replies.
+- **Light social media and admin**: scheduling posts, formatting documents.
 
 You do not do all of these. Most VAs offer a focused handful based on what they are good at.
 

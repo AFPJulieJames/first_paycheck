@@ -14,11 +14,11 @@ Before the list, the filter that matters most for moms is control over your hour
 
 ## Real options, no degree required
 
-- **Virtual assistant** — $18 to $35/hr starting, very flexible, fastest to start. Step-by-step in [how to become a VA with no experience](/blog/how-to-become-a-virtual-assistant-with-no-experience).
-- **Freelance writing** — $25 to $75/hr as you build, work when the kids are down.
-- **Bookkeeping** — $25 to $50/hr, recurring monthly clients, mostly your own schedule.
-- **Online tutoring** — $15 to $40/hr if you can teach a subject, around school hours.
-- **Customer service / chat support** — $15 to $22/hr, companies train you, look on real job boards.
+- **Virtual assistant**: $18 to $35/hr starting, very flexible, fastest to start. Step-by-step in [how to become a VA with no experience](/blog/how-to-become-a-virtual-assistant-with-no-experience).
+- **Freelance writing**: $25 to $75/hr as you build, work when the kids are down.
+- **Bookkeeping**: $25 to $50/hr, recurring monthly clients, mostly your own schedule.
+- **Online tutoring**: $15 to $40/hr if you can teach a subject, around school hours.
+- **Customer service / chat support**: $15 to $22/hr, companies train you, look on real job boards.
 
 None of these require a degree. They require showing up and doing good work.
 

@@ -12,11 +12,11 @@ There is no shortage of "remote job" sites; there is a shortage of ones that are
 
 None of these charge you to apply (a couple offer optional paid memberships, but applying is free):
 
-- **The Mom Project** and **HireMyMom** — flexible, family-friendly roles. ([Is The Mom Project legit?](/blog/is-the-mom-project-legit))
-- **FlexJobs** — hand-screened remote listings (paid membership, scam-free by design).
-- **We Work Remotely** and **Remote OK** — large remote boards, strong for tech and operations.
-- **LinkedIn and Indeed** — filter for "remote"; huge volume, just vet each posting.
-- **Company career pages** — the safest of all. Find a company you like and apply directly.
+- **The Mom Project** and **HireMyMom**: flexible, family-friendly roles. ([Is The Mom Project legit?](/blog/is-the-mom-project-legit))
+- **FlexJobs**: hand-screened remote listings (paid membership, scam-free by design).
+- **We Work Remotely** and **Remote OK**: large remote boards, strong for tech and operations.
+- **LinkedIn and Indeed**: filter for "remote"; huge volume, just vet each posting.
+- **Company career pages**: the safest of all. Find a company you like and apply directly.
 
 ## For building your own income (not just a job)
 

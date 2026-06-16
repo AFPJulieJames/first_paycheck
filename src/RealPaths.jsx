@@ -264,9 +264,9 @@ export default function RealPaths({ onBack, initialPathId }) {
         <div style={{ marginTop: 18 }}>
           <EmailCapture
             source="real-paths"
-            title="Want this plan in your inbox?"
-            blurb="We will send your path plan plus honest tips, real openings, and scam alerts. No hype, unsubscribe anytime."
-            cta="Email me my plan"
+            title="Want honest openings and tips?"
+            blurb="Join the no-hype newsletter for honest tips, real openings, and scam alerts. Free, unsubscribe anytime."
+            cta="Join the newsletter"
             variant="inline"
           />
         </div>

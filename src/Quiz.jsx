@@ -113,9 +113,9 @@ export default function Quiz({ onBack, onPick }) {
             </div>
             <EmailCapture
               source="quiz"
-              title="Want your plan and next steps emailed to you?"
-              blurb="We will send your starting plan plus honest tips and scam alerts. No hype, unsubscribe anytime."
-              cta="Email me my plan"
+              title="Want honest WFH tips and new paths?"
+              blurb="Join the no-hype newsletter for honest tips, real openings, and scam alerts. Free, unsubscribe anytime."
+              cta="Join the newsletter"
               variant="inline"
             />
           </div>
