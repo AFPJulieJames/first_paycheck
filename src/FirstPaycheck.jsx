@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { C, FONT, BRAND } from "./brand.js";
 import Hero from "./Hero.jsx";
+import Nav from "./Nav.jsx";
 import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
 import RealPaths from "./RealPaths.jsx";
@@ -121,18 +122,14 @@ export default function FirstPaycheck() {
 
   return (
     <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight }}>
-      <Hero onStart={() => go("reality")} onPaths={() => go("paths")} />
+      <Nav onNav={(v) => (v === "home" ? home() : go(v))} onCheck={() => go("reality")} />
+      <Hero onStart={() => go("reality")} onPaths={() => go("paths")} onOpenReality={openReality} stats={stats} />
 
       {/* BELOW THE FOLD */}
-      <section ref={toolsRef} style={{ padding: "64px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
-        {/* interactive hook */}
-        <div style={{ maxWidth: 640, margin: "0 auto 28px" }}>
-          <HomeHook onOpenReality={openReality} />
-        </div>
-
+      <section ref={toolsRef} style={{ padding: "56px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
         {/* live counters (only when there is real activity) */}
         {totalActivity > 0 && (
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginBottom: 40 }}>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginBottom: 44 }}>
             {[["checks run", stats.checks], ["scams flagged", stats.scams], ["plans built", stats.paths]].filter(([, n]) => n > 0).map(([label, n]) => (
               <div key={label} style={{ background: "#fff", border: `1px solid ${C.creamDim}`, borderRadius: 12, padding: "12px 18px", textAlign: "center", minWidth: 110 }}>
                 <div style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 24, color: C.onLight }}>{n.toLocaleString()}</div>
