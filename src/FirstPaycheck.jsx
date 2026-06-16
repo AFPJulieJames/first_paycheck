@@ -3,6 +3,7 @@ import { C, FONT, BRAND } from "./brand.js";
 import Hero from "./Hero.jsx";
 import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
+import RealPaths from "./RealPaths.jsx";
 
 /* The three core surfaces, in the order the search data says people want them
    (handoff 5b): gauge it -> pick a real path -> prove it pays. Reality Check
@@ -33,7 +34,7 @@ const SURFACES = [
     body: "Start with Virtual Assistant, Freelance Writing, or Bookkeeping. Each shows real pay, first steps to a paycheck, and where to find legit work. Then the worth-it tracker does the math the scam world never makes you do: your true hourly rate.",
     chip: "Virtual Assistant · Writing · Bookkeeping",
     accent: C.aqua,
-    live: false,
+    live: true,
   },
 ];
 
@@ -97,14 +98,15 @@ export default function FirstPaycheck() {
   const scrollToTools = () => toolsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   const go = (v) => { setView(v); window.scrollTo(0, 0); };
   const home = () => go("home");
-  const openSurface = (id) => go(id === "scam" ? "scam" : "reality");
+  const openSurface = (id) => go(id);
 
   if (view === "reality") return <RealityCheck onBack={home} />;
   if (view === "scam") return <ScamSmellTest onBack={home} />;
+  if (view === "paths") return <RealPaths onBack={home} />;
 
   return (
     <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight }}>
-      <Hero onStart={() => go("reality")} onPaths={scrollToTools} />
+      <Hero onStart={() => go("reality")} onPaths={() => go("paths")} />
 
       {/* BELOW THE FOLD */}
       <section ref={toolsRef} style={{ padding: "84px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
@@ -146,7 +148,10 @@ export default function FirstPaycheck() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10,
       }}>
         <span style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 16, color: C.onLight }}>First Paycheck</span>
-        <span style={{ fontSize: 12.5, color: C.onLightDim }}>{BRAND.tagline} · firstpaycheck.co</span>
+        <span style={{ display: "flex", gap: 16, alignItems: "center", fontSize: 12.5, color: C.onLightDim }}>
+          <a href="/blog" style={{ color: C.onLight, fontWeight: 600, textDecoration: "none" }}>Blog</a>
+          <span>{BRAND.tagline} · firstpaycheck.co</span>
+        </span>
       </footer>
     </div>
   );
