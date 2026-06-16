@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { C, FONT, BRAND } from "./brand.js";
 import Hero from "./Hero.jsx";
 import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
 import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
 import RealPaths from "./RealPaths.jsx";
@@ -113,16 +114,19 @@ export default function FirstPaycheck() {
 
   useEffect(() => { getStats().then((s) => s && setStats(s)); }, []);
 
-  if (view === "reality") return <RealityCheck onBack={home} initialQuery={realityQuery} />;
-  if (view === "scam") return <ScamSmellTest onBack={home} />;
-  if (view === "paths") return <RealPaths onBack={home} initialPathId={pathId} />;
-  if (view === "quiz") return <Quiz onBack={home} onPick={openPath} />;
-
+  const onNav = (v) => (v === "home" ? home() : go(v));
   const totalActivity = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
 
   return (
-    <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight }}>
-      <Nav onNav={(v) => (v === "home" ? home() : go(v))} onCheck={() => go("reality")} />
+    <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <Nav onNav={onNav} onCheck={() => go("reality")} />
+      <main style={{ flex: 1 }}>
+        {view === "reality" && <RealityCheck initialQuery={realityQuery} />}
+        {view === "scam" && <ScamSmellTest />}
+        {view === "paths" && <RealPaths initialPathId={pathId} />}
+        {view === "quiz" && <Quiz onPick={openPath} />}
+        {view === "home" && (
+      <>
       <Hero onStart={() => go("reality")} onPaths={() => go("paths")} onOpenReality={openReality} stats={stats} />
 
       {/* BELOW THE FOLD */}
@@ -190,20 +194,10 @@ export default function FirstPaycheck() {
           />
         </div>
       </section>
-
-      <footer style={{
-        borderTop: `1px solid ${C.creamDim}`, padding: "26px 24px", maxWidth: 1100, margin: "0 auto",
-        display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10,
-      }}>
-        <span style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 16, color: C.onLight }}>First Paycheck</span>
-        <span style={{ display: "flex", gap: 16, alignItems: "center", fontSize: 12.5, color: C.onLightDim }}>
-          <a href="/blog" style={{ color: C.onLight, fontWeight: 600, textDecoration: "none" }}>Blog</a>
-          <span>{BRAND.tagline} · firstpaycheck.co</span>
-        </span>
-      </footer>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px 28px", fontSize: 11.5, lineHeight: 1.5, color: C.onLightDim }}>
-        {AFFILIATE_DISCLOSURE} First Paycheck shares honest information, not financial advice.
-      </div>
+      </>
+        )}
+      </main>
+      <Footer onNav={onNav} />
     </div>
   );
 }

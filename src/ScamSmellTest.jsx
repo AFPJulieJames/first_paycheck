@@ -100,14 +100,7 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
   );
 
   return (
-    <div style={{ minHeight: "100vh", background: C.cream, color: C.onLight, fontFamily: FONT.body }}>
-      <header style={{ maxWidth: 720, margin: "0 auto", width: "100%", boxSizing: "border-box", padding: "20px 24px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ cursor: "pointer", border: `1px solid ${C.creamDim}`, background: "#fff", borderRadius: 999, padding: "8px 14px", fontSize: 13.5, color: C.onLight, fontFamily: FONT.body }}>
-          ← Home
-        </button>
-        <span style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 18 }}>First Paycheck</span>
-      </header>
-
+    <div style={{ background: C.cream, color: C.onLight, fontFamily: FONT.body }}>
       <div style={{ maxWidth: 720, margin: "0 auto", width: "100%", boxSizing: "border-box", padding: "8px 24px 64px" }}>
         <div style={{ textAlign: "center", margin: "14px 0 26px" }}>
           <span style={{ fontFamily: FONT.mono, fontSize: 11.5, letterSpacing: 2, color: C.rose }}>SCAM SMELL TEST</span>
