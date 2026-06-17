@@ -273,7 +273,7 @@ posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 writeFileSync(join(OUT_DIR, "index.html"), renderIndex(posts));
 
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/blog`, ...pageMetas.map((p) => `${SITE}/${p.slug}`), ...posts.map((p) => `${SITE}/blog/${p.slug}`)];
+const urls = [`${SITE}/`, `${SITE}/blog`, `${SITE}/partners`, ...pageMetas.map((p) => `${SITE}/${p.slug}`), ...posts.map((p) => `${SITE}/blog/${p.slug}`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`;
 writeFileSync(join(PUBLIC_DIR, "sitemap.xml"), sitemap);
 writeFileSync(join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
