@@ -10,55 +10,83 @@ import EmailCapture from "./EmailCapture.jsx";
    a button into that path, and an email capture.
    ============================================================ */
 
+/* Each option scores across the six starter paths. The "Which sounds most
+   like you?" question (interest) is the strongest signal and also breaks ties,
+   so the result follows what the person actually told us about themselves. */
 const QUESTIONS = [
   {
     q: "How much time can you give it each week?",
     options: [
-      { label: "A few hours", score: { va: 2, writing: 1, bookkeeping: 0 } },
-      { label: "Around 10 hours", score: { va: 1, writing: 1, bookkeeping: 1 } },
-      { label: "20+ hours", score: { va: 1, writing: 1, bookkeeping: 2 } },
+      { label: "A few hours, here and there", score: { va: 1, transcription: 2, annotation: 2 } },
+      { label: "Around 10 hours, fairly steady", score: { va: 1, writing: 1, bookkeeping: 1, support: 2 } },
+      { label: "20+ hours, I'm going for it", score: { writing: 2, bookkeeping: 2, support: 1 } },
     ],
   },
   {
     q: "What are you hoping it turns into?",
     options: [
-      { label: "A little extra cash", score: { va: 2, writing: 1, bookkeeping: 0 } },
-      { label: "Steady part-time income", score: { va: 1, writing: 1, bookkeeping: 2 } },
-      { label: "Eventually a full-time income", score: { va: 0, writing: 2, bookkeeping: 2 } },
+      { label: "A little extra cash, soon", score: { va: 1, support: 1, transcription: 2, annotation: 2 } },
+      { label: "A steady part-time paycheck", score: { va: 1, bookkeeping: 2, support: 2 } },
+      { label: "Eventually a full-time income", score: { va: 1, writing: 2, bookkeeping: 2 } },
     ],
   },
   {
     q: "Which sounds most like you?",
+    interest: true,
     options: [
-      { label: "Organized, on top of details", score: { va: 3, writing: 0, bookkeeping: 1 } },
-      { label: "I like writing and explaining", score: { va: 0, writing: 3, bookkeeping: 0 } },
-      { label: "I like numbers and order", score: { va: 1, writing: 0, bookkeeping: 3 } },
-      { label: "Honestly, not sure yet", score: { va: 2, writing: 1, bookkeeping: 1 } },
+      { label: "Organized, on top of details", score: { va: 3 } },
+      { label: "I love words and explaining things", score: { writing: 3 } },
+      { label: "I like numbers and order", score: { bookkeeping: 3 } },
+      { label: "I like helping and talking to people", score: { support: 3 } },
+      { label: "Fast typer, happy to work heads-down", score: { transcription: 3 } },
+      { label: "Detail-focused and a bit techy", score: { annotation: 3 } },
     ],
   },
   {
-    q: "Can you spend a little to get started?",
+    q: "What kind of work appeals most?",
     options: [
-      { label: "I'd rather start free", score: { va: 2, writing: 2, bookkeeping: 0 } },
-      { label: "A little is fine", score: { va: 1, writing: 1, bookkeeping: 2 } },
+      { label: "A bit of everything, lots of variety", score: { va: 2, support: 1 } },
+      { label: "Creative work with words", score: { writing: 2 } },
+      { label: "Structured work with records and numbers", score: { bookkeeping: 2, annotation: 1 } },
+      { label: "Helping customers and solving problems", score: { support: 2 } },
+      { label: "Repetitive tasks I can do on autopilot", score: { transcription: 2, annotation: 1 } },
+      { label: "Following clear steps to train tech", score: { annotation: 2, transcription: 1 } },
+    ],
+  },
+  {
+    q: "Your own clients, or a steady paycheck?",
+    options: [
+      { label: "I'd rather find my own clients", score: { va: 2, writing: 2, bookkeeping: 2 } },
+      { label: "I'd prefer a company that pays me, free to start", score: { support: 2, transcription: 2, annotation: 2 } },
     ],
   },
 ];
 
+const EMPTY_SCORE = { va: 0, writing: 0, bookkeeping: 0, support: 0, transcription: 0, annotation: 0 };
+
 export default function Quiz({ onBack, onPick }) {
   const [step, setStep] = useState(0);
-  const [score, setScore] = useState({ va: 0, writing: 0, bookkeeping: 0 });
+  const [score, setScore] = useState({ ...EMPTY_SCORE });
+  const [interestId, setInterestId] = useState(null);
   const done = step >= QUESTIONS.length;
 
   const answer = (opt) => {
+    const q = QUESTIONS[step];
     const next = { ...score };
     for (const k in opt.score) next[k] += opt.score[k];
     setScore(next);
+    if (q.interest) setInterestId(Object.keys(opt.score)[0]);
     setStep(step + 1);
   };
-  const restart = () => { setStep(0); setScore({ va: 0, writing: 0, bookkeeping: 0 }); };
+  const restart = () => { setStep(0); setScore({ ...EMPTY_SCORE }); setInterestId(null); };
 
-  const winnerId = Object.entries(score).sort((a, b) => b[1] - a[1])[0][0];
+  // Highest score wins. Ties resolve toward the path the person said they're
+  // most like, so the result reflects their stated interest, not list order.
+  const max = Math.max(...Object.values(score));
+  const topped = Object.keys(score).filter((k) => score[k] === max);
+  const winnerId = topped.length === 1
+    ? topped[0]
+    : (interestId && topped.includes(interestId) ? interestId : topped[0]);
   const path = PATHS.find((p) => p.id === winnerId) || PATHS[0];
   const pct = Math.round(((step) / QUESTIONS.length) * 100);
 

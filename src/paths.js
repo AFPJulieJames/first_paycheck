@@ -42,6 +42,16 @@ export const PLATFORM_URLS = {
   "ProBlogger Job Board": "https://problogger.com/jobs",
   "Contently": "https://contently.com",
   "QuickBooks Live": "https://quickbooks.intuit.com/live",
+  "We Work Remotely": "https://weworkremotely.com",
+  "Indeed": "https://www.indeed.com",
+  "ModSquad": "https://join.modsquad.com",
+  "Working Solutions": "https://www.workingsolutions.com",
+  "Rev": "https://www.rev.com/freelancers",
+  "GoTranscript": "https://gotranscript.com/transcription-jobs",
+  "TranscribeMe": "https://www.transcribeme.com/careers",
+  "DataAnnotation": "https://www.dataannotation.tech",
+  "LXT": "https://www.lxt.ai/careers",
+  "RWS TrainAI": "https://www.rws.com/artificial-intelligence/train-ai-data-services/",
 };
 
 /* One transparent line, shown wherever we link out. Keeps us honest. */
@@ -157,6 +167,114 @@ export const PATHS = [
     offers: [
       { label: "Monthly bookkeeping", text: "Clean, categorized books every month plus a simple profit-and-loss report, so you always know where you stand." },
       { label: "Catch-up bookkeeping", text: "Behind on your books? I will get months of backlog cleaned up and bring everything current." },
+    ],
+  },
+  {
+    id: "support",
+    name: "Customer Support",
+    tagline: "Help customers by chat or email, on a real paycheck.",
+    legit: "legit",
+    whatItIs:
+      "You answer customer questions for a company by live chat, email, or phone: tracking orders, fixing logins, sorting billing. It is one of the fastest ways to get hired with no experience, and unlike freelancing, a company pays you a steady hourly wage from day one.",
+    pay: { start: "$15 to $20/hr", month: "$1,200 to $2,800 part-time", first: "1 to 3 weeks" },
+    fitIf: "You are patient, write clearly, and would rather have a steady employer than chase your own clients.",
+    skipIf: "You want to set your own hours and rates. These are scheduled shifts for a company.",
+    firstWeek: [
+      "Day 1 (1 hour): polish a simple resume that highlights communication and reliability.",
+      "Day 2 to 3 (30 min each): set up profiles on 2 remote job boards and save 5 chat or email roles.",
+      "Day 4 to 5 (1 hour): apply to all 5. Many of these roles hire quickly.",
+      "Weekend: rest, then check for replies once.",
+    ],
+    steps: [
+      "Write a short resume that highlights clear writing and dependability.",
+      "Decide if you want non-phone work (chat and email) or are open to phone roles.",
+      "Apply to 5 remote support roles on legit boards this week.",
+      "Prepare for a quick typing test or a short interview.",
+      "Start your first shift and keep your answers friendly and clear.",
+    ],
+    platforms: [
+      { name: "We Work Remotely", tag: "steady", note: "Established remote roles, including support." },
+      { name: "Indeed", tag: "volume", note: "Many chat and email support listings daily." },
+      { name: "ModSquad", tag: "steady", note: "Flexible chat, email, and moderation projects." },
+      { name: "Working Solutions", tag: "steady", note: "Contract customer support from home." },
+    ],
+    watchOut:
+      "If a support job asks you to buy a starter kit or pay for training, it is a scam. Real employers pay you, never the other way around.",
+    offers: [
+      { label: "Live chat coverage", text: "Friendly, fast answers to your customers by live chat, so no question sits waiting." },
+      { label: "Email & ticket support", text: "I clear your support inbox daily, sorting and answering tickets so customers feel looked after." },
+    ],
+  },
+  {
+    id: "transcription",
+    name: "Transcription",
+    tagline: "Turn audio into text, on your own schedule.",
+    legit: "legit",
+    whatItIs:
+      "You listen to audio and type out what you hear: interviews, videos, meetings. No degree needed, just careful ears and steady typing. The work is flexible and you pick up files when you want, which makes it a popular first paycheck for fast typers.",
+    pay: { start: "$0.40 to $0.75 per audio minute", month: "$300 to $1,500 part-time", first: "1 to 3 weeks" },
+    fitIf: "You type quickly and accurately, have a good ear, and want to work whenever it suits you.",
+    skipIf: "You type slowly or dislike repetitive focus work. Early pay per hour can be low while you build speed.",
+    firstWeek: [
+      "Day 1 (1 hour): test your typing speed and aim for 60+ words per minute.",
+      "Day 2 to 3 (1 hour each): practice with a free audio clip.",
+      "Day 4 (30 min): apply to 2 beginner-friendly transcription platforms.",
+      "Day 5: take their short qualification test.",
+    ],
+    steps: [
+      "Check and build your typing speed and accuracy.",
+      "Practice transcribing a few short, clear audio clips.",
+      "Apply to beginner platforms like Rev, GoTranscript, or TranscribeMe.",
+      "Pass the qualification test (most let you retry).",
+      "Start with shorter, clearer files and build speed before harder audio.",
+    ],
+    platforms: [
+      { name: "Rev", tag: "easy", note: "Well-known starting point with steady files." },
+      { name: "GoTranscript", tag: "easy", note: "Beginner friendly, with frequent work." },
+      { name: "TranscribeMe", tag: "steady", note: "Clearer audio and decent per-minute rates." },
+      { name: "Upwork", tag: "volume", note: "Direct clients once you have a sample or two." },
+    ],
+    watchOut:
+      "Avoid any transcription site that charges a fee to take the test or to unlock work. The real ones are free to join.",
+    offers: [
+      { label: "Interview transcripts", text: "Clean, accurate transcripts of your interviews and calls, formatted and ready to use." },
+      { label: "Video captions", text: "Accurate captions and transcripts for your videos, so they are searchable and accessible." },
+    ],
+  },
+  {
+    id: "annotation",
+    name: "Data Annotation",
+    tagline: "Help train AI, one small task at a time.",
+    legit: "legit",
+    whatItIs:
+      "You label the data that teaches AI models: tagging images, rating answers, checking text. No coding or degree needed, just careful attention and the patience to follow detailed instructions. It is one of the newer, faster-growing first paychecks online.",
+    pay: { start: "$15 to $20/hr", month: "$600 to $2,000 part-time", first: "1 to 4 weeks" },
+    fitIf: "You are detail-oriented, comfortable working solo, and happy to follow clear instructions closely.",
+    skipIf: "You want guaranteed steady hours. Projects come and go, so income can be uneven.",
+    firstWeek: [
+      "Day 1 (30 min): sign up at one or two reputable platforms.",
+      "Day 2 to 3 (1 to 3 hours): complete the unpaid qualification assessment carefully.",
+      "Day 4 to 5: accept your first small paid tasks and read every instruction twice.",
+      "Weekend: note which task types pay best per hour.",
+    ],
+    steps: [
+      "Sign up at a reputable platform (DataAnnotation, LXT, RWS TrainAI).",
+      "Pass the unpaid assessment, which can take one to three hours.",
+      "Start with small tasks and follow the guidelines exactly.",
+      "Favor projects that pay a guaranteed hourly rate over per-task gigs.",
+      "Build a track record so better-paying projects open up.",
+    ],
+    platforms: [
+      { name: "DataAnnotation", tag: "easy", note: "Common starting point, often hourly pay." },
+      { name: "LXT", tag: "steady", note: "Established AI data company with varied projects." },
+      { name: "RWS TrainAI", tag: "steady", note: "Ongoing AI training and data work." },
+      { name: "Upwork", tag: "volume", note: "Direct data and AI tasks once you have experience." },
+    ],
+    watchOut:
+      "Skip any site that asks you to pay to start or promises big AI passive income. Per-task work can also dip below minimum wage, so prioritize hourly projects.",
+    offers: [
+      { label: "Image labeling", text: "Carefully tagged images and data, ready to train your model with consistent, accurate labels." },
+      { label: "AI output review", text: "I check and rate your AI's responses for accuracy, so the model keeps improving." },
     ],
   },
 ];
