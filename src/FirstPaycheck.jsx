@@ -188,9 +188,9 @@ export default function FirstPaycheck() {
         <div style={{ marginTop: 48, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
           <EmailCapture
             source="homepage"
-            title="The honest work-from-home newsletter"
-            blurb="Real openings, fresh scam alerts, and what is actually working. Free, no hype, unsubscribe anytime."
-            cta="Send it to me"
+            title="Get the free scam red-flag checklist"
+            blurb="Join the no-hype newsletter and we'll email you the scam red-flag checklist right away. Real openings, fresh scam alerts, unsubscribe anytime."
+            cta="Email me the checklist"
           />
         </div>
       </section>

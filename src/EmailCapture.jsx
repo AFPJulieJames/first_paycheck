@@ -11,22 +11,32 @@ export default function EmailCapture({
   cta = "Send it to me",
   variant = "panel",
   dark = false,
+  mode = "newsletter",     // "newsletter" | "result"
+  resultSubject = "",       // used when mode === "result"
+  resultText = "",          // the actual result body to email
 }) {
   const [email, setEmail] = useState("");
   const [state, setState] = useState("idle"); // idle | loading | done | error
   const [msg, setMsg] = useState("");
+  const [emailed, setEmailed] = useState(false);
 
   const submit = async (e) => {
     e?.preventDefault?.();
     if (state === "loading") return;
     setState("loading"); setMsg("");
     try {
-      const r = await fetch("/api/subscribe", {
+      const isResult = mode === "result";
+      const endpoint = isResult ? "/api/email-result" : "/api/subscribe";
+      const payload = isResult
+        ? { email, source, subject: resultSubject, body: resultText }
+        : { email, source };
+      const r = await fetch(endpoint, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify(payload),
       });
       const data = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(data.error || "Something went wrong.");
+      setEmailed(Boolean(data.emailed));
       setState("done");
     } catch (err) {
       setState("error"); setMsg(err.message || "Please try again.");
@@ -38,13 +48,19 @@ export default function EmailCapture({
   const textDim = onLight ? C.onLightDim : C.onDarkDim;
 
   if (state === "done") {
+    const headline = mode === "result" && emailed ? "Sent. Check your inbox." : "You are on the list.";
+    const sub = mode === "result"
+      ? (emailed
+          ? "Your result is on its way, and you are on the no-hype newsletter too. Unsubscribe anytime."
+          : "You are on the newsletter. Your result is on screen above to save or screenshot.")
+      : "Thanks for trusting us with your email. We will only send things worth your time.";
     return (
       <div style={{
         borderRadius: 14, padding: variant === "inline" ? "14px 16px" : "20px 22px",
         background: "#E2F5EC", border: "1px solid #9FE1C6", color: "#14241F",
       }}>
-        <div style={{ fontWeight: 700, fontSize: 15 }}>You are on the list.</div>
-        <div style={{ fontSize: 13.5, color: C.onLightDim, marginTop: 4 }}>Thanks for trusting us with your email. We will only send things worth your time.</div>
+        <div style={{ fontWeight: 700, fontSize: 15 }}>{headline}</div>
+        <div style={{ fontSize: 13.5, color: C.onLightDim, marginTop: 4 }}>{sub}</div>
       </div>
     );
   }

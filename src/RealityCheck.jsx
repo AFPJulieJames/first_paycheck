@@ -130,6 +130,36 @@ function Scorecard({ data }) {
   );
 }
 
+/* Turn a scorecard into a plain-text email body (no em dashes, honest copy). */
+function buildResultText(data) {
+  const v = VERDICT[data.verdict] || VERDICT.real;
+  const lines = [
+    "Your First Paycheck Reality Check",
+    "",
+    `${data.name}: ${v.label}`,
+    data.summary || "",
+    "",
+    `How much you can really make: ${data.pay}`,
+    `True cost to start: ${data.startCost}`,
+    `Time to your first dollar: ${data.timeToFirstDollar}`,
+    `Competition: ${data.saturation}/5`,
+  ];
+  if (data.flags && data.flags.length) {
+    lines.push("", "Watch out for:");
+    for (const f of data.flags) lines.push(`- ${f}`);
+  }
+  if (data.greens && data.greens.length) {
+    lines.push("", "What's actually good about it:");
+    for (const g of data.greens) lines.push(`- ${g}`);
+  }
+  lines.push(
+    "",
+    "Honest estimates for the US in 2026. Real pay varies with skill, hours, and luck.",
+    "More free, honest tools at https://firstpaycheck.co",
+  );
+  return lines.join("\n");
+}
+
 export default function RealityCheck({ onBack, initialQuery }) {
   const [q, setQ] = useState("");
   const [data, setData] = useState(null);
@@ -257,13 +287,26 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
                 text={`Is ${data.name} legit? First Paycheck says: ${(VERDICT[data.verdict] || VERDICT.real).label}. Real pay: ${data.pay}.`}
               />
             </div>
-            <EmailCapture
-              source="reality-check"
-              title="Get honest pay updates and scam alerts"
-              blurb="Join the no-hype newsletter for honest pay ranges and fresh scam alerts. Free, unsubscribe anytime."
-              cta="Join the newsletter"
-              variant="inline"
-            />
+            {import.meta.env.VITE_EMAIL_RESULTS ? (
+              <EmailCapture
+                source="reality-check"
+                mode="result"
+                resultSubject={`Your Reality Check: ${data.name}`}
+                resultText={buildResultText(data)}
+                title="Email me this result"
+                blurb="We'll send this scorecard to your inbox and add you to the no-hype newsletter. Free, unsubscribe anytime."
+                cta="Email me my result"
+                variant="inline"
+              />
+            ) : (
+              <EmailCapture
+                source="reality-check"
+                title="Get honest pay updates and scam alerts"
+                blurb="Join the no-hype newsletter for honest pay ranges and fresh scam alerts. Free, unsubscribe anytime."
+                cta="Join the newsletter"
+                variant="inline"
+              />
+            )}
           </div>
         )}
       </div>
