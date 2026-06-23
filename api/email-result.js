@@ -59,6 +59,34 @@ async function forwardToMailerLite(email, source) {
   } catch (e) { /* best effort */ }
 }
 
+/* Wrap the plain-text result in a simple, branded, email-safe HTML template.
+   Inline styles only (email clients strip <style>). Plain text stays the
+   fallback for clients that block HTML. */
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function resultHtml(text) {
+  const paras = esc(text)
+    .split(/\n{2,}/)
+    .map((p) => `<p style="margin:0 0 14px;line-height:1.6;font-size:15px;color:#14241F;">${p.replace(/\n/g, "<br>")}</p>`)
+    .join("");
+  return `<!doctype html><html><body style="margin:0;background:#FBF6EF;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:0 auto;padding:24px;">
+    <div style="padding:4px 0 16px;">
+      <span style="display:inline-block;width:20px;height:20px;border-radius:6px;background:#FF6A3D;vertical-align:middle;"></span>
+      <span style="font-size:20px;font-weight:bold;color:#0B1F1C;vertical-align:middle;margin-left:8px;">First Paycheck</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid #EFE7DA;border-radius:14px;padding:22px 24px;">
+      ${paras}
+    </div>
+    <div style="background:#13302B;border-radius:14px;padding:16px 20px;margin-top:16px;">
+      <div style="font-size:15px;font-weight:bold;color:#F4EFE7;">A real job pays you. You never pay it.</div>
+      <div style="font-size:13px;color:#9DB3A9;margin-top:6px;">Free, honest work-from-home reality checks at <a href="https://firstpaycheck.co" style="color:#43C9B0;text-decoration:none;">firstpaycheck.co</a></div>
+    </div>
+    <p style="font-size:12px;color:#5E7068;margin:16px 4px 0;line-height:1.5;">You're getting this because you asked First Paycheck to email your result. We never sell your info.</p>
+  </div></body></html>`;
+}
+
 /* Send the result via Resend. Returns true only if it actually went out. */
 async function sendResult(email, subject, text) {
   if (!RESEND_KEY) return false;
@@ -71,6 +99,7 @@ async function sendResult(email, subject, text) {
         to: [email],
         subject: (subject || "Your First Paycheck result").slice(0, 180),
         text: text,
+        html: resultHtml(text),
       }),
     });
     return r.ok;
