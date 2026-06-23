@@ -66,18 +66,45 @@ function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 function resultHtml(text) {
-  const paras = esc(text)
-    .split(/\n{2,}/)
+  /* Pull the known sections out of the plain-text body (markers authored in
+     the client's buildResultText) so we can present them like the welcome
+     email: result in the card, the one rule in a green callout, the checked
+     message in a muted block. Falls back gracefully if a marker is absent. */
+  const RULE = "The one rule that beats most scams: ";
+  const MSG = "The message you checked:";
+  let main = text;
+  let rule = "";
+  let message = "";
+  const mi = main.indexOf(MSG);
+  if (mi !== -1) { message = main.slice(mi + MSG.length).trim(); main = main.slice(0, mi).trim(); }
+  const ri = main.indexOf(RULE);
+  if (ri !== -1) { rule = main.slice(ri + RULE.length).trim(); main = main.slice(0, ri).trim(); }
+
+  const para = (s) => esc(s).split(/\n{2,}/)
     .map((p) => `<p style="margin:0 0 14px;line-height:1.6;font-size:15px;color:#14241F;">${p.replace(/\n/g, "<br>")}</p>`)
     .join("");
+
+  const ruleBox = rule
+    ? `<div style="background:#E2F5EC;border:1px solid #9FE1C6;border-radius:12px;padding:16px 18px;margin:6px 0 20px;line-height:1.6;font-size:14.5px;">
+        <strong style="color:#14241F;">The one rule that beats most scams:</strong> <span style="color:#14241F;">${esc(rule)}</span>
+      </div>` : "";
+  const msgBox = message
+    ? `<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#5E7068;margin:24px 0 8px;">The message you checked</div>
+       <div style="background:#FBF6EF;border:1px solid #EFE7DA;border-radius:12px;padding:14px 16px;font-size:13.5px;line-height:1.6;color:#5E7068;white-space:pre-wrap;">${esc(message)}</div>` : "";
+
   return `<!doctype html><html><body style="margin:0;background:#FBF6EF;font-family:Arial,Helvetica,sans-serif;">
   <div style="max-width:560px;margin:0 auto;padding:24px;">
-    <div style="padding:4px 0 16px;">
-      <span style="display:inline-block;width:20px;height:20px;border-radius:6px;background:#FF6A3D;vertical-align:middle;"></span>
-      <span style="font-size:20px;font-weight:bold;color:#0B1F1C;vertical-align:middle;margin-left:8px;">First Paycheck</span>
+    <div style="background:#13302B;padding:20px 28px;border-radius:14px 14px 0 0;">
+      <span style="font-size:19px;font-weight:bold;color:#FBF6EF;">First Paycheck</span>
     </div>
-    <div style="background:#ffffff;border:1px solid #EFE7DA;border-radius:14px;padding:22px 24px;">
-      ${paras}
+    <div style="background:#ffffff;border:1px solid #EFE7DA;border-top:none;border-radius:0 0 14px 14px;padding:26px 28px;">
+      <div style="font-size:21px;font-weight:bold;color:#0B1F1C;margin:0 0 16px;">Here is your result.</div>
+      ${para(main)}
+      ${ruleBox}
+      <div style="text-align:center;margin:6px 0 4px;">
+        <a href="https://firstpaycheck.co" style="display:inline-block;background:#FF6A3D;color:#ffffff;font-weight:bold;font-size:15px;text-decoration:none;padding:13px 28px;border-radius:999px;">Check another message</a>
+      </div>
+      ${msgBox}
     </div>
     <div style="background:#13302B;border-radius:14px;padding:16px 20px;margin-top:16px;">
       <div style="font-size:15px;font-weight:bold;color:#F4EFE7;">A real job pays you. You never pay it.</div>
