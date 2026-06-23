@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { C, FONT } from "./brand.js";
+import { trackEvent } from "./track.js";
 
 /* Reusable email capture. Posts to /api/subscribe with a source tag so we
    know where signups come from. Two looks: "panel" (standalone block) and
@@ -38,6 +39,7 @@ export default function EmailCapture({
       if (!r.ok) throw new Error(data.error || "Something went wrong.");
       setEmailed(Boolean(data.emailed));
       setState("done");
+      trackEvent(isResult ? "email_result_signup" : "newsletter_signup", { source }); // GA4 conversion
     } catch (err) {
       setState("error"); setMsg(err.message || "Please try again.");
     }
