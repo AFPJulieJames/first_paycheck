@@ -56,6 +56,30 @@ function highlight(text, phrases) {
   return out;
 }
 
+/* Plain-text version of the result, for the optional "email me my result". */
+function buildResultText(result, v) {
+  const flags = result.triggered.length;
+  const lines = [
+    `Verdict: ${v.label} (${flags} red flag${flags === 1 ? "" : "s"})`,
+    "",
+    v.blurb,
+    "",
+  ];
+  if (flags > 0) {
+    lines.push("Red flags we spotted:");
+    result.triggered.forEach((s) => {
+      const sev = s.severity === "high" ? "high risk" : s.severity === "med" ? "caution" : "minor";
+      lines.push(`- ${s.label} (${sev}): ${s.why}`);
+    });
+    lines.push("");
+  }
+  lines.push("The one rule that beats most scams: A real job pays you. If you are asked to pay a fee, buy a kit, deposit a check and send money back, or earn mainly by recruiting others, stop and walk away.");
+  lines.push("");
+  lines.push("The message you checked:");
+  lines.push(result.input);
+  return lines.join("\n");
+}
+
 export default function ScamSmellTest({ onBack }) {
   const [text, setText] = useState("");
   const [result, setResult] = useState(null);
@@ -204,13 +228,26 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
                 text={`I ran a message through First Paycheck's free Scam Smell Test. Verdict: ${v.label} (${result.triggered.length} red flag${result.triggered.length === 1 ? "" : "s"}).`}
               />
             </div>
-            <EmailCapture
-              source="scam-smell-test"
-              title="Get fresh scam alerts, no hype"
-              blurb="Join the newsletter for honest scam alerts so you can spot the next one before it costs you. Free, unsubscribe anytime."
-              cta="Join the newsletter"
-              variant="inline"
-            />
+            {import.meta.env.VITE_EMAIL_RESULTS ? (
+              <EmailCapture
+                source="scam-smell-test"
+                mode="result"
+                resultSubject={`Your Scam Smell Test result: ${v.label}`}
+                resultText={buildResultText(result, v)}
+                title="Email me this result"
+                blurb="We'll send this breakdown to your inbox and add you to the no-hype scam alerts. Free, unsubscribe anytime."
+                cta="Email me my result"
+                variant="inline"
+              />
+            ) : (
+              <EmailCapture
+                source="scam-smell-test"
+                title="Get fresh scam alerts, no hype"
+                blurb="Join the newsletter for honest scam alerts so you can spot the next one before it costs you. Free, unsubscribe anytime."
+                cta="Join the newsletter"
+                variant="inline"
+              />
+            )}
           </div>
         )}
       </div>

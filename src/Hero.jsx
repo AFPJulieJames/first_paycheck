@@ -70,6 +70,7 @@ export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
   const [m, setM] = useState(false);
   useEffect(() => { setM(true); }, []);
   const total = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
+  const MIN_PUBLIC_COUNT = 500; // hide the social-proof count until it's a number that helps, not hurts
 
   return (
     <section style={{ background: C.cream, color: C.onLight, fontFamily: FONT.body, padding: "40px 24px 56px" }}>
@@ -107,7 +108,7 @@ export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
             ))}
           </div>
 
-          {total > 0 && (
+          {total >= MIN_PUBLIC_COUNT && (
             <div style={{ marginTop: 18, fontSize: 13, color: C.onLightDim }}>
               <b style={{ color: C.onLight }}>{total.toLocaleString()}</b> checks run so far. Free, and no email required to use the tools.
             </div>

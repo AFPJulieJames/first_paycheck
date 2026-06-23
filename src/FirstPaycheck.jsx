@@ -116,6 +116,7 @@ export default function FirstPaycheck() {
 
   const onNav = (v) => (v === "home" ? home() : go(v));
   const totalActivity = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
+  const MIN_PUBLIC_COUNT = 500; // hide the counters until usage is credible (low numbers read as "nobody uses this")
 
   return (
     <div style={{ background: C.cream, fontFamily: FONT.body, color: C.onLight, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -132,9 +133,9 @@ export default function FirstPaycheck() {
       {/* BELOW THE FOLD */}
       <section ref={toolsRef} style={{ padding: "56px 24px 40px", maxWidth: 1100, margin: "0 auto" }}>
         {/* live counters (only when there is real activity) */}
-        {totalActivity > 0 && (
+        {totalActivity >= MIN_PUBLIC_COUNT && (
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginBottom: 44 }}>
-            {[["checks run", stats.checks], ["scams flagged", stats.scams], ["plans built", stats.paths]].filter(([, n]) => n > 0).map(([label, n]) => (
+            {[["checks run", stats.checks], ["scams flagged", stats.scams], ["plans built", stats.paths]].filter(([, n]) => n >= 25).map(([label, n]) => (
               <div key={label} style={{ background: "#fff", border: `1px solid ${C.creamDim}`, borderRadius: 12, padding: "12px 18px", textAlign: "center", minWidth: 110 }}>
                 <div style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 24, color: C.onLight }}>{n.toLocaleString()}</div>
                 <div style={{ fontFamily: FONT.mono, fontSize: 10.5, letterSpacing: 1, color: C.onLightDim, textTransform: "uppercase" }}>{label}</div>
