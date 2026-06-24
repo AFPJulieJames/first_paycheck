@@ -131,12 +131,21 @@ export default function FirstPaycheck() {
   const openSurface = (id) => go(id);
   const openReality = (query) => { setRealityQuery(query || ""); go("reality"); };
   const openPath = (id) => { setPathId(id); go("paths"); };
-  // Newsletter signup lives at the bottom of the home view. From home, just
-  // scroll to it; from another view, switch to home first, then the effect
-  // below scrolls once the form has rendered.
+  // Bring the newsletter form into view AND focus its input, so the action
+  // always gives feedback, even when the form is already on screen (e.g.
+  // clicking "Join the newsletter" from the footer right above it).
+  const focusNewsletter = () => {
+    const el = newsletterRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.querySelector("input")?.focus({ preventScroll: true });
+  };
+  // Newsletter signup lives at the bottom of the home view. From home, focus
+  // it directly; from another view, switch to home first, then the effect
+  // below runs once the form has rendered.
   const goNewsletter = () => {
     if (view === "home") {
-      newsletterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      focusNewsletter();
     } else {
       setPendingNewsletter(true);
       setView("home");
@@ -146,7 +155,7 @@ export default function FirstPaycheck() {
   useEffect(() => { getStats().then((s) => s && setStats(s)); }, []);
   useEffect(() => {
     if (view === "home" && pendingNewsletter) {
-      newsletterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      focusNewsletter();
       setPendingNewsletter(false);
     }
   }, [view, pendingNewsletter]);
