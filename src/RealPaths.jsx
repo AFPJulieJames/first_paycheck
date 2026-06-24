@@ -213,7 +213,7 @@ export default function RealPaths({ onBack, initialPathId }) {
             Pick a path, or build one for any job.
           </h1>
           <p style={{ fontSize: 16, lineHeight: 1.6, color: C.onLightDim, maxWidth: 540, margin: "0 auto" }}>
-            Start with one of our three, or type any job and get the same honest plan: real pay, a realistic first week, the steps, and where to find work.
+            Start with one of our starter paths, or type any job and get the same honest plan: real pay, a realistic first week, the steps, and where to find work.
           </p>
         </div>
 
