@@ -16,6 +16,7 @@ export default function Nav({ onNav, onCheck }) {
     ["Scam Check", () => onNav("scam")],
     ["Paths", () => onNav("paths")],
     ["Quiz", () => onNav("quiz")],
+    ["Free checklist", () => onNav("newsletter")],
   ];
   const linkStyle = { cursor: "pointer", background: "none", border: "none", fontFamily: FONT.body, fontSize: 14, fontWeight: 500, color: C.onLight, padding: "6px 4px" };
 

@@ -104,17 +104,40 @@ export default function FirstPaycheck() {
   const [realityQuery, setRealityQuery] = useState("");
   const [pathId, setPathId] = useState(null);
   const [stats, setStats] = useState(null);
+  const [pendingNewsletter, setPendingNewsletter] = useState(false);
   const toolsRef = useRef(null);
+  const newsletterRef = useRef(null);
   const scrollToTools = () => toolsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   const go = (v) => { setView(v); window.scrollTo(0, 0); };
   const home = () => go("home");
   const openSurface = (id) => go(id);
   const openReality = (query) => { setRealityQuery(query || ""); go("reality"); };
   const openPath = (id) => { setPathId(id); go("paths"); };
+  // Newsletter signup lives at the bottom of the home view. From home, just
+  // scroll to it; from another view, switch to home first, then the effect
+  // below scrolls once the form has rendered.
+  const goNewsletter = () => {
+    if (view === "home") {
+      newsletterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      setPendingNewsletter(true);
+      setView("home");
+    }
+  };
 
   useEffect(() => { getStats().then((s) => s && setStats(s)); }, []);
+  useEffect(() => {
+    if (view === "home" && pendingNewsletter) {
+      newsletterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setPendingNewsletter(false);
+    }
+  }, [view, pendingNewsletter]);
 
-  const onNav = (v) => (v === "home" ? home() : go(v));
+  const onNav = (v) => {
+    if (v === "home") return home();
+    if (v === "newsletter") return goNewsletter();
+    return go(v);
+  };
   const totalActivity = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
   const MIN_PUBLIC_COUNT = 500; // hide the counters until usage is credible (low numbers read as "nobody uses this")
 
@@ -186,7 +209,7 @@ export default function FirstPaycheck() {
           </button>
         </div>
 
-        <div style={{ marginTop: 48, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
+        <div id="newsletter" ref={newsletterRef} style={{ marginTop: 48, maxWidth: 620, marginLeft: "auto", marginRight: "auto", scrollMarginTop: 80 }}>
           <EmailCapture
             source="homepage"
             title="Get the free scam red-flag checklist"

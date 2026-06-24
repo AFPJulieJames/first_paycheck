@@ -46,7 +46,7 @@ export default function Footer({ onNav }) {
           </Group>
 
           <Group title="Get updates">
-            <button onClick={() => onNav("home")} style={linkBtn}>Join the newsletter</button>
+            <button onClick={() => onNav("newsletter")} style={linkBtn}>Join the newsletter</button>
             <span style={{ fontSize: 13, color: C.onLightDim }}>firstpaycheck.co</span>
           </Group>
         </div>
