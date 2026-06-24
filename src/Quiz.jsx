@@ -5,29 +5,30 @@ import EmailCapture from "./EmailCapture.jsx";
 
 /* ============================================================
    FIND YOUR PATH QUIZ
-   A 60-second, no-pressure quiz that recommends one of the three
+   A 60-second, no-pressure quiz that recommends one of the
    starter paths. Pure local logic (no API). Ends with the pick,
    a button into that path, and an email capture.
    ============================================================ */
 
-/* Each option scores across the six starter paths. The "Which sounds most
+/* Each option scores across all ten starter paths. The "Which sounds most
    like you?" question (interest) is the strongest signal and also breaks ties,
-   so the result follows what the person actually told us about themselves. */
+   so the result follows what the person actually told us about themselves.
+   Every path appears in the interest question, so each one is reachable. */
 const QUESTIONS = [
   {
     q: "How much time can you give it each week?",
     options: [
-      { label: "A few hours, here and there", score: { va: 1, transcription: 2, annotation: 2 } },
-      { label: "Around 10 hours, fairly steady", score: { va: 1, writing: 1, bookkeeping: 1, support: 2 } },
-      { label: "20+ hours, I'm going for it", score: { writing: 2, bookkeeping: 2, support: 1 } },
+      { label: "A few hours, here and there", score: { va: 1, transcription: 2, annotation: 2, "digital-products": 1 } },
+      { label: "Around 10 hours, fairly steady", score: { va: 1, writing: 1, bookkeeping: 1, support: 2, smm: 1, "pinterest-manager": 1 } },
+      { label: "20+ hours, I'm going for it", score: { writing: 2, bookkeeping: 2, support: 1, smm: 1, "video-editing": 1 } },
     ],
   },
   {
     q: "What are you hoping it turns into?",
     options: [
       { label: "A little extra cash, soon", score: { va: 1, support: 1, transcription: 2, annotation: 2 } },
-      { label: "A steady part-time paycheck", score: { va: 1, bookkeeping: 2, support: 2 } },
-      { label: "Eventually a full-time income", score: { va: 1, writing: 2, bookkeeping: 2 } },
+      { label: "A steady part-time paycheck", score: { va: 1, bookkeeping: 2, support: 2, smm: 1, "pinterest-manager": 1 } },
+      { label: "Eventually a full-time income", score: { va: 1, writing: 2, bookkeeping: 2, smm: 1, "video-editing": 1, "digital-products": 1 } },
     ],
   },
   {
@@ -40,29 +41,35 @@ const QUESTIONS = [
       { label: "I like helping and talking to people", score: { support: 3 } },
       { label: "Fast typer, happy to work heads-down", score: { transcription: 3 } },
       { label: "Detail-focused and a bit techy", score: { annotation: 3 } },
+      { label: "Creative, and I enjoy social media", score: { smm: 3 } },
+      { label: "I like hands-on creative work like video", score: { "video-editing": 3 } },
+      { label: "I like design, keywords, and behind-the-scenes work", score: { "pinterest-manager": 3 } },
+      { label: "I'd rather build my own products than have clients", score: { "digital-products": 3 } },
     ],
   },
   {
     q: "What kind of work appeals most?",
     options: [
-      { label: "A bit of everything, lots of variety", score: { va: 2, support: 1 } },
-      { label: "Creative work with words", score: { writing: 2 } },
+      { label: "A bit of everything, lots of variety", score: { va: 2, support: 1, smm: 1 } },
+      { label: "Creative work with words", score: { writing: 2, "pinterest-manager": 1 } },
       { label: "Structured work with records and numbers", score: { bookkeeping: 2, annotation: 1 } },
       { label: "Helping customers and solving problems", score: { support: 2 } },
       { label: "Repetitive tasks I can do on autopilot", score: { transcription: 2, annotation: 1 } },
       { label: "Following clear steps to train tech", score: { annotation: 2, transcription: 1 } },
+      { label: "Creative, visual work (design, video, social)", score: { "video-editing": 2, smm: 1, "pinterest-manager": 1 } },
+      { label: "Making my own products to sell", score: { "digital-products": 2 } },
     ],
   },
   {
     q: "Your own clients, or a steady paycheck?",
     options: [
-      { label: "I'd rather find my own clients", score: { va: 2, writing: 2, bookkeeping: 2 } },
+      { label: "I'd rather find my own clients or sell my own thing", score: { va: 2, writing: 2, bookkeeping: 2, smm: 2, "video-editing": 2, "pinterest-manager": 2, "digital-products": 2 } },
       { label: "I'd prefer a company that pays me, free to start", score: { support: 2, transcription: 2, annotation: 2 } },
     ],
   },
 ];
 
-const EMPTY_SCORE = { va: 0, writing: 0, bookkeeping: 0, support: 0, transcription: 0, annotation: 0 };
+const EMPTY_SCORE = { va: 0, writing: 0, bookkeeping: 0, support: 0, transcription: 0, annotation: 0, smm: 0, "video-editing": 0, "pinterest-manager": 0, "digital-products": 0 };
 
 export default function Quiz({ onBack, onPick }) {
   const [step, setStep] = useState(0);

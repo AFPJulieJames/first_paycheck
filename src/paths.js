@@ -52,6 +52,11 @@ export const PLATFORM_URLS = {
   "DataAnnotation": "https://www.dataannotation.tech",
   "LXT": "https://www.lxt.ai/careers",
   "RWS TrainAI": "https://www.rws.com/artificial-intelligence/train-ai-data-services/",
+  "LinkedIn": "https://www.linkedin.com/jobs",
+  "Fiverr": "https://www.fiverr.com",
+  "Etsy": "https://www.etsy.com/sell",
+  "Teachers Pay Teachers": "https://www.teacherspayteachers.com/Sell-on-TpT",
+  "Gumroad": "https://gumroad.com",
 };
 
 /* One transparent line, shown wherever we link out. Keeps us honest. */
@@ -275,6 +280,148 @@ export const PATHS = [
     offers: [
       { label: "Image labeling", text: "Carefully tagged images and data, ready to train your model with consistent, accurate labels." },
       { label: "AI output review", text: "I check and rate your AI's responses for accuracy, so the model keeps improving." },
+    ],
+  },
+  {
+    id: "smm",
+    name: "Social Media Management",
+    tagline: "Run the social accounts busy businesses do not have time for.",
+    legit: "legit",
+    whatItIs:
+      "You plan, write, and schedule posts for a business so their social media stays active without them lifting a finger. No degree needed. It is one of the fastest-growing remote roles, and most owners know they need it but cannot keep up themselves.",
+    pay: { start: "$20 to $50/hr", month: "$1,000 to $3,000 part-time", first: "3 to 8 weeks" },
+    fitIf: "You are organized, enjoy writing short posts, and like the mix of creative and steady client work.",
+    skipIf: "You want a fixed paycheck with no client management, or you dislike being online much.",
+    firstWeek: [
+      "Day 1 (1 hour): pick one or two platforms you actually use and understand.",
+      "Day 2 to 3 (1 hour each): make a simple sample, a week of posts for a pretend or real local business.",
+      "Day 4 to 5 (1 hour): offer your services to 5 small businesses you know or follow.",
+      "Weekend: rest, then check for replies once.",
+    ],
+    steps: [
+      "Choose one or two platforms to specialize in at first.",
+      "Build a sample: a week of posts for a business you admire.",
+      "Write a simple one-page list of what you will handle (posts, scheduling, replies).",
+      "Offer to manage social for one local business, even at a starter rate.",
+      "Do great work for a month, then ask for a testimonial and a referral.",
+    ],
+    platforms: [
+      { name: "Local businesses & referrals", tag: "easy", note: "Your first client is often someone you already know." },
+      { name: "LinkedIn", tag: "steady", note: "Small businesses post social media roles here." },
+      { name: "Upwork", tag: "volume", note: "Lots of listings; good for early samples and reviews." },
+      { name: "We Work Remotely", tag: "steady", note: "Established remote marketing and social roles." },
+    ],
+    watchOut:
+      "Skip any paid 'start a social media agency' course that promises fast five-figure months. The work is real; that pitch is the funnel. You can start free with one client.",
+    offers: [
+      { label: "Monthly social package", text: "A month of planned, written, and scheduled posts in your brand voice, so your accounts stay active without you." },
+      { label: "Account growth & replies", text: "I post consistently and answer comments and DMs, so your audience grows and feels heard." },
+    ],
+  },
+  {
+    id: "video-editing",
+    name: "Video Editing",
+    tagline: "Turn raw clips into sharp videos creators pay for.",
+    legit: "legit",
+    whatItIs:
+      "You take someone's raw footage and cut it into clean, watchable videos: YouTube uploads, short-form reels, course lessons. Demand from creators and small businesses keeps climbing. The skill takes practice, but you can learn it with free tools and no degree.",
+    pay: { start: "$20 to $60/hr", month: "$800 to $3,000 part-time", first: "3 to 8 weeks" },
+    fitIf: "You are patient, detail-oriented, and enjoy the satisfying craft of making something look polished.",
+    skipIf: "You want income this week or dislike sitting and fiddling with details for stretches at a time.",
+    firstWeek: [
+      "Day 1 (1 hour): pick a free or low-cost editor (CapCut, DaVinci Resolve) and install it.",
+      "Day 2 to 4 (1 to 2 hours each): edit two short practice videos to build a small reel.",
+      "Day 5 (45 min): post your reel and message 5 creators offering to edit a video.",
+      "Weekend: note which style of editing you enjoyed most and lean into it.",
+    ],
+    steps: [
+      "Pick one free or affordable editing tool and learn the basics.",
+      "Edit two or three short sample videos to show your style.",
+      "Put your samples in a simple reel or shared folder.",
+      "Reach out to 5 creators or businesses offering to edit one video.",
+      "Deliver fast, reliable edits, then turn that client into repeat work.",
+    ],
+    platforms: [
+      { name: "Local businesses & referrals", tag: "easy", note: "Creators you already follow may need an editor." },
+      { name: "Upwork", tag: "volume", note: "Steady stream of editing gigs; great for first reviews." },
+      { name: "Fiverr", tag: "volume", note: "Buyers search for editors; good for building a track record." },
+      { name: "We Work Remotely", tag: "steady", note: "Ongoing video roles with companies and studios." },
+    ],
+    watchOut:
+      "Basic, cheap edits face heavy global competition. Niche down (short-form reels, a specific industry) so you compete on skill, not on being the lowest price.",
+    offers: [
+      { label: "Short-form reels", text: "Scroll-stopping reels and shorts from your long videos, captioned and ready to post." },
+      { label: "YouTube editing", text: "Your raw footage cut into a clean, paced YouTube video, so you just film and hand it off." },
+    ],
+  },
+  {
+    id: "pinterest-manager",
+    name: "Pinterest Manager",
+    tagline: "Help bloggers and shops get found on Pinterest.",
+    legit: "legit",
+    whatItIs:
+      "You run Pinterest for bloggers and online shops: designing pins, writing keyword descriptions, and scheduling them so their content gets found. It is a quieter, lower-competition corner of social media work, with recurring monthly clients and flexible, batch-friendly hours.",
+    pay: { start: "$25 to $50/hr", month: "$600 to $2,000 part-time", first: "1 to 3 months" },
+    fitIf: "You like light design, keywords, and steady behind-the-scenes work more than being on camera.",
+    skipIf: "You need clients this week. The pool is smaller, so the first few take a little longer to find.",
+    firstWeek: [
+      "Day 1 (1 hour): learn how Pinterest search and keywords work (it is a search engine, not a feed).",
+      "Day 2 to 3 (1 hour each): design 5 sample pins in a free tool like Canva.",
+      "Day 4 to 5 (1 hour): reach out to 5 bloggers or Etsy shops offering to manage their Pinterest.",
+      "Weekend: save examples of pins you think work well, and why.",
+    ],
+    steps: [
+      "Learn Pinterest basics: keyword search, fresh pins, and scheduling.",
+      "Design 5 sample pins to show your eye and your keyword skill.",
+      "Write a one-page offer: pins designed, descriptions written, and scheduled each month.",
+      "Pitch 5 bloggers or online shops who clearly use Pinterest.",
+      "Land one retainer, show growth in saves and clicks, then ask for a referral.",
+    ],
+    platforms: [
+      { name: "Blogger & shop outreach", tag: "easy", note: "Bloggers and Etsy sellers are your core clients; reach out directly." },
+      { name: "Local businesses & referrals", tag: "easy", note: "Word of mouth lands the first retainer fast." },
+      { name: "Upwork", tag: "volume", note: "Search 'Pinterest' listings; good for early reviews." },
+    ],
+    watchOut:
+      "Be wary of paid 'Pinterest manager' courses that promise quick full-time income. The work is real and learnable for free; the smaller client pool just means honest expectations.",
+    offers: [
+      { label: "Monthly pin design", text: "Fresh, keyword-optimized pins designed and scheduled every month, so your traffic grows while you focus on your business." },
+      { label: "Pinterest setup & cleanup", text: "I set up or refresh your boards and keywords so your existing content finally gets found." },
+    ],
+  },
+  {
+    id: "digital-products",
+    name: "Digital Products & Printables",
+    tagline: "Make a useful download once, sell it again and again.",
+    legit: "caution",
+    whatItIs:
+      "You create digital files people buy and download: printables, planners, templates, or teaching resources, then sell them on marketplaces like Etsy or Teachers Pay Teachers. It is real and cheap to start, but the marketplaces are crowded, so income usually builds slowly rather than overnight.",
+    pay: { start: "Most under $200/mo at first", month: "$200 to $1,500 as your shop grows", first: "Often a few months" },
+    fitIf: "You like making things, can be patient, and want something that keeps earning after the work is done.",
+    skipIf: "You need money this month. This is a slow build, not a fast paycheck, and many shops earn little.",
+    firstWeek: [
+      "Day 1 (1 hour): pick one specific buyer and problem (busy teachers, new moms, small shops).",
+      "Day 2 to 4 (1 to 2 hours each): make 3 to 5 simple products in a free tool like Canva.",
+      "Day 5 (1 hour): open a free shop and list your first product with keyword-rich titles.",
+      "Weekend: list one more and note which idea you are most excited to expand.",
+    ],
+    steps: [
+      "Choose a specific niche and the person you are making for.",
+      "Create 3 to 5 useful, well-designed digital products.",
+      "Open a shop on Etsy or Teachers Pay Teachers (free to start).",
+      "Write keyword-rich titles and descriptions so buyers can find you.",
+      "Add new products regularly and lean into whatever starts selling.",
+    ],
+    platforms: [
+      { name: "Etsy", tag: "volume", note: "Huge built-in audience for printables and templates." },
+      { name: "Teachers Pay Teachers", tag: "steady", note: "The go-to marketplace for teaching resources." },
+      { name: "Gumroad", tag: "steady", note: "Sell from your own page and keep more of each sale." },
+    ],
+    watchOut:
+      "The danger here is not the work, it is the 'passive printables income' courses that oversell it. You can start free. Expect a slow build, and treat fast-money promises as the red flag.",
+    offers: [
+      { label: "Printable bundle", text: "A themed set of ready-to-print planners or worksheets your buyers can download instantly." },
+      { label: "Custom templates", text: "Editable templates (social posts, planners, resumes) people can personalize and reuse." },
     ],
   },
 ];

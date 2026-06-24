@@ -91,6 +91,85 @@ export const OPPORTUNITIES = [
       "A real, fast on-ramp if you can teach a subject or a language. Pay is modest but steady, and the hours fit around kids well.",
   },
   {
+    id: "smm",
+    name: "Social Media Management",
+    aka: ["social media management", "social media manager", "smm", "social media marketing", "social media"],
+    verdict: "legit",
+    pay: "$20 to $50/hr; $500 to $2,000/mo per client retainer",
+    startCost: "$0",
+    asksUpfront: false,
+    timeToFirstDollar: "3 to 8 weeks",
+    saturation: 4,
+    flags: ["Paid 'social media agency' courses are often the real product, not the work"],
+    greens: [
+      "One of the fastest-growing remote roles for parents",
+      "Recurring monthly retainers, no degree required",
+      "Small businesses know they need it and will pay",
+    ],
+    summary:
+      "A real, in-demand skill businesses pay for monthly. The work is genuine; the hype is the paid 'start an agency' courses. Start with one local business and build from there.",
+  },
+  {
+    id: "video-editing",
+    name: "Video Editing",
+    aka: ["video editing", "video editor", "short form video", "reels editor", "youtube editor"],
+    verdict: "legit",
+    pay: "$20 to $60/hr; more once you specialize",
+    startCost: "$0 to $300 (free tools exist; paid software optional)",
+    asksUpfront: false,
+    timeToFirstDollar: "3 to 8 weeks",
+    saturation: 4,
+    flags: ["The skill takes real practice the pitch downplays", "Cheap global competition for basic edits"],
+    greens: [
+      "Heavy, growing demand from creators and small businesses",
+      "Portfolio beats credentials",
+      "Repeat clients once you are reliable",
+    ],
+    summary:
+      "Editing short videos for creators and businesses is real, well-paid work once you build a sample reel. It takes practice, but no degree, and demand keeps climbing.",
+  },
+  {
+    id: "pinterest-manager",
+    name: "Pinterest Manager",
+    aka: ["pinterest manager", "pinterest management", "pinterest va", "pinterest marketing"],
+    verdict: "legit",
+    pay: "$25 to $50/hr; $300 to $800/mo per client retainer",
+    startCost: "$0",
+    asksUpfront: false,
+    timeToFirstDollar: "1 to 3 months",
+    saturation: 2,
+    flags: ["Smaller client pool than general social media", "Some paid 'Pinterest manager' courses oversell the income"],
+    greens: [
+      "A low-competition corner of social media work",
+      "Recurring retainers with bloggers and online shops",
+      "Flexible, batch-friendly, fits around kids",
+    ],
+    summary:
+      "Managing Pinterest for bloggers and shops is a real, low-competition niche with recurring pay. The market is smaller than general social media, but so is the crowd chasing it.",
+  },
+  {
+    id: "digital-products",
+    name: "Digital Products & Printables",
+    aka: ["digital products", "printables", "etsy printables", "teachers pay teachers", "tpt", "sell printables", "digital downloads"],
+    verdict: "real",
+    pay: "Most earn under $200/mo; top sellers far more, slowly",
+    startCost: "$0 to $50",
+    asksUpfront: false,
+    timeToFirstDollar: "Often months; a few sooner",
+    saturation: 5,
+    flags: [
+      "Marketplaces are crowded; SEO and marketing decide who sells",
+      "'Passive printables income' courses are the real funnel",
+    ],
+    greens: [
+      "Make it once, sell it many times",
+      "Low cost, no inventory, low risk to try",
+      "Real winners on Etsy and Teachers Pay Teachers",
+    ],
+    summary:
+      "Selling printables and templates is legit and cheap to try, and the best ones earn for years. But the market is saturated and most earn little, so treat it as a slow build, not fast cash.",
+  },
+  {
     id: "ugc",
     name: "UGC Creator",
     aka: ["ugc", "ugc creator", "user generated content"],
@@ -248,4 +327,4 @@ export function matchOpportunity(query) {
 
 /* Chips shown on the Reality Check landing, in a deliberate order:
    a couple of safe wins, then the fads people are anxious about. */
-export const FEATURED = ["va", "bookkeeping", "ugc", "ai-agency", "fba", "faceless-yt", "data-entry", "reshipping"];
+export const FEATURED = ["va", "bookkeeping", "smm", "ugc", "ai-agency", "fba", "video-editing", "pinterest-manager", "digital-products", "faceless-yt", "data-entry", "reshipping"];
