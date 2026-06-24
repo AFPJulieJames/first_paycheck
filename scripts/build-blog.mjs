@@ -105,7 +105,10 @@ body{margin:0;background:var(--cream);color:var(--onLight);font-family:Inter,sys
 a{color:#B5481F}
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 header.site{border-bottom:1px solid var(--creamDim)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 24px}
+header.site .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;flex-wrap:wrap}
+header.site nav.sitenav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header.site nav.sitenav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--onLight);white-space:nowrap}
+header.site nav.sitenav a.navcta{color:#fff;background:linear-gradient(135deg,#FF6A3D,#FF7A59);padding:9px 16px;border-radius:999px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--onLight)}
 .logo .mark{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,#FF7A59,#FFB155)}
 .logo b{font-family:Fraunces,serif;font-weight:600;font-size:18px}
@@ -130,7 +133,7 @@ footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 footer.site b{font-family:Fraunces,serif;color:var(--onLight)}
 </style>`;
 
-const header = `<header class="site"><div class="wrap"><a class="logo" href="/"><span class="mark"></span><b>${BRAND}</b></a><a href="/blog" style="font-size:14px;text-decoration:none;color:var(--dim)">Blog</a></div></header>`;
+const header = `<header class="site"><div class="wrap"><a class="logo" href="/"><span class="mark"></span><b>${BRAND}</b></a><nav class="sitenav"><a href="/#reality">Reality Check</a><a href="/#scam">Scam Check</a><a href="/#paths">Paths</a><a href="/#quiz">Quiz</a><a href="/#newsletter">Free Checklist</a><a href="/blog">Blog</a><a class="navcta" href="/#reality">Check a job</a></nav></div></header>`;
 const footerLinks = ["/", "Home", "/blog", "Blog", "/about", "About", "/contact", "Contact", "/privacy", "Privacy", "/terms", "Terms"];
 let footerLinksHtml = "";
 for (let i = 0; i < footerLinks.length; i += 2) footerLinksHtml += `<a href="${footerLinks[i]}" style="color:var(--dim);text-decoration:none">${footerLinks[i + 1]}</a>`;
@@ -235,7 +238,13 @@ ${footer}</body></html>`;
 }
 
 /* ---------- build ---------- */
-if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true, force: true });
+/* Wipe + rebuild the blog dir. Some sandboxed/mounted filesystems disallow
+   unlink; if so, fall back to overwriting in place so the rest of the build
+   still runs (the live Vercel build can delete normally). */
+if (existsSync(OUT_DIR)) {
+  try { rmSync(OUT_DIR, { recursive: true, force: true }); }
+  catch (e) { console.warn(`Could not clear ${OUT_DIR} (${e.code}); overwriting in place.`); }
+}
 mkdirSync(OUT_DIR, { recursive: true });
 
 /* static pages */

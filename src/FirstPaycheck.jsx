@@ -99,16 +99,34 @@ function SurfaceCard({ s, i, onOpen }) {
   );
 }
 
+// Views that are deep-linkable via the URL hash, so the static blog/marketing
+// pages (and shared links) can open a specific tool, e.g. /#scam.
+const HASH_VIEWS = ["reality", "scam", "paths", "quiz"];
+const viewFromHash = () => {
+  const h = (typeof window !== "undefined" ? window.location.hash : "").replace(/^#/, "");
+  return HASH_VIEWS.includes(h) ? h : "home";
+};
+
 export default function FirstPaycheck() {
-  const [view, setView] = useState("home"); // home | reality | scam | paths | quiz
+  const [view, setView] = useState(viewFromHash); // home | reality | scam | paths | quiz
   const [realityQuery, setRealityQuery] = useState("");
   const [pathId, setPathId] = useState(null);
   const [stats, setStats] = useState(null);
-  const [pendingNewsletter, setPendingNewsletter] = useState(false);
+  const [pendingNewsletter, setPendingNewsletter] = useState(
+    typeof window !== "undefined" && window.location.hash === "#newsletter"
+  );
   const toolsRef = useRef(null);
   const newsletterRef = useRef(null);
   const scrollToTools = () => toolsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  const go = (v) => { setView(v); window.scrollTo(0, 0); };
+  // Keep the URL hash in sync so tools are deep-linkable and shareable.
+  const go = (v) => {
+    setView(v);
+    if (typeof window !== "undefined") {
+      if (v === "home") history.replaceState(null, "", window.location.pathname + window.location.search);
+      else if (window.location.hash !== `#${v}`) window.location.hash = v;
+    }
+    window.scrollTo(0, 0);
+  };
   const home = () => go("home");
   const openSurface = (id) => go(id);
   const openReality = (query) => { setRealityQuery(query || ""); go("reality"); };
@@ -132,6 +150,16 @@ export default function FirstPaycheck() {
       setPendingNewsletter(false);
     }
   }, [view, pendingNewsletter]);
+  // Handle back/forward and #newsletter links arriving via hash changes.
+  useEffect(() => {
+    const onHash = () => {
+      const h = window.location.hash.replace(/^#/, "");
+      if (h === "newsletter") { setView("home"); setPendingNewsletter(true); }
+      else setView(HASH_VIEWS.includes(h) ? h : "home");
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
 
   const onNav = (v) => {
     if (v === "home") return home();
