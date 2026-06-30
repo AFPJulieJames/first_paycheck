@@ -22,6 +22,18 @@ const PUBLIC_DIR = join(ROOT, "public");
 const SITE = "https://firstpaycheck.co";
 const BRAND = "First Paycheck";
 const TAGLINE = "Legitimate, flexible work-from-home jobs. No experience needed.";
+const OG_IMAGE = `${SITE}/og-image.jpg`;
+
+/* E-E-A-T: a real named author + organization publisher with a logo.
+   Helps both classic SEO (author/publisher signals) and GEO (AI engines
+   prefer clearly-attributed, sourceable content). */
+const AUTHOR = { "@type": "Person", name: "Julie James", url: `${SITE}/about` };
+const PUBLISHER = {
+  "@type": "Organization",
+  name: BRAND,
+  url: SITE,
+  logo: { "@type": "ImageObject", url: OG_IMAGE, width: 1200, height: 630 },
+};
 
 /* ---------- tiny helpers ---------- */
 const esc = (s = "") => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -93,6 +105,40 @@ function parse(raw) {
   return { meta, body: m[2] };
 }
 
+/* strip markdown inline syntax down to plain text (for JSON-LD answers) */
+function plain(s = "") {
+  return s
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1") // links -> text
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // bold
+    .replace(/(^|[^*])\*([^*]+)\*/g, "$1$2") // italic
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/* Extract a FAQ section ("## Frequently asked questions" / "## FAQ") into
+   {q,a} pairs so we can emit FAQPage JSON-LD. Each ### is a question; the
+   text until the next ### or ## is its answer. Powers rich results + GEO. */
+function extractFaq(body) {
+  const lines = body.replace(/\r\n/g, "\n").split("\n");
+  let i = 0;
+  while (i < lines.length && !/^##\s+(frequently asked questions|faqs?)\b/i.test(lines[i])) i++;
+  if (i >= lines.length) return [];
+  i++; // move past the FAQ heading
+  const faqs = [];
+  let q = null, ans = [];
+  const push = () => { if (q && ans.length) faqs.push({ q, a: plain(ans.join(" ")) }); };
+  for (; i < lines.length; i++) {
+    const line = lines[i];
+    if (/^##\s/.test(line)) break; // next top-level section ends the FAQ
+    const m = line.match(/^###\s+(.*)$/);
+    if (m) { push(); q = plain(m[1].trim()); ans = []; continue; }
+    if (q && line.trim()) ans.push(line.trim());
+  }
+  push();
+  return faqs;
+}
+
 /* ---------- shared page chrome ---------- */
 const GA = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-49PQ9QX7Z0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-49PQ9QX7Z0');</script>`;
 
@@ -142,16 +188,24 @@ const footer = `<footer class="site"><div class="wrap" style="flex-direction:col
 const ctaBlock = `<div class="cta"><h3>Not sure if an opportunity is real?</h3><p>Run it through the free Reality Check and Scam Smell Test. Honest pay ranges, real scam flags, no hype.</p><a class="btn" href="/">Try the free tools &rarr;</a></div>`;
 
 /* ---------- render one post ---------- */
-function renderPost(meta, bodyHtml, related = []) {
+function renderPost(meta, bodyHtml, related = [], faqs = []) {
   const url = `${SITE}/blog/${meta.slug}`;
   const ld = {
     "@context": "https://schema.org", "@type": "Article",
     headline: meta.title, description: meta.description,
+    image: OG_IMAGE,
     datePublished: meta.date, dateModified: meta.date,
-    author: { "@type": "Organization", name: BRAND, url: SITE },
-    publisher: { "@type": "Organization", name: BRAND },
+    author: AUTHOR,
+    publisher: PUBLISHER,
     mainEntityOfPage: url,
   };
+  const faqLd = faqs.length ? {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question", name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
   const breadcrumb = {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: [
@@ -170,11 +224,14 @@ ${GA}
 <meta name="description" content="${esc(meta.description)}">
 ${meta.keywords ? `<meta name="keywords" content="${esc(meta.keywords)}">` : ""}
 <link rel="canonical" href="${url}">
-<meta property="og:type" content="article"><meta property="og:title" content="${esc(meta.title)}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="${BRAND}"><meta property="og:title" content="${esc(meta.title)}">
 <meta property="og:description" content="${esc(meta.description)}"><meta property="og:url" content="${url}">
+<meta property="og:image" content="${OG_IMAGE}"><meta property="article:published_time" content="${esc(meta.date)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(meta.title)}"><meta name="twitter:description" content="${esc(meta.description)}"><meta name="twitter:image" content="${OG_IMAGE}">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+${faqLd ? `<script type="application/ld+json">${JSON.stringify(faqLd)}</script>` : ""}
 ${FONTS}${STYLE}</head><body>
 ${header}
 <main class="wrap"><article>
@@ -191,15 +248,31 @@ ${footer}</body></html>`;
 /* ---------- render the index ---------- */
 function renderIndex(posts) {
   const cards = posts.map((p) => `<a class="card" href="/blog/${p.slug}"><span class="k">Guide</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></a>`).join("");
+  const collectionLd = {
+    "@context": "https://schema.org", "@type": "CollectionPage",
+    name: `The Honest Work-From-Home Blog | ${BRAND}`,
+    description: "Honest, no-hype guides to legitimate work-from-home jobs: what is real, how much you can actually make, and how to spot scams.",
+    url: `${SITE}/blog`, isPartOf: { "@type": "WebSite", name: BRAND, url: SITE },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: posts.map((p, i) => ({
+        "@type": "ListItem", position: i + 1,
+        url: `${SITE}/blog/${p.slug}`, name: p.title,
+      })),
+    },
+  };
   return `<!doctype html><html lang="en"><head>
 ${GA}
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Honest Work-From-Home Blog | ${BRAND}</title>
 <meta name="description" content="Honest, no-hype guides to legitimate work-from-home jobs: what is real, how much you can actually make, and how to spot scams.">
 <link rel="canonical" href="${SITE}/blog">
+<meta property="og:type" content="website"><meta property="og:site_name" content="${BRAND}">
 <meta property="og:title" content="The Honest Work-From-Home Blog | ${BRAND}">
 <meta property="og:description" content="Honest guides to legitimate work-from-home income. No hype, real numbers, real scam flags.">
-<meta property="og:url" content="${SITE}/blog">
+<meta property="og:url" content="${SITE}/blog"><meta property="og:image" content="${OG_IMAGE}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${OG_IMAGE}">
+<script type="application/ld+json">${JSON.stringify(collectionLd)}</script>
 ${FONTS}${STYLE}</head><body>
 ${header}
 <main class="wrap">
@@ -266,7 +339,7 @@ const parsedPosts = [];
 for (const f of files) {
   const { meta, body } = parse(readFileSync(join(POSTS_DIR, f), "utf8"));
   if (!meta.slug || !meta.title) { console.warn(`skip ${f}: missing slug/title`); continue; }
-  parsedPosts.push({ meta, bodyHtml: mdToHtml(body) });
+  parsedPosts.push({ meta, bodyHtml: mdToHtml(body), faqs: extractFaq(body) });
 }
 /* pass 2: render each with 3 rotating related guides for internal linking */
 const posts = parsedPosts.map((x) => x.meta);
@@ -276,15 +349,23 @@ parsedPosts.forEach((p, i) => {
     .map((r) => r.meta);
   const dir = join(OUT_DIR, p.meta.slug);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), renderPost(p.meta, p.bodyHtml, related));
+  writeFileSync(join(dir, "index.html"), renderPost(p.meta, p.bodyHtml, related, p.faqs));
 });
 posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 writeFileSync(join(OUT_DIR, "index.html"), renderIndex(posts));
 
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/blog`, `${SITE}/partners`, ...pageMetas.map((p) => `${SITE}/${p.slug}`), ...posts.map((p) => `${SITE}/blog/${p.slug}`)];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`;
+const today = new Date().toISOString().slice(0, 10);
+/* {loc, lastmod, priority} per URL; posts use their own date as lastmod */
+const urlEntries = [
+  { loc: `${SITE}/`, lastmod: today, priority: "1.0" },
+  { loc: `${SITE}/blog`, lastmod: today, priority: "0.9" },
+  { loc: `${SITE}/partners`, lastmod: today, priority: "0.5" },
+  ...pageMetas.map((p) => ({ loc: `${SITE}/${p.slug}`, lastmod: today, priority: "0.4" })),
+  ...posts.map((p) => ({ loc: `${SITE}/blog/${p.slug}`, lastmod: p.date || today, priority: "0.7" })),
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority}</priority></url>`).join("\n")}\n</urlset>\n`;
 writeFileSync(join(PUBLIC_DIR, "sitemap.xml"), sitemap);
 writeFileSync(join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 
-console.log(`Blog built: ${posts.length} posts, index, sitemap (${urls.length} urls), robots.txt`);
+console.log(`Blog built: ${posts.length} posts, index, sitemap (${urlEntries.length} urls), robots.txt`);
