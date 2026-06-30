@@ -187,10 +187,31 @@ const footer = `<footer class="site"><div class="wrap" style="flex-direction:col
 
 const ctaBlock = `<div class="cta"><h3>Not sure if an opportunity is real?</h3><p>Run it through the free Reality Check and Scam Smell Test. Honest pay ranges, real scam flags, no hype.</p><a class="btn" href="/">Try the free tools &rarr;</a></div>`;
 
+/* Visible author bio (E-E-A-T): a real, named, photographed author with a
+   link to the about page strengthens trust for readers, search ranking, and
+   AI-answer citations. */
+const authorBox = `<div style="display:flex;gap:16px;align-items:center;margin:36px 0 8px;padding:18px 20px;background:#fff;border:1px solid var(--creamDim);border-radius:14px">
+<img src="/julie.jpg" alt="Julie James, founder of ${BRAND}" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto" loading="lazy">
+<div style="font-size:14.5px;color:var(--onLight)"><b style="font-family:Fraunces,serif">Written by Julie James</b><div style="color:var(--dim);margin-top:3px">Founder of ${BRAND}. I research work-from-home jobs and scams so you can tell what's real before you spend a minute or a dollar. <a href="/about">More about me &rarr;</a></div></div>
+</div>`;
+
 /* ---------- render one post ---------- */
 function renderPost(meta, bodyHtml, related = [], faqs = []) {
   const url = `${SITE}/blog/${meta.slug}`;
-  const ld = {
+  /* A post with `type: review` + `rating:` (+ optional `reviewOf:`) emits
+     Review schema with a star rating instead of plain Article schema, so
+     "Is X legit?" pages are eligible for rich-result stars. Otherwise it's
+     a normal Article. */
+  const isReview = (meta.type || "").toLowerCase() === "review" && meta.rating;
+  const ld = isReview ? {
+    "@context": "https://schema.org", "@type": "Review",
+    headline: meta.title, description: meta.description,
+    image: OG_IMAGE,
+    datePublished: meta.date, dateModified: meta.date,
+    author: AUTHOR, publisher: PUBLISHER, mainEntityOfPage: url,
+    itemReviewed: { "@type": "Organization", name: meta.reviewOf || meta.title },
+    reviewRating: { "@type": "Rating", ratingValue: String(meta.rating), bestRating: "5", worstRating: "1" },
+  } : {
     "@context": "https://schema.org", "@type": "Article",
     headline: meta.title, description: meta.description,
     image: OG_IMAGE,
@@ -240,6 +261,7 @@ ${header}
 <div class="meta">Updated ${esc(meta.date)} &middot; ${BRAND}</div>
 <div style="margin-top:22px">${bodyHtml}</div>
 ${ctaBlock}
+${authorBox}
 ${relatedHtml}
 </article></main>
 ${footer}</body></html>`;
