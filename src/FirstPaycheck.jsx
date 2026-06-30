@@ -6,11 +6,13 @@ import Footer from "./Footer.jsx";
 import RealityCheck from "./RealityCheck.jsx";
 import ScamSmellTest from "./ScamSmellTest.jsx";
 import RealPaths from "./RealPaths.jsx";
+import RateCalculator from "./RateCalculator.jsx";
 import EmailCapture from "./EmailCapture.jsx";
 import HomeHook from "./HomeHook.jsx";
 import Quiz from "./Quiz.jsx";
 import { AFFILIATE_DISCLOSURE } from "./paths.js";
 import { getStats } from "./track.js";
+import { RECENT_POSTS } from "./blogData.js";
 
 /* The three core surfaces, in the order the search data says people want them
    (handoff 5b): gauge it -> pick a real path -> prove it pays. Reality Check
@@ -41,6 +43,15 @@ const SURFACES = [
     body: "Start with virtual assisting, bookkeeping, social media management, and more. Each shows real pay, first steps to a paycheck, and where to find legit work. Then the worth-it tracker does the math the scam world never makes you do: your true hourly rate.",
     chip: "VA · Bookkeeping · Social Media · and more",
     accent: C.aqua,
+    live: true,
+  },
+  {
+    id: "rate",
+    tag: "04 · DO THE MATH",
+    title: "Real Pay Calculator",
+    body: "See what a work-from-home rate actually leaves you after taxes, or work backward from the take-home you want to the rate you need to charge. The honest math the hype never shows you.",
+    chip: "What you really keep after taxes",
+    accent: C.apricot,
     live: true,
   },
 ];
@@ -101,7 +112,7 @@ function SurfaceCard({ s, i, onOpen }) {
 
 // Views that are deep-linkable via the URL hash, so the static blog/marketing
 // pages (and shared links) can open a specific tool, e.g. /#scam.
-const HASH_VIEWS = ["reality", "scam", "paths", "quiz"];
+const HASH_VIEWS = ["reality", "scam", "paths", "quiz", "rate"];
 const viewFromHash = () => {
   const h = (typeof window !== "undefined" ? window.location.hash : "").replace(/^#/, "");
   return HASH_VIEWS.includes(h) ? h : "home";
@@ -185,6 +196,7 @@ export default function FirstPaycheck() {
         {view === "reality" && <RealityCheck initialQuery={realityQuery} />}
         {view === "scam" && <ScamSmellTest />}
         {view === "paths" && <RealPaths initialPathId={pathId} />}
+        {view === "rate" && <RateCalculator />}
         {view === "quiz" && <Quiz onPick={openPath} />}
         {view === "home" && (
       <>
@@ -245,6 +257,32 @@ export default function FirstPaycheck() {
             Try a Reality Check →
           </button>
         </div>
+
+        {RECENT_POSTS.length > 0 && (
+          <div style={{ marginTop: 64 }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+              <div>
+                <span style={{ fontFamily: FONT.mono, fontSize: 11.5, letterSpacing: 2, color: C.evergreen }}>FROM THE BLOG</span>
+                <h2 style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: "clamp(24px,4vw,34px)", letterSpacing: "-0.02em", margin: "8px 0 0", color: C.onLight }}>
+                  Honest answers, no hype
+                </h2>
+              </div>
+              <a href="/blog" style={{ fontSize: 14.5, fontWeight: 600, color: C.cta, textDecoration: "none", whiteSpace: "nowrap" }}>All articles →</a>
+            </div>
+            <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+              {RECENT_POSTS.slice(0, 6).map((p) => (
+                <a key={p.slug} href={`/blog/${p.slug}`} style={{
+                  display: "block", textDecoration: "none", background: "#fff",
+                  border: `1px solid ${C.creamDim}`, borderRadius: 14, padding: "20px",
+                }}>
+                  <span style={{ fontFamily: FONT.mono, fontSize: 10.5, letterSpacing: 1, color: C.coral, textTransform: "uppercase" }}>Guide</span>
+                  <h3 style={{ fontFamily: FONT.display, fontWeight: 600, fontSize: 18, margin: "8px 0 6px", color: C.onLight, lineHeight: 1.25 }}>{p.title}</h3>
+                  <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.55, color: C.onLightDim }}>{p.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div id="newsletter" ref={newsletterRef} style={{ marginTop: 48, maxWidth: 620, marginLeft: "auto", marginRight: "auto", scrollMarginTop: 80 }}>
           <EmailCapture

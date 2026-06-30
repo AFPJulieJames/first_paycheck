@@ -15,6 +15,7 @@ export default function Nav({ onNav, onCheck }) {
     ["Reality Check", () => onNav("reality")],
     ["Scam Check", () => onNav("scam")],
     ["Paths", () => onNav("paths")],
+    ["Calculator", () => onNav("rate")],
     ["Quiz", () => onNav("quiz")],
     ["Free Checklist", () => onNav("newsletter")],
   ];
