@@ -44,7 +44,7 @@ export default function Nav({ onNav, onCheck }) {
             marginLeft: 6, cursor: "pointer", border: "none", borderRadius: 999, padding: "9px 16px",
             fontSize: 14, fontWeight: 600, color: "#fff", fontFamily: FONT.body, whiteSpace: "nowrap",
             background: `linear-gradient(135deg, ${C.cta}, ${C.coral})`,
-          }}>Check a job</button>
+          }}>Check a Job</button>
         </nav>
       </div>
     </header>

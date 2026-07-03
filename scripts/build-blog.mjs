@@ -179,7 +179,7 @@ footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 footer.site b{font-family:Fraunces,serif;color:var(--onLight)}
 </style>`;
 
-const header = `<header class="site"><div class="wrap"><a class="logo" href="/"><span class="mark"></span><b>${BRAND}</b></a><nav class="sitenav"><a href="/#reality">Reality Check</a><a href="/#scam">Scam Check</a><a href="/#paths">Paths</a><a href="/#rate">Calculator</a><a href="/#quiz">Quiz</a><a href="/#newsletter">Free Checklist</a><a href="/blog">Blog</a><a class="navcta" href="/#reality">Check a job</a></nav></div></header>`;
+const header = `<header class="site"><div class="wrap"><a class="logo" href="/"><span class="mark"></span><b>${BRAND}</b></a><nav class="sitenav"><a href="/#reality">Reality Check</a><a href="/#scam">Scam Check</a><a href="/#paths">Paths</a><a href="/#rate">Calculator</a><a href="/#quiz">Quiz</a><a href="/#newsletter">Free Checklist</a><a href="/blog">Blog</a><a class="navcta" href="/#reality">Check a Job</a></nav></div></header>`;
 const footerLinks = ["/", "Home", "/blog", "Blog", "/about", "About", "/contact", "Contact", "/privacy", "Privacy", "/terms", "Terms"];
 let footerLinksHtml = "";
 for (let i = 0; i < footerLinks.length; i += 2) footerLinksHtml += `<a href="${footerLinks[i]}" style="color:var(--dim);text-decoration:none">${footerLinks[i + 1]}</a>`;

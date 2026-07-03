@@ -28,13 +28,13 @@ export default function Footer({ onNav }) {
             <button onClick={() => onNav("reality")} style={linkBtn}>Reality Check</button>
             <button onClick={() => onNav("scam")} style={linkBtn}>Scam Smell Test</button>
             <button onClick={() => onNav("paths")} style={linkBtn}>Real Paths</button>
-            <button onClick={() => onNav("quiz")} style={linkBtn}>Find your path quiz</button>
+            <button onClick={() => onNav("quiz")} style={linkBtn}>Find Your Path Quiz</button>
           </Group>
 
           <Group title="Learn">
             <a href="/blog" style={{ ...linkBtn, textDecoration: "none" }}>Blog</a>
-            <a href="/blog/is-work-from-home-a-scam" style={{ ...linkBtn, textDecoration: "none" }}>Is it a scam?</a>
-            <a href="/blog/how-much-can-you-make-working-from-home" style={{ ...linkBtn, textDecoration: "none" }}>How much can you make?</a>
+            <a href="/blog/is-work-from-home-a-scam" style={{ ...linkBtn, textDecoration: "none" }}>Is It a Scam?</a>
+            <a href="/blog/how-much-can-you-make-working-from-home" style={{ ...linkBtn, textDecoration: "none" }}>How Much Can You Make?</a>
           </Group>
 
           <Group title="Company">
