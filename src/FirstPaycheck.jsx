@@ -10,7 +10,6 @@ import RateCalculator from "./RateCalculator.jsx";
 import EmailCapture from "./EmailCapture.jsx";
 import HomeHook from "./HomeHook.jsx";
 import Quiz from "./Quiz.jsx";
-import { AFFILIATE_DISCLOSURE } from "./paths.js";
 import { getStats } from "./track.js";
 import { RECENT_POSTS } from "./blogData.js";
 

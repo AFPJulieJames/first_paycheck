@@ -29,9 +29,9 @@ To send you what you signed up for, to keep the tools working, to understand wha
 
 We use a few trusted service providers to run the site: a hosting provider, a database to store newsletter signups, an analytics provider, and an AI provider that powers the Reality Check and Scam Smell Test features. They process data only to provide their service. We do not sell or rent your information to anyone.
 
-## Affiliate links
+## Outbound links
 
-Some outbound links are partner links. If you sign up with a platform through one, we may earn a commission at no cost to you. Those platforms have their own privacy policies once you leave our site.
+Some pages link to third-party platforms we consider legitimate. We do not earn commissions from these links. Once you leave our site, those platforms have their own privacy policies.
 
 ## Your choices
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { C, FONT, BRAND } from "./brand.js";
-import { AFFILIATE_DISCLOSURE } from "./paths.js";
 
 /* Shared footer, shown on every page. Gives navigation, trust, and the
    required disclosures. In-app links use onNav; Blog is a real URL. */
@@ -52,7 +51,6 @@ export default function Footer({ onNav }) {
         </div>
 
         <div style={{ borderTop: `1px solid ${C.creamDim}`, marginTop: 28, paddingTop: 18, fontSize: 11.5, lineHeight: 1.55, color: C.onLightDim }}>
-          <p style={{ margin: "0 0 6px" }}>{AFFILIATE_DISCLOSURE}</p>
           <p style={{ margin: 0 }}>First Paycheck shares honest information, not financial advice. © {new Date().getFullYear()} First Paycheck.</p>
         </div>
       </div>

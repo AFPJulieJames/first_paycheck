@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { C, FONT } from "./brand.js";
-import { PATHS, PLATFORM_TAGS, PATH_LEGIT, PLATFORM_URLS, AFFILIATE_DISCLOSURE, pathPrompt } from "./paths.js";
+import { PATHS, PLATFORM_TAGS, PATH_LEGIT, PLATFORM_URLS, pathPrompt } from "./paths.js";
 import WorthItTracker from "./WorthItTracker.jsx";
 import EmailCapture from "./EmailCapture.jsx";
 import { logStat } from "./track.js";
@@ -139,7 +139,6 @@ function PathDetail({ path, keyId }) {
               );
             })}
           </div>
-          <div style={{ fontSize: 11.5, color: C.onLightDim, marginTop: 10, lineHeight: 1.5 }}>{AFFILIATE_DISCLOSURE}</div>
         </div>
       )}
 

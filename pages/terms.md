@@ -20,9 +20,9 @@ We will never tell you how much you are going to make, because no one honestly c
 
 The Reality Check, Scam Smell Test, and path plans are aids to help you think, not final answers. A "no major red flags" result is not a guarantee that something is safe, and our verdicts can be wrong or out of date. Use your own judgment, and when in doubt, walk away from anything that asks you to pay to start.
 
-## Outbound and affiliate links
+## Outbound links
 
-We link to third-party platforms we consider legitimate. Some are partner links that may earn us a commission at no cost to you. We do not control those sites and are not responsible for their content, policies, or practices. Review their terms before signing up.
+We link to third-party platforms we consider legitimate. We do not earn commissions from these links. We do not control those sites and are not responsible for their content, policies, or practices. Review their terms before signing up.
 
 ## Acceptable use
 

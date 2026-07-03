@@ -24,7 +24,7 @@ It is a reality-check and a planner. Three free tools do the heavy lifting:
 
 ## What First Paycheck is not
 
-It is not a course. It is not a job board. There is nothing to buy to use the tools, and there never will be a fee to join. We keep the lights on through honest, disclosed partner links to legitimate platforms we would recommend anyway, never by charging the people we are trying to help.
+It is not a course. It is not a job board. There is nothing to buy to use the tools, and there never will be a fee to join. We keep the lights on through advertising and our free newsletter, never through affiliate commissions and never by charging the people we are trying to help.
 
 The villain here is hype, and the people who profit from it. If we ever start sounding like them, we have failed.
 
