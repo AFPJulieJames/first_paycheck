@@ -1,6 +1,7 @@
 ---
 title: Content Moderator Jobs From Home: Honest Pay and What to Expect
 slug: content-moderator-jobs-from-home
+answer: Content moderators review user posts, comments, images, and chats against a rulebook and decide what stays or goes. Honest pay is about **$13–$20/hour** (up to ~$26 for better projects). Two catches the listings skip: some roles mean **exposure to disturbing content**, and work is often **project-based, not a guaranteed salary**. No degree needed; never pay to start.
 description: What content moderation jobs really pay, what the work is actually like, the part most listings hide, and how to start from home with no experience.
 keywords: content moderator jobs from home, online moderator jobs no experience, ModSquad jobs, trust and safety jobs remote, content moderation pay
 date: 2026-06-17
@@ -49,3 +50,18 @@ If a listing trips any of these, check it against our [scam red flags](/blog/wor
 If you have steady judgment, can work alone, and go in with clear eyes about the content and the project-based pay, content moderation is a real, accessible way to earn from home with no experience. Just match the role to what you can handle, expect $13 to $20 an hour to start, and never pay to get in.
 
 Not sure a moderation gig is legit? Paste the listing into the free [Scam Smell Test](/) and it will flag the tricks in seconds, or run the company through the [Reality Check](/) for an honest scorecard before you start.
+
+
+## Frequently asked questions
+
+### What does a content moderator do?
+You review user-generated content against a platform's rules and decide what stays and what is removed: approving or removing comments, screening images and videos, watching chat for harassment or spam, and flagging guideline violations. Some roles blend into community management or customer support. Good judgment and consistency matter more than a degree.
+
+### How much do content moderators make from home?
+Typically about $13 to $20 an hour for most projects, up to roughly $26 for better projects or experienced moderators. Some contractor gigs pay under $15, so read the pay terms closely. Treat any "$30 an hour, no experience" promise with skepticism.
+
+### What is the catch with content moderation jobs?
+Two things listings tend to skip. First, depending on the platform, the work can mean repeated exposure to disturbing content, which is real emotional labor. Second, much of the work is contractor-based and project-by-project, so you can be moved off a project with little warning and pay can shift between assignments.
+
+### Where can I find legit content moderation jobs?
+ModSquad is one of the best-known legitimate employers, and LiveWorld and other community-management firms hire too; general boards like Indeed list moderator roles regularly. Search any company name with "review" first, and remember no legitimate job charges you a fee to start.

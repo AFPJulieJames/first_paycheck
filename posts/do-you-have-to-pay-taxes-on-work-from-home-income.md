@@ -1,6 +1,7 @@
 ---
 title: Do You Have to Pay Taxes on Work-From-Home Income? (2026 Plain-English Guide)
 slug: do-you-have-to-pay-taxes-on-work-from-home-income
+answer: Yes — if you earn **$400 or more in net self-employment income** in a year, you owe self-employment tax and must report it, even if no company sends you a tax form. "Net" means after your legitimate business expenses. (This is general information, not tax advice — check specifics with a tax professional.)
 description: A plain-English guide to taxes on your first work-from-home or side-hustle income in 2026. The $400 rule, the new 1099 thresholds, and how to not get surprised.
 keywords: taxes on side hustle income, do I have to pay taxes on work from home income, self employment tax 2026, 1099-K threshold 2026, side hustle taxes
 date: 2026-06-29

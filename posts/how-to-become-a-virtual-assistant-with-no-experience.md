@@ -1,6 +1,7 @@
 ---
 title: How to Become a Virtual Assistant With No Experience (2026 Step-by-Step)
 slug: how-to-become-a-virtual-assistant-with-no-experience
+answer: To become a VA with no experience: **list the admin tasks you're good at, make a simple one-page profile**, join fee-free platforms (The Mom Project, HireMyMom, Time Etc), and **pitch five clients this week** leading with the problem you solve. Start around **$18–$25/hour**; most people land a first client in two to six weeks.
 description: A realistic, step-by-step guide to becoming a virtual assistant with no experience in 2026, including what to offer, where to find clients, and what to charge.
 keywords: how to become a virtual assistant with no experience, virtual assistant no experience, become a VA from home, virtual assistant for beginners
 date: 2026-06-15
@@ -39,3 +40,18 @@ Start around $18 to $25 an hour and raise it as you get testimonials. You can ea
 Not sure about a specific listing or recruiter message? Paste it into the free [Scam Smell Test](/) first, and use the [Reality Check](/) to gauge any path before you start. Both are free, no email needed.
 
 When you are ready to actually begin, the [Virtual Assistant path](/) gives you a checkable first-week plan and the worth-it tracker so you know your real hourly rate from day one.
+
+
+## Frequently asked questions
+
+### How do I become a virtual assistant with no experience?
+List the admin tasks you already do well (inbox, calendars, spreadsheets, organizing), make a simple one-page profile that says who you help and what you do, join legitimate fee-free platforms, and pitch about five businesses this week. Lead with the problem you solve rather than your life story.
+
+### What should I charge as a beginner VA?
+Start around $18 to $25 an hour and raise it as you collect testimonials. Part-time, that is about $800 to $2,500 a month once you have a client or two. Anyone promising "$10k a month your first month" is selling a course, not describing reality.
+
+### How long does it take to get your first VA client?
+Most people who treat it seriously land a first client in two to six weeks. The first one is the hardest; after a testimonial or two it gets easier.
+
+### Where can I find legit VA jobs with no experience?
+Start on platforms like The Mom Project, HireMyMom, and Time Etc, and look at Belay or Boldly as you build. Skip anything that charges you a fee to join or get matched, because a real job pays you.

@@ -1,6 +1,7 @@
 ---
 title: How to Spot a Fake Job Listing (2026 Scam Guide)
 slug: how-to-spot-a-fake-job-listing
+answer: Fake job listings look polished in 2026, so judge the signals, not the looks. The tells that never change: you must **pay to start**, you were "hired" without applying, the pay makes no sense, the requirements are vague, or a check shows up early. Newest twist: a surprise text asking you to reply "YES." Verify every role on the company's own careers page before applying.
 description: Fake job listings and recruiter scams are at record highs in 2026. Here are the exact red flags, the new text-message twist, and how to check a posting before you apply.
 keywords: how to spot a fake job listing, fake job posting, job scam red flags, ghost jobs, recruiter scam 2026
 date: 2026-06-17
@@ -50,3 +51,18 @@ You do not have to become an expert to stay safe. You just have to remember one 
 Got a listing or message you are unsure about? Paste it into the free [Scam Smell Test](/) and it will flag the manipulation in seconds, or run the offer through the [Reality Check](/) before you send a single document.
 
 This is a sensitive area, and scams can be genuinely costly. If you think you have already lost money to one, you can report it to the FTC at reportfraud.ftc.gov and contact your bank right away.
+
+
+## Frequently asked questions
+
+### How do I spot a fake job listing?
+Ignore how polished it looks and watch for the signals: you have to pay to start, you were hired without applying or interviewing, the pay is too high for the work, the requirements are vague, or a check arrives early. Then verify the role exists on the company's official careers page and that the recruiter's email uses a real company domain.
+
+### How common are fake job listings in 2026?
+Very. Remote job scam losses hit $521 million in 2026 per the FTC, up from about $90 million four years earlier, with roughly 31,000 job text-scam reports in the first quarter of 2026 alone. Around a third of US adults report running into a suspicious job posting.
+
+### What is a "ghost job"?
+A ghost job is a real-looking listing for a role that does not actually exist, left up to collect resumes, build a talent pool, or make a company look like it is growing. It wastes your time rather than your money. Listings reposted for months with a generic description and no clear hiring manager are worth a second look.
+
+### Should I reply "YES" to a job text I did not apply for?
+No. Replying confirms you are a real person and invites more pressure. Real employers do not recruit by random text, WhatsApp, or Telegram. Ignore and delete.

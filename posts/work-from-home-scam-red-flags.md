@@ -1,6 +1,7 @@
 ---
 title: 7 Red Flags of a Work-From-Home Scam (and How to Check)
 slug: work-from-home-scam-red-flags
+answer: The biggest work-from-home scam red flags: it asks you to **pay upfront**, you earn by **recruiting**, the income claims are unrealistic, you are paid by check and asked to send money back, it is a vague "system" with no real product, they rush you, or they want sensitive info and move you to WhatsApp fast. One rule beats most: a real job pays you; you never pay it.
 description: The seven warning signs that a work-from-home job or side hustle is a scam, based on FTC guidance, plus a free way to check any message in seconds.
 keywords: work from home scam red flags, work from home scams, is it a scam, side hustle scams
 date: 2026-06-15
@@ -43,3 +44,18 @@ You do not have to memorize all of this. If you get a pitch or a recruiter messa
 > The fastest scam filter of all: a real job pays you, you never pay it. Keep that one rule and you will dodge most of these.
 
 Want to go deeper on whether a whole path is legit, not just one message? The [Reality Check](/) grades any work-from-home idea on whether it is real and what it actually pays.
+
+
+## Frequently asked questions
+
+### What is the biggest red flag of a work-from-home scam?
+Being asked to pay before you earn: a starter kit, training fee, "small investment," or refundable deposit. A real job pays you, and money should never flow from you to them first. The FTC has flagged upfront-payment schemes for years.
+
+### How can I check if a work-from-home offer is a scam?
+Run it through the seven red flags: upfront payment, recruiting-based income, unrealistic pay claims, pay-by-check with money sent back, a vague "system" with no real product, high-pressure urgency, and requests for sensitive info or a fast move to WhatsApp or Telegram. Any one is reason to walk away, and you can paste the message into the free Scam Smell Test for an instant read.
+
+### Is it a scam if a job pays you by check and asks for some back?
+Yes. That is classic overpayment (fake-check) fraud: the check bounces days later and you are on the hook for the money you sent. No legitimate employer sends you a check and asks you to return part of it.
+
+### Do legitimate work-from-home jobs ever ask for money upfront?
+No. Real employers pay you to work; they do not charge you to start. Fees for kits, training, certification, or equipment you must buy first are hallmarks of a scam.

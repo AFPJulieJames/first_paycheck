@@ -1,6 +1,7 @@
 ---
 title: Task Scams and Fake Job Texts: The Newest Work-From-Home Trap (2026)
 slug: task-scams-and-fake-job-texts
+answer: A surprise "easy online task" job by text, WhatsApp, or Telegram is 2026's fastest-growing scam. It pays you a small amount first to feel real, then asks you to **deposit your own money** to "unlock" higher pay or withdraw. That deposit is the theft. Real employers do not recruit by random text, and a real job never asks you to pay in.
 description: AI "task" jobs and surprise recruiter texts are the fastest-growing work-from-home scams of 2026. Here is how the money trap actually works and how to check any offer free.
 keywords: task scam, fake job offer text, online task job scam, work from home job scam 2026, whatsapp telegram job scam
 date: 2026-06-24
@@ -42,3 +43,18 @@ You do not need to memorize all of this. If a message feels off, paste it into t
 Want to vet a whole opportunity, not just one message? Run it through the [Reality Check](/#reality) for an honest scorecard before you spend a dime.
 
 This is a stressful thing to deal with, especially if money is already tight. If a scam has cost you money, you can report it to the FTC at reportfraud.ftc.gov, and you are not foolish for being targeted. These are designed to fool careful people.
+
+
+## Frequently asked questions
+
+### What is a task scam?
+A task scam offers simple online work such as rating products, "optimizing" apps, liking videos, or "training AI," and pays a small amount at first to seem legitimate. Then it requires you to deposit your own money to unlock higher-paying tasks or withdraw your balance. That deposit is the scam; the money is gone.
+
+### Are job offers by text or WhatsApp real?
+Almost never. Legitimate employers do not recruit through unexpected texts, WhatsApp, or Telegram messages. If a message names pay but no real job, company details, or interview, and pushes you to chat only on a messaging app, it is a scam.
+
+### How much do people lose to task scams?
+The FTC logged roughly 31,000 job and employment text-scam reports in the first quarter of 2026 alone, and the average victim loses over $2,000. These are high-volume operations aimed directly at job seekers, not rare mistakes.
+
+### I already deposited money into a task scam. What do I do?
+Stop sending money immediately and do not pay more to "release" your balance. Report it to the FTC at reportfraud.ftc.gov and contact your bank right away. Being targeted does not make you foolish; these are designed to fool careful people.

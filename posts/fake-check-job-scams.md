@@ -1,6 +1,7 @@
 ---
 title: Fake Check Job Scams: How the Overpayment Trap Works (2026)
 slug: fake-check-job-scams
+answer: In a fake-check scam, a fake "employer" sends you a check, tells you to deposit it and send part back or buy equipment — then the check bounces days later and you owe your bank the full amount. Real employers never send you a check and ask for money back. It is the most expensive work-from-home scam.
 description: How the fake-check and overpayment job scam works, why your bank lets it happen, and exactly how to protect yourself. The single most expensive work-from-home scam.
 keywords: fake check job scam, overpayment scam, work from home check scam, fake check work from home, employer sent me a check scam
 date: 2026-06-29
