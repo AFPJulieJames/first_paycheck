@@ -1,6 +1,7 @@
 ---
 title: Is Working From Home a Scam? How to Tell in About 60 Seconds
 slug: is-work-from-home-a-scam
+answer: Working from home is **not** a scam — real remote jobs exist and pay real money — but many things sold *as* work-from-home opportunities are scams. The fastest filter: a real job pays you; you never pay it.
 description: Some work-from-home jobs are real and some are scams. Here is the honest, fast way to tell the difference, plus the one rule that filters out most fraud.
 keywords: is work from home a scam, work from home scams, legitimate work from home jobs, work from home jobs no experience
 date: 2026-06-15
@@ -54,3 +55,17 @@ If a message you got feels like one of these, do not guess. Paste it into the fr
 Working from home is real. The money is real. But the space is crowded with people selling a dream instead of a job, and the dream usually costs you upfront. Keep the one rule in mind, ask the five questions, and you will avoid the large majority of scams without needing to be an expert.
 
 When you want a gut check on a specific path or message, that is exactly what First Paycheck is for. The Reality Check tells you if something is legit and what it really pays. The Scam Smell Test reads a pitch for traps. Both are free and neither asks you for a dime.
+
+## Frequently asked questions
+
+### Is working from home a scam?
+No. Legitimate remote jobs are real and pay real money in 2026, from virtual assistant and freelance writing to bookkeeping and customer service. What gives "work from home" a bad name is the flood of pitches that charge you upfront or pay you to recruit other people. Those are scams. The honest jobs never ask you to pay to start.
+
+### How can I tell if a work-from-home job is legit?
+Run it through five questions. Can they tell you plainly what you would do day to day? Is the pay a believable range rather than a guaranteed jackpot? Do you get paid without paying them first? Is there a normal hiring step like an interview or a written agreement? Do you earn from doing work rather than recruiting? Honest opportunities answer yes to all five.
+
+### What is the biggest sign of a work-from-home scam?
+Being asked for money before you earn any: a fee, a "starter kit," inventory, training, or equipment you are required to buy. A real job pays you; you never pay it. The FTC has flagged upfront-payment job schemes for years.
+
+### Do legit work-from-home jobs require experience?
+Many do not. Virtual assistant, customer service, data entry, and content moderation roles regularly hire beginners. You may need to build a small work sample or pass a short assessment, but you should never have to pay to be considered.

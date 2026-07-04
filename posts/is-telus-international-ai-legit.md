@@ -1,6 +1,7 @@
 ---
 title: Is Telus International AI Legit? An Honest 2026 Review
 slug: is-telus-international-ai-legit
+answer: **Telus International AI is legit** — a real, publicly traded company that genuinely pays AI raters — but the work is inconsistent and the pay is modest. Best treated as flexible side income, not a steady job.
 description: Is Telus International AI legit or a scam? An honest 2026 review of the AI rater platform, real pay, the inconsistent-hours catch, and the login red flag to know.
 keywords: is telus international ai legit, telus international ai review, telus ai rater, is telus international a scam, telus international ai pay
 date: 2026-06-30

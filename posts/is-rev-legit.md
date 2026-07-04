@@ -1,6 +1,7 @@
 ---
 title: Is Rev Legit? An Honest 2026 Review for Transcription and Captioning
 slug: is-rev-legit
+answer: **Rev is legit and really pays** freelancers for transcription and captioning, but beginner pay is low. Honest verdict: a real starting point, not a great paycheck.
 description: Is Rev legit or a scam? An honest 2026 review of Rev transcription and captioning work, what beginners really earn per audio minute, and whether it's worth it.
 keywords: is rev legit, rev transcription review, rev.com pay, is rev a scam, rev captioning jobs
 date: 2026-06-30

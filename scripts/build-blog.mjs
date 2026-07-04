@@ -163,6 +163,9 @@ h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(30px,5vw,46px);lin
 h2{font-family:Fraunces,serif;font-weight:600;font-size:26px;letter-spacing:-.01em;margin:34px 0 10px}
 h3{font-family:Fraunces,serif;font-weight:600;font-size:20px;margin:26px 0 8px}
 article p,article li{font-size:17px}
+.answer{margin:20px 0 8px;padding:18px 20px;background:#fff;border:1px solid var(--creamDim);border-left:4px solid var(--ever);border-radius:0 12px 12px 0}
+.answer .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--ever);text-transform:uppercase;display:block;margin-bottom:6px}
+.answer p{margin:0;font-size:17.5px;color:var(--onLight)}
 blockquote{margin:18px 0;padding:12px 18px;border-left:4px solid var(--ever);background:#fff;border-radius:0 10px 10px 0;color:var(--onLight)}
 .meta{color:var(--dim);font-size:13.5px;font-family:'IBM Plex Mono',monospace}
 .cta{margin:36px 0;padding:24px;background:var(--ink);border-radius:16px;color:#F4EFE7}
@@ -227,6 +230,12 @@ function renderPost(meta, bodyHtml, related = [], faqs = []) {
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   } : null;
+  /* AEO: a concise `answer:` up top gives ChatGPT/Perplexity/Google AI a
+     clean, extractable direct answer. speakable marks it (plus the H1) for
+     voice/answer surfaces. Purely additive — omitted when no answer set. */
+  if (meta.answer) {
+    ld.speakable = { "@type": "SpeakableSpecification", cssSelector: [".answer", "h1"] };
+  }
   const breadcrumb = {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: [
@@ -259,6 +268,7 @@ ${header}
 <nav style="margin-top:24px;font-size:13px" class="meta"><a href="/" style="color:var(--dim)">Home</a> &rsaquo; <a href="/blog" style="color:var(--dim)">Blog</a></nav>
 <h1>${esc(meta.title)}</h1>
 <div class="meta">Updated ${esc(meta.date)} &middot; ${BRAND}</div>
+${meta.answer ? `<div class="answer"><span class="k">Quick answer</span><p>${inline(esc(meta.answer))}</p></div>` : ""}
 <div style="margin-top:22px">${bodyHtml}</div>
 ${ctaBlock}
 ${authorBox}

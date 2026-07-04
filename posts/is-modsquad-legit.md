@@ -1,6 +1,7 @@
 ---
 title: Is ModSquad Legit? An Honest 2026 Review (Moderation and Support Jobs)
 slug: is-modsquad-legit
+answer: **ModSquad is legit** — an established company offering real remote moderation and customer-support gigs — but pay is modest and you work as a contractor with no benefits.
 description: Is ModSquad legit or a scam? An honest 2026 review of ModSquad's remote moderation and customer-support gigs, real pay, the contractor catch, and who it suits.
 keywords: is modsquad legit, modsquad review, modsquad jobs, is modsquad a scam, modsquad pay
 date: 2026-06-30
