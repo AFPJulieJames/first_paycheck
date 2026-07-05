@@ -46,6 +46,8 @@ You do not have to memorize all of this. If you get a pitch or a recruiter messa
 Want to go deeper on whether a whole path is legit, not just one message? The [Reality Check](/) grades any work-from-home idea on whether it is real and what it actually pays.
 
 
+**Related:** learn to [spot a fake job listing](/blog/how-to-spot-a-fake-job-listing), and see our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### What is the biggest red flag of a work-from-home scam?

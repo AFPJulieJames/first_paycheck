@@ -43,6 +43,8 @@ Do not deposit it. If you already did, do not send anything back and contact you
 
 The fake check often arrives after an offer that itself had warning signs, like a [job offer that came by text](/blog/task-scams-and-fake-job-texts) or a [too-good-to-be-true listing](/blog/how-to-spot-a-fake-job-listing). Learning the broader [work-from-home scam red flags](/blog/work-from-home-scam-red-flags) helps you stop these before a check ever shows up. And any time an offer feels off, the free [Scam Smell Test](/#scam) takes about a minute.
 
+**Related:** the closely related [task scams and fake job texts](/blog/task-scams-and-fake-job-texts), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### How does the fake check job scam work?

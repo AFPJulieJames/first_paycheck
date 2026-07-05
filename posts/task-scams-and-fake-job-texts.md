@@ -45,6 +45,8 @@ Want to vet a whole opportunity, not just one message? Run it through the [Reali
 This is a stressful thing to deal with, especially if money is already tight. If a scam has cost you money, you can report it to the FTC at reportfraud.ftc.gov, and you are not foolish for being targeted. These are designed to fool careful people.
 
 
+**Related:** the classic [fake check / overpayment scam](/blog/fake-check-job-scams), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### What is a task scam?

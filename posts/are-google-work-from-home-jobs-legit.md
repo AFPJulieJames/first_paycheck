@@ -48,6 +48,8 @@ If you want the legitimate version, go straight to the source and skip the middl
 
 Google is a real employer, so "are Google work-from-home jobs legit" has a technically-yes answer, but the practical answer for almost every offer landing in your inbox or texts is no. Real openings live on Google's own careers site and never cost you a cent. If someone claiming to be Google asks for money, moves you to a chat app, or wants your bank details up front, it is a scam.
 
+**Related:** how to [spot a fake job listing](/blog/how-to-spot-a-fake-job-listing), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### Are Google work-from-home jobs real?

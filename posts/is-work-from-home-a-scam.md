@@ -56,6 +56,8 @@ Working from home is real. The money is real. But the space is crowded with peop
 
 When you want a gut check on a specific path or message, that is exactly what First Paycheck is for. The Reality Check tells you if something is legit and what it really pays. The Scam Smell Test reads a pitch for traps. Both are free and neither asks you for a dime.
 
+**Go deeper:** for every scam type and how to spot it, see our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### Is working from home a scam?

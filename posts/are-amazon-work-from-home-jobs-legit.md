@@ -36,6 +36,8 @@ If you want remote customer-service-style work without the impersonation risk, t
 Got a message claiming to be Amazon? Paste it into the free [Scam Smell Test](/) before you reply, or run "Amazon work from home" through the [Reality Check](/) for an honest read. Both free, no email needed.
 
 
+**Related:** how to [spot a fake job listing](/blog/how-to-spot-a-fake-job-listing), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### Are Amazon work-from-home jobs legit?

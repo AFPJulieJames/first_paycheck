@@ -34,6 +34,8 @@ The large majority of MLM participants make little or lose money once you subtra
 Got a pitch and not sure? Paste it into the free [Scam Smell Test](/). It scans for the exact MLM and funnel patterns above and tells you plainly whether to walk away. Want real options instead? See [legit work-from-home jobs with no experience](/blog/work-from-home-jobs-no-experience).
 
 
+**Related:** how [scams spread on Facebook](/blog/work-from-home-scams-on-facebook), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### How can I tell if a job is really an MLM?

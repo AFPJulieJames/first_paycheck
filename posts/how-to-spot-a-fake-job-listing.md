@@ -53,6 +53,8 @@ Got a listing or message you are unsure about? Paste it into the free [Scam Smel
 This is a sensitive area, and scams can be genuinely costly. If you think you have already lost money to one, you can report it to the FTC at reportfraud.ftc.gov and contact your bank right away.
 
 
+**Related:** review the [7 red flags of a WFH scam](/blog/work-from-home-scam-red-flags), and see our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### How do I spot a fake job listing?

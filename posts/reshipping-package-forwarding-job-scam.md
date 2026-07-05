@@ -48,6 +48,8 @@ That makes you a **"reshipping mule."** The activity is illegal, and you are the
 
 Stick to real employers and vetted boards, and remember the two rules that defuse most work-from-home scams: a real job pays you and never asks you to pay it, and no honest role is built around forwarding packages or money from your home. For the broader playbook, see our [work-from-home scam red flags](/blog/work-from-home-scam-red-flags), and if an offer feels off, paste it into the free [Scam Smell Test](/#scam) before you reply.
 
+**Related:** the [7 red flags of a WFH scam](/blog/work-from-home-scam-red-flags), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### What is a reshipping job scam?

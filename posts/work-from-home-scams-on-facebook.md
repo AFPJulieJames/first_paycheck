@@ -34,6 +34,8 @@ Find remote work on real job boards and company pages, not in DMs. See [the best
 Got a DM or saw a "job" that feels off? Before you reply, paste it into the free [Scam Smell Test](/). It flags the exact MLM and funnel patterns above and tells you plainly whether to walk away. It is FTC-aligned and free, no email needed.
 
 
+**Related:** how to [tell if a 'job' is really an MLM](/blog/how-to-tell-if-a-job-is-an-mlm), and our complete [work-from-home scams guide](/blog/work-from-home-scams).
+
 ## Frequently asked questions
 
 ### Are work-from-home jobs on Facebook legit?
