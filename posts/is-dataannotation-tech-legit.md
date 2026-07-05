@@ -44,6 +44,8 @@ DataAnnotation pays you, it never asks you to pay it. There is no fee to join an
 
 Great for people with writing, coding, or specialist knowledge who want flexible task income. If that is you, it is one of the better options in the [data annotation space](/blog/data-annotation-jobs-from-home-no-experience). If you want predictable hours, pair it with steadier work and use the Worth-It Tracker in [Real Paths](/#paths) to track your true rate.
 
+**Comparing platforms?** See how it stacks up in our [honest AI training & data-annotation comparison](/blog/best-ai-training-data-annotation-jobs), or browse every platform we've vetted in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is DataAnnotation.tech a scam?

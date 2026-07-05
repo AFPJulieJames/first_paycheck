@@ -39,6 +39,8 @@ Because Arise is well known, **scammers impersonate it constantly**, fake "Arise
 
 Arise can work if you want flexible scheduling, are comfortable being a self-employed contractor, and can absorb the upfront cost and unpaid training. If you want a steady paycheck from day one with no startup cost, a regular remote [customer service job](/blog/customer-service-jobs-from-home-no-experience) is a better fit. Compare the trade-offs honestly with [Reality Check](/#reality) before you commit.
 
+**Comparing companies?** See other remote support options in [customer service jobs from home with no experience](/blog/customer-service-jobs-from-home-no-experience), and every platform we've checked in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is Arise a scam?

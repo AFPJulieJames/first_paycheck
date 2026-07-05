@@ -36,6 +36,8 @@ Working Solutions pays its contractors and never charges a fee, so it passes our
 
 A good fit if you want flexible, legitimate remote customer-service or sales work and are comfortable being self-employed. It is one of the more reputable options in this space, compare it with regular [customer service jobs with no experience](/blog/customer-service-jobs-from-home-no-experience) and score the trade-offs with [Reality Check](/#reality).
 
+**Comparing companies?** See other remote support options in [customer service jobs from home with no experience](/blog/customer-service-jobs-from-home-no-experience), and every platform we've checked in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is Working Solutions a scam?

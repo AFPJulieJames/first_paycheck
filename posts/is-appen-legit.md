@@ -34,6 +34,8 @@ Appen itself pays for completed work. The real scam risk is **impersonation**, f
 
 If you want AI-training micro-task income, newer platforms generally pay more and have steadier work. See our honest look at [data annotation jobs](/blog/data-annotation-jobs-from-home-no-experience), and compare a couple of named platforms in our [DataAnnotation review](/blog/is-dataannotation-tech-legit) and [Telus International AI review](/blog/is-telus-international-ai-legit). If you want predictable pay overall, a [no-experience customer service or chat role](/blog/work-from-home-jobs-no-experience) beats waiting on a dry task pipeline.
 
+**Comparing platforms?** See how it stacks up in our [honest AI training & data-annotation comparison](/blog/best-ai-training-data-annotation-jobs), or browse every platform we've vetted in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is Appen a scam?

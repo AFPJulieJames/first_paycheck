@@ -44,6 +44,8 @@ Alignerr itself is a real, Labelbox-backed platform that pays for completed work
 
 Alignerr is legitimate and one of the more promising newer AI-training platforms in 2026, especially for people with writing or technical skills. Go in expecting flexible, inconsistent work rather than a steady paycheck, and compare it against the alternatives in our [honest guide to AI training and data annotation jobs](/blog/best-ai-training-data-annotation-jobs).
 
+**Comparing platforms?** See how it stacks up in our [honest AI training & data-annotation comparison](/blog/best-ai-training-data-annotation-jobs), or browse every platform we've vetted in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is Alignerr legit or a scam?

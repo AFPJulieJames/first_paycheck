@@ -41,6 +41,8 @@ ModSquad pays its contractors and charges nothing to join, so it passes our scam
 
 ModSquad fits people who want flexible remote moderation or support work and are comfortable as contractors. If the moderation side appeals, see our broader guide to [content moderator jobs from home](/blog/content-moderator-jobs-from-home). If you want steadier W-2 pay, compare it with regular [customer service roles](/blog/customer-service-jobs-from-home-no-experience), and score the trade-offs with [Reality Check](/#reality).
 
+**Comparing gigs?** See more in [content moderator jobs from home](/blog/content-moderator-jobs-from-home), and every platform we've vetted in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is ModSquad a scam?

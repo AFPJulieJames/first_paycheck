@@ -34,6 +34,8 @@ Some raters work through Microsoft's **UHRS** platform via Telus, which means yo
 
 Telus International AI works if you want flexible, low-commitment task income and can handle hours that come and go. If you need steady, predictable pay, it should not be your only plan. Compare it with our broader guide to [data annotation jobs](/blog/data-annotation-jobs-from-home-no-experience) and the [DataAnnotation review](/blog/is-dataannotation-tech-legit), and score the trade-offs with [Reality Check](/#reality).
 
+**Comparing platforms?** See how it stacks up in our [honest AI training & data-annotation comparison](/blog/best-ai-training-data-annotation-jobs), or browse every platform we've vetted in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
+
 ## Frequently asked questions
 
 ### Is Telus International AI a scam?
