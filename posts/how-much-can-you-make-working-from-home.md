@@ -45,6 +45,17 @@ The scam and course world never tells you to calculate your profit and loss, bec
 If you are weighing options or eyeing a trending fad, run it through the free [Reality Check](/) first. It gives you an honest scorecard: is it legit, what does it really pay, how long until your first dollar, and how crowded it is. Honest numbers in, honest answer out, no hype and no cost.
 
 
+## Dig into the numbers, path by path
+
+These honest breakdowns back up the ranges above:
+
+- **[Remote jobs that pay weekly](/blog/remote-jobs-that-pay-weekly)** — entry-level and contractor roles at roughly $10–$20/hour, and how to avoid the "$1,000/week" bait.
+- **[How to make $1,000 a month from home](/blog/how-to-make-1000-a-month-from-home)** — a realistic ~8–12 hours/week plan and the fastest legit paths to get there.
+- **[25 work-from-home jobs that pay $20+ an hour](/blog/work-from-home-jobs-that-pay-20-an-hour)** — legit roles that realistically clear $20/hour, some to start and some as you build skill.
+- **[Remote jobs that provide equipment](/blog/remote-jobs-that-provide-equipment)** — which roles hand you a laptop, and why "buy your own gear" is often a scam tell.
+- **[Do you have to pay taxes on WFH income?](/blog/do-you-have-to-pay-taxes-on-work-from-home-income)** — the $400 self-employment threshold, in plain English.
+- **[Are online surveys worth it?](/blog/are-online-surveys-worth-it)** — real, but only $1–$3/hour; pocket change, not a plan.
+
 ## Frequently asked questions
 
 ### How much can you realistically make working from home?

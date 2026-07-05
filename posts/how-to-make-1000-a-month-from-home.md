@@ -40,6 +40,8 @@ The mistake that quietly kills the $1,000 goal is undercharging and unpaid admin
 Pick the path that fits your hours with the free [quiz](/), or run any idea through the [Reality Check](/) for an honest read before you commit.
 
 
+**Related:** [remote jobs that pay weekly](/blog/remote-jobs-that-pay-weekly), and [how much you can really make working from home](/blog/how-much-can-you-make-working-from-home).
+
 ## Frequently asked questions
 
 ### How many hours does it take to make $1,000 a month from home?

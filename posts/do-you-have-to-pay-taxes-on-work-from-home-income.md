@@ -36,6 +36,8 @@ If your work-from-home income is a small, occasional thing under $400 net for th
 
 Keep your business money and personal money separate from day one, even if it is just a second free checking account. It makes tax time ten times easier and makes your expenses obvious. If your side income grows past a few thousand dollars, an hour with a tax preparer usually pays for itself. And do not let taxes scare you off, owing tax means you earned money, which is the whole point.
 
+**Related:** with the tax basics covered, see [how much you can really make working from home](/blog/how-much-can-you-make-working-from-home).
+
 ## Frequently asked questions
 
 ### Do I have to pay taxes on a small side hustle?

@@ -44,6 +44,8 @@ The second one is the [fake-check scam](/blog/fake-check-job-scams). A real empl
 
 If you need equipment provided, aim for W-2 customer service and support roles at established remote employers, and look for it stated in the listing. If a job instead wants money to flow from you (or through you) to get equipped, that is your signal to walk away.
 
+**Related:** any job that makes you pay for equipment is a scam tell — see the [7 red flags of a WFH scam](/blog/work-from-home-scam-red-flags) — plus [how much you can really make working from home](/blog/how-much-can-you-make-working-from-home).
+
 ## Frequently asked questions
 
 ### Do remote jobs provide a laptop and equipment?

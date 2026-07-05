@@ -51,6 +51,8 @@ Notice the pattern: almost everything reaches $20/hour the same way, by speciali
 
 Not sure which lane suits you? The free [Find Your Path quiz](/#quiz) matches you to a starting point, and [Reality Check](/#reality) gives any of these an honest pay-and-risk scorecard before you invest time. Then use the Worth-It Tracker inside [Real Paths](/#paths) to check your true hourly rate as you go, so "$20/hour" is real take-home, not just a headline number.
 
+**Related:** [how to make $1,000 a month from home](/blog/how-to-make-1000-a-month-from-home), and [how much you can really make working from home](/blog/how-much-can-you-make-working-from-home).
+
 ## Frequently asked questions
 
 ### What work-from-home job most easily pays $20 an hour?

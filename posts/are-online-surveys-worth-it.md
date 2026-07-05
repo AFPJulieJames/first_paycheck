@@ -38,6 +38,8 @@ If you have an hour, you will almost always earn more building a real skill than
 Worth it only as something to do passively while watching TV, never as a plan to make real money. Want to see how surveys score against actual paths? Run "online surveys" through the free [Reality Check](/) for the full honest scorecard, or take the [60-second quiz](/) to find a path that actually pays.
 
 
+**Related:** for a better use of the same hours, see [how to make $1,000 a month from home](/blog/how-to-make-1000-a-month-from-home) and [how much you can really make working from home](/blog/how-much-can-you-make-working-from-home).
+
 ## Frequently asked questions
 
 ### Do online surveys actually pay?
