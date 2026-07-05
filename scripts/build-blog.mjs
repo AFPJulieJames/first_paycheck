@@ -191,7 +191,7 @@ const footer = `<footer class="site"><div class="wrap" style="flex-direction:col
 const ctaBlock = `<div class="cta"><h3>Not sure if an opportunity is real?</h3><p>Run it through the free Reality Check and Scam Smell Test. Honest pay ranges, real scam flags, no hype.</p><a class="btn" href="/">Try the free tools &rarr;</a></div>`;
 
 /* Free Facebook community CTA: converts blog readers into group members. */
-const GROUP_URL = "https://www.facebook.com/groups/1004926619099573";
+const GROUP_URL = "https://www.facebook.com/groups/firstpaycheck";
 const communityBlock = `<div style="margin:28px 0;padding:22px 24px;background:#fff;border:1px solid var(--creamDim);border-left:4px solid var(--coral);border-radius:0 14px 14px 0"><div class="kicker">Free community</div><h3 style="margin:6px 0 8px">Join our free Facebook group</h3><p style="margin:0 0 14px;color:var(--dim);font-size:15px">Legit Remote &amp; Work From Home Jobs. Honest job leads, scam alerts, and straight answers. No hype, no MLMs, no fees.</p><a class="btn" href="${GROUP_URL}" target="_blank" rel="noopener">Join the group, free &rarr;</a></div>`;
 
 /* Visible author bio (E-E-A-T): a real, named, photographed author with a
