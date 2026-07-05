@@ -42,6 +42,8 @@ Not sure about a specific listing or recruiter message? Paste it into the free [
 When you are ready to actually begin, the [Virtual Assistant path](/) gives you a checkable first-week plan and the worth-it tracker so you know your real hourly rate from day one.
 
 
+**Related:** [what a VA actually does](/blog/what-does-a-virtual-assistant-do) and [how much VAs make](/blog/how-much-do-virtual-assistants-make), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### How do I become a virtual assistant with no experience?

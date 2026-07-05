@@ -48,6 +48,8 @@ Pinterest VA work is lower-pressure than live customer support and more visual t
 
 You will see expensive "become a Pinterest VA" courses. You do not need one to start, the skills are free to learn. And as with any remote work, no real client pays you with a check and asks for part of it back, which is the [fake-check scam](/blog/fake-check-job-scams). When in doubt, the [Scam Smell Test](/#scam) is free and fast.
 
+**Related:** the broader [how to become a VA with no experience](/blog/how-to-become-a-virtual-assistant-with-no-experience), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### What does a Pinterest virtual assistant do?

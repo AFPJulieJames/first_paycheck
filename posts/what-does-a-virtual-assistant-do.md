@@ -41,6 +41,8 @@ You do not need a degree or experience to start. The short version: list what yo
 Curious whether VA work fits you specifically? Take the free [quiz](/), or open the [Virtual Assistant path](/) for a checkable first-week plan and the worth-it tracker.
 
 
+**Related:** [how to become a VA with no experience](/blog/how-to-become-a-virtual-assistant-with-no-experience), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### What does a virtual assistant do day to day?

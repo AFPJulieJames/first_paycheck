@@ -42,6 +42,8 @@ Most people who pitch consistently land a first paying client in **three to eigh
 Not sure freelance writing is the right fit versus virtual assistant or bookkeeping work? Take the 60-second [Reality Check](/) and get an honest read before you spend a single hour.
 
 
+**Related:** [how much freelance writers make](/blog/how-much-do-freelance-writers-make), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### How do I start freelance writing with no experience?

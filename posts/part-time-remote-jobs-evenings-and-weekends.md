@@ -45,6 +45,8 @@ If you are not sure, the free [Scam Smell Test](/#scam) takes about a minute.
 
 Decide how many hours a week you can realistically protect, then pick one task-based role that fits. Apply through [vetted job boards](/blog/best-sites-for-legitimate-remote-jobs), not random listings. Block the time on your calendar like an appointment so the side income actually happens instead of getting squeezed out.
 
+**Related:** [20 remote night-shift jobs](/blog/remote-night-shift-jobs), and guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What part-time remote jobs work best for evenings?

@@ -42,6 +42,8 @@ Your first client is often someone you already know. Beyond that: QuickBooks Liv
 Bookkeeping fits people who like tidy numbers and steady, recurring work. Run it through the free [Reality Check](/) for the full honest scorecard, or open the [Bookkeeping path](/) for a checkable first-week plan and the worth-it tracker so you know your true hourly rate.
 
 
+**Related:** see the full set of paths in our guide to [starting a work-from-home career with no experience](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### How much do beginner bookkeepers make from home?

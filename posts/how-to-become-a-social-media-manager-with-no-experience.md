@@ -50,6 +50,8 @@ When you start pitching, you may get fake "clients" too. No real client sends yo
 
 Want to see whether this path fits you alongside the others? Take the free [60-second quiz](/#quiz).
 
+**Related:** see the full set of paths in our guide to [starting a work-from-home career with no experience](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### Can I become a social media manager with no experience?

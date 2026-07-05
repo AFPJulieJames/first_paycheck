@@ -42,6 +42,8 @@ If an offer landed in your inbox unprompted and involves money moving in any dir
 
 Pick one skill you already have, set up a simple profile on a vetted platform, and apply to five real listings. Keep your hours honest with yourself during exam weeks. Flexible work is only an asset if it bends around your degree instead of competing with it.
 
+**Related:** find guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What is the best online job for a college student with no experience?

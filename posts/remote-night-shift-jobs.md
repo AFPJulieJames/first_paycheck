@@ -47,6 +47,8 @@ Overnight shift roles sometimes pay a small differential, and task-based work pa
 
 Not sure which fits your situation? The free [Find Your Path quiz](/#quiz) matches you to a starting point, and [Reality Check](/#reality) scores any path for honest pay and risk.
 
+**Related:** [part-time remote jobs for evenings and weekends](/blog/part-time-remote-jobs-evenings-and-weekends), and guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What remote jobs let you work overnight?

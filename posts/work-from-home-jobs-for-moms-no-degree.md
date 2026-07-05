@@ -38,6 +38,8 @@ The "boss babe" and "be your own boss" pitches in your DMs are usually MLMs that
 Not sure which path suits your hours and strengths? Take the free 60-second [quiz on the home page](/), or run any option through the [Reality Check](/) for honest pay and red flags before you start.
 
 
+**Related:** [remote jobs for stay-at-home moms](/blog/remote-jobs-for-stay-at-home-moms), and guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What work-from-home jobs can moms do without a degree?

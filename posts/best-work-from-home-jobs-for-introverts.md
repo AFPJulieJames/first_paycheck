@@ -46,6 +46,8 @@ Introverts often do the deep, careful, detail-heavy work that other people avoid
 
 Quiet, low-interaction jobs are also a favorite disguise for scams, because "just do simple tasks alone at home" is an easy pitch. The rules do not change: no legitimate job charges you to start, and no real employer sends a check and asks for part of it back, which is the [fake-check scam](/blog/fake-check-job-scams). Run anything questionable through the [Scam Smell Test](/#scam) first.
 
+**Related:** find guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What is the best work-from-home job for an introvert?

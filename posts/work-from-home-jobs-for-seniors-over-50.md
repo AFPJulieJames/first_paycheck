@@ -41,6 +41,8 @@ Pick one role that matches something you have already done. Spend a week setting
 
 You do not need to learn to code or master new software overnight. The fastest path to a first paycheck after 50 is usually the skill you already have, pointed at a remote employer who needs it.
 
+**Related:** find guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What is the easiest work-from-home job for someone over 50?

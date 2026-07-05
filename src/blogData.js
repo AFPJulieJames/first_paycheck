@@ -6,9 +6,19 @@ export const RECENT_POSTS = [
     "description": "The complete 2026 guide to work-from-home scams — fake check scams, task/text scams, reshipping, MLMs, fake job listings, and impersonation. How to spot them, with one rule that catches most."
   },
   {
+    "slug": "work-from-home-jobs-for-your-situation",
+    "title": "Work-From-Home Jobs for Your Situation (Moms, Seniors, Students & More)",
+    "description": "Honest work-from-home job guides for your situation — moms, stay-at-home parents, seniors over 50, college students, introverts, and night/evening/weekend schedules. Real options, real pay, no hype."
+  },
+  {
     "slug": "legit-work-from-home-company-reviews",
     "title": "Legit Work-From-Home Companies: Honest Reviews (2026)",
     "description": "Honest 2026 reviews of legit work-from-home companies and platforms — AI training, customer service, moderation, and transcription. Real pay, real catches, no hype, no affiliate links."
+  },
+  {
+    "slug": "how-to-start-a-work-from-home-career",
+    "title": "How to Start a Work-From-Home Career With No Experience (2026)",
+    "description": "An honest 2026 guide to starting a real work-from-home career with no experience — virtual assistant, freelance writing, bookkeeping, social media, and digital products, with real pay and how to begin."
   },
   {
     "slug": "reshipping-package-forwarding-job-scam",
@@ -19,15 +29,5 @@ export const RECENT_POSTS = [
     "slug": "is-remotasks-legit",
     "title": "Is Remotasks Legit in 2026? An Honest Review (Pay, Reviews, Red Flags)",
     "description": "Is Remotasks legit or a scam in 2026? An honest review of pay, the mixed reviews, how work availability varies by region, and the red flags to know before you sign up."
-  },
-  {
-    "slug": "is-outlier-ai-legit",
-    "title": "Is Outlier AI Legit in 2026? An Honest Review (Pay, Work, Red Flags)",
-    "description": "Is Outlier AI legit or a scam in 2026? An honest review of pay rates, the kind of work, who earns the most, payment reliability, and the real red flags to know before you start."
-  },
-  {
-    "slug": "is-alignerr-legit",
-    "title": "Is Alignerr Legit in 2026? An Honest Review (Pay, Work, Red Flags)",
-    "description": "Is Alignerr legit or a scam in 2026? An honest review of pay, the kind of work, payment reliability, and the red flags to know before you sign up."
   }
 ];

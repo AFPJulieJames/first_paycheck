@@ -48,6 +48,8 @@ For most people, yes, if you go in with honest expectations. The pay is real, th
 
 Curious whether VA work fits you specifically, or how it stacks up against freelance writing or bookkeeping? Run it through the free [Reality Check](/) and you will get an honest scorecard in seconds.
 
+**Related:** [how to become a VA with no experience](/blog/how-to-become-a-virtual-assistant-with-no-experience), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### How much do virtual assistants make per hour in 2026?

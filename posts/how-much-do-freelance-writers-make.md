@@ -45,6 +45,8 @@ For most people, yes, if you go in clear-eyed. The pay is real and you can start
 Want to see how freelance writing stacks up against virtual assistant or bookkeeping work for you specifically? Run it through the free [Reality Check](/) and you will get an honest scorecard in seconds.
 
 
+**Related:** [how to become a freelance writer with no experience](/blog/how-to-become-a-freelance-writer-with-no-experience), part of our guide to [starting a work-from-home career](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### How much do freelance writers make in 2026?

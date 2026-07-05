@@ -58,6 +58,8 @@ Be extra wary of "boss babe" and "be your own boss" pitches in your DMs. The com
 The honest move nobody in the hype world tells you to make: track your hours against what you earn, especially in the early weeks when you are building. A "flexible" gig that nets you four dollars an hour is not worth time away from your family. First Paycheck has a free worth-it tracker that does this math for you, plus a [Reality Check](/) to gauge any path before you start. None of it costs anything, ever.
 
 
+**Related:** [work-from-home jobs for moms with no degree](/blog/work-from-home-jobs-for-moms-no-degree), and guides for [every situation](/blog/work-from-home-jobs-for-your-situation).
+
 ## Frequently asked questions
 
 ### What are the best remote jobs for stay-at-home moms?

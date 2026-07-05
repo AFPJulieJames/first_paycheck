@@ -46,6 +46,8 @@ Be realistic. Most sellers make modest money at first, a few sales a week, then 
 
 First, remember the [tax side](/blog/do-you-have-to-pay-taxes-on-work-from-home-income): once you net $400 in a year, it counts as self-employment income. Second, the skills you build here (design, writing, marketing) are valuable on their own and overlap with [social media management](/blog/how-to-become-a-social-media-manager-with-no-experience) and VA work, so the effort is rarely wasted even if your first product is a slow starter.
 
+**Related:** see the full set of paths in our guide to [starting a work-from-home career with no experience](/blog/how-to-start-a-work-from-home-career).
+
 ## Frequently asked questions
 
 ### Is selling digital products actually profitable?
