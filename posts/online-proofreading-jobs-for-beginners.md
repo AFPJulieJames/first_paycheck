@@ -41,6 +41,8 @@ For detail-oriented people, yes. It is flexible, low-cost to start, and the dema
 Want to know whether proofreading or another path fits you best? The free [Reality Check](/) gives you an honest scorecard in under a minute. And if a proofreading "opportunity" feels off, run it through the [Scam Smell Test](/) first.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### How much do beginner proofreaders make?

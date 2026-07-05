@@ -49,6 +49,8 @@ You will run into fake clients and "agencies." No legitimate client sends you a 
 
 Not sure if editing is your best path versus writing, VA work, or social media? The free [quiz](/#quiz) will point you to a fit.
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### Can I get a video editing job with no experience?

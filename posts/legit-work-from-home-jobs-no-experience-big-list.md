@@ -56,6 +56,21 @@ Do not start with the job, start with you. Are you organized? Look at VA, data e
 
 If you want this decided for you, the free [Find Your Path quiz](/#quiz) reads your situation and points you to a starting path in about a minute. From there, pick one, give it two weeks of real effort, and ignore anything that asks you to pay to begin.
 
+## Browse by job type
+
+Want to go deep on one path? Each of these is a legit no-experience option covered in its own honest guide:
+
+- **[Customer service jobs (no experience)](/blog/customer-service-jobs-from-home-no-experience)**
+- **[Data entry jobs (no fee)](/blog/legit-data-entry-jobs-from-home-no-fee)**
+- **[Online chat jobs (no phone)](/blog/online-chat-jobs-no-phone-no-experience)**
+- **[Data annotation / AI-training jobs](/blog/data-annotation-jobs-from-home-no-experience)**
+- **[Transcription jobs](/blog/legit-transcription-jobs-from-home)**
+- **[Content moderation jobs](/blog/content-moderator-jobs-from-home)**
+- **[Online tutoring (no degree)](/blog/online-tutoring-jobs-no-degree)**
+- **[Proofreading for beginners](/blog/online-proofreading-jobs-for-beginners)**
+- **[Video editing (no experience)](/blog/video-editing-jobs-from-home-no-experience)**
+- **[35 non-phone work-from-home jobs](/blog/legit-non-phone-work-from-home-jobs)**
+
 ## Frequently asked questions
 
 ### What work-from-home job can I start with absolutely no experience?

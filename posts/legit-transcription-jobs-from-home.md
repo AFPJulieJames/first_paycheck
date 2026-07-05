@@ -44,6 +44,8 @@ It depends on your goal. As a flexible, no-cost, no-experience way to start earn
 Curious how transcription compares to other paths for you? Run it through the free [Reality Check](/) for an honest scorecard, and paste any sketchy "transcription job" offer into the [Scam Smell Test](/) before you reply.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### How much do transcription jobs pay for beginners?

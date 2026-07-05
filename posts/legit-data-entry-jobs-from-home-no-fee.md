@@ -40,6 +40,8 @@ If you can type and stay organized, **virtual assistant work** pays more ($18 to
 Got a data-entry offer that feels off? Paste it into the free [Scam Smell Test](/), or run the role through the [Reality Check](/) to see honest pay and red flags. Both free, no email required.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### How much do legit data entry jobs pay?

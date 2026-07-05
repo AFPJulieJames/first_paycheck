@@ -73,6 +73,8 @@ Start with what you can already do. If you are organized, look at VA, data entry
 
 Whatever you pick, the scam rules never change: no fees to start, no depositing checks and sending money back, and no "non-phone job" that pays hundreds a day for simple tasks. Real non-phone work pays real, normal rates, and that is exactly what makes it worth doing.
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### What is the best non-phone work-from-home job for beginners?

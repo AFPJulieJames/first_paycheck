@@ -1,4 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blog/work-from-home-jobs-no-experience",
+      "destination": "/blog/legit-work-from-home-jobs-no-experience-big-list",
+      "permanent": true
+    }
+  ]
 }

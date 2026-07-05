@@ -48,6 +48,8 @@ For people who write well and want a quiet, no-phone way to earn from home, chat
 Got a chat-agent listing you are not sure about? Paste it into the free [Scam Smell Test](/) and it will flag the tricks in seconds, or run the company through the [Reality Check](/) for an honest scorecard before you apply.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### What is a non-phone online chat job?

@@ -52,6 +52,8 @@ If you have steady judgment, can work alone, and go in with clear eyes about the
 Not sure a moderation gig is legit? Paste the listing into the free [Scam Smell Test](/) and it will flag the tricks in seconds, or run the company through the [Reality Check](/) for an honest scorecard before you start.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### What does a content moderator do?

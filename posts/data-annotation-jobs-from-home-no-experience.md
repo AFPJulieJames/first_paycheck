@@ -46,6 +46,8 @@ For the right person, yes. If you are detail-oriented, comfortable working alone
 Not sure if a labeling site is the real thing or a repackaged scam? Paste the pitch into the free [Scam Smell Test](/) and it will flag the tricks in seconds, or run the platform through the [Reality Check](/) for an honest scorecard before you spend a minute.
 
 
+**See the full list:** this is one of 30 options in our [legit work-from-home jobs with no experience](/blog/legit-work-from-home-jobs-no-experience-big-list) guide.
+
 ## Frequently asked questions
 
 ### What is data annotation work?
