@@ -42,7 +42,7 @@ function Row({ label, children }) {
   );
 }
 
-function Scorecard({ data }) {
+function Scorecard({ data, afterVerdict }) {
   const v = VERDICT[data.verdict] || VERDICT.real;
   return (
     <div style={{ display: "grid", gap: 14 }}>
@@ -64,6 +64,9 @@ function Scorecard({ data }) {
         </div>
         <p style={{ fontSize: 14.5, lineHeight: 1.6, color: C.onLight, margin: "14px 0 0" }}>{data.summary}</p>
       </div>
+
+      {/* Primary email ask, right under the verdict — the reveal moment. */}
+      {afterVerdict}
 
       {/* the two headline questions + the facts */}
       <div style={card}>
@@ -280,33 +283,29 @@ verdict meaning: legit = real sustainable work; real = real money but hard/slow;
 
         {data && !loading && (
           <div style={{ marginTop: 22, display: "grid", gap: 16 }}>
-            <Scorecard data={data} />
+            <Scorecard
+              data={data}
+              afterVerdict={
+                <EmailCapture
+                  source="reality-check-top"
+                  mode="result"
+                  resultSubject={`Your Reality Check: ${data.name}`}
+                  resultText={buildResultText(data)}
+                  twoStep
+                  trigger="Email me this scorecard + scam alerts"
+                  title="Where should we send it?"
+                  blurb="We'll email this scorecard now and send honest pay updates and fresh scam alerts. Free, about twice a month, unsubscribe anytime."
+                  cta="Email me my result"
+                  variant="inline"
+                />
+              }
+            />
             <div style={{ display: "flex", justifyContent: "center" }}>
               <ShareButton
                 label="Share this verdict"
                 text={`Is ${data.name} legit? First Paycheck says: ${(VERDICT[data.verdict] || VERDICT.real).label}. Real pay: ${data.pay}.`}
               />
             </div>
-            {import.meta.env.VITE_EMAIL_RESULTS ? (
-              <EmailCapture
-                source="reality-check"
-                mode="result"
-                resultSubject={`Your Reality Check: ${data.name}`}
-                resultText={buildResultText(data)}
-                title="Email me this result"
-                blurb="We'll send this scorecard to your inbox and add you to the no-hype newsletter. Free, unsubscribe anytime."
-                cta="Email me my result"
-                variant="inline"
-              />
-            ) : (
-              <EmailCapture
-                source="reality-check"
-                title="Get honest pay updates and scam alerts"
-                blurb="Join the no-hype newsletter for honest pay ranges and fresh scam alerts. Free, unsubscribe anytime."
-                cta="Join the newsletter"
-                variant="inline"
-              />
-            )}
           </div>
         )}
       </div>

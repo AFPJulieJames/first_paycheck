@@ -169,6 +169,21 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
               <p style={{ fontSize: 14.5, lineHeight: 1.55, color: C.onLight, margin: "10px 0 0" }}>{v.blurb}</p>
             </div>
 
+            {/* Primary ask, right at the reveal — the highest-converting spot.
+                Two-step: a single button that opens the form on click. */}
+            <EmailCapture
+              source="scam-smell-test-top"
+              mode="result"
+              resultSubject={`Your Scam Smell Test result: ${v.label}`}
+              resultText={buildResultText(result, v)}
+              twoStep
+              trigger="Email me this result + free scam alerts"
+              title="Where should we send it?"
+              blurb="We'll email this breakdown now and send a heads-up whenever a new scam is going around. Free, about twice a month, unsubscribe anytime."
+              cta="Email me my result"
+              variant="inline"
+            />
+
             <div style={card}>
               <div style={labelStyle}>The message, with red flags highlighted</div>
               <div style={{ fontSize: 14, lineHeight: 1.7, color: C.onLight, marginTop: 10, whiteSpace: "pre-wrap" }}>
@@ -228,26 +243,6 @@ In 2 to 3 plain sentences, no hype and no em dashes, say whether this looks like
                 text={`I ran a message through First Paycheck's free Scam Smell Test. Verdict: ${v.label} (${result.triggered.length} red flag${result.triggered.length === 1 ? "" : "s"}).`}
               />
             </div>
-            {import.meta.env.VITE_EMAIL_RESULTS ? (
-              <EmailCapture
-                source="scam-smell-test"
-                mode="result"
-                resultSubject={`Your Scam Smell Test result: ${v.label}`}
-                resultText={buildResultText(result, v)}
-                title="Email me this result"
-                blurb="We'll send this breakdown to your inbox and add you to the no-hype scam alerts. Free, unsubscribe anytime."
-                cta="Email me my result"
-                variant="inline"
-              />
-            ) : (
-              <EmailCapture
-                source="scam-smell-test"
-                title="Get fresh scam alerts, no hype"
-                blurb="Join the newsletter for honest scam alerts so you can spot the next one before it costs you. Free, unsubscribe anytime."
-                cta="Join the newsletter"
-                variant="inline"
-              />
-            )}
           </div>
         )}
       </div>

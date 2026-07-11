@@ -148,6 +148,8 @@ export default function Quiz({ onBack, onPick }) {
             </div>
             <EmailCapture
               source="quiz"
+              twoStep
+              trigger="Get honest WFH tips and new paths"
               title="Want honest WFH tips and new paths?"
               blurb="Join the no-hype newsletter for honest tips, real openings, and scam alerts. Free, unsubscribe anytime."
               cta="Join the newsletter"
