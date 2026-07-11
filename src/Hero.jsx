@@ -68,62 +68,114 @@ const TRUST = ["No fees to join, ever", "Real pay ranges, no hype", "FTC-aligned
 
 export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
   const [m, setM] = useState(false);
+  /* Most of our traffic is mobile Facebook. On a phone the two-column grid
+     collapses and the live tool used to land ~730px down, well below the fold,
+     so visitors saw nothing they could tap and bounced. On mobile we now put
+     the tool directly under the headline and push the supporting copy, the
+     buttons, and the trust row beneath it. Desktop is unchanged. */
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.matchMedia("(max-width: 760px)").matches : false
+  );
   useEffect(() => { setM(true); }, []);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 760px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    setIsMobile(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const total = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
   const MIN_PUBLIC_COUNT = 500; // hide the social-proof count until it's a number that helps, not hurts
 
-  return (
-    <section style={{ background: C.cream, color: C.onLight, fontFamily: FONT.body, padding: "40px 24px 56px" }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gap: 36, gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", alignItems: "center" }}>
-        {/* LEFT: crisp text on light */}
-        <div>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${C.creamDim}`, borderRadius: 999, padding: "6px 14px", fontSize: 12.5, color: C.onLightDim, background: "#fff", opacity: m ? 1 : 0, transition: "opacity .8s ease" }}>
-            <span style={{ width: 7, height: 7, borderRadius: 99, background: C.evergreen }} />
-            Legitimate, flexible work-from-home jobs
-          </div>
+  const badge = (
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${C.creamDim}`, borderRadius: 999, padding: "6px 14px", fontSize: 12.5, color: C.onLightDim, background: "#fff", opacity: m ? 1 : 0, transition: "opacity .8s ease" }}>
+      <span style={{ width: 7, height: 7, borderRadius: 99, background: C.evergreen }} />
+      Legitimate, flexible work-from-home jobs
+    </div>
+  );
 
-          <h1 style={{ fontFamily: FONT.display, fontWeight: 600, margin: "18px 0 0", fontSize: "clamp(38px, 6.5vw, 66px)", lineHeight: 1.04, letterSpacing: "-0.02em", color: C.onLight }}>
-            <Kinetic text="Know what's real" delay={0.1} />
-            <span style={{ display: "block" }}><Kinetic text="before you spend a dime." delay={0.34} color="#C2410C" /></span>
-          </h1>
+  const headline = (
+    <h1 style={{ fontFamily: FONT.display, fontWeight: 600, margin: "18px 0 0", fontSize: "clamp(38px, 6.5vw, 66px)", lineHeight: 1.04, letterSpacing: "-0.02em", color: C.onLight }}>
+      <Kinetic text="Know what's real" delay={0.1} />
+      <span style={{ display: "block" }}><Kinetic text="before you spend a dime." delay={0.34} color="#C2410C" /></span>
+    </h1>
+  );
 
-          <p style={{ maxWidth: 480, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.55, color: C.onLightDim, margin: "20px 0 0", opacity: m ? 1 : 0, transform: m ? "none" : "translateY(8px)", transition: "opacity .8s ease .5s, transform .8s ease .5s" }}>
-            The honest work-from-home guide. See if a path is legit, how much you can really make, and the exact steps to your first paycheck, with no experience needed.
-          </p>
+  const copy = (
+    <p style={{ maxWidth: 480, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.55, color: C.onLightDim, margin: "20px 0 0", opacity: m ? 1 : 0, transform: m ? "none" : "translateY(8px)", transition: "opacity .8s ease .5s, transform .8s ease .5s" }}>
+      The honest work-from-home guide. See if a path is legit, how much you can really make, and the exact steps to your first paycheck, with no experience needed.
+    </p>
+  );
 
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
-            <button onClick={onStart} style={{ cursor: "pointer", border: "none", borderRadius: 999, padding: "15px 26px", fontSize: 16, fontWeight: 600, color: "#fff", fontFamily: FONT.body, background: `linear-gradient(135deg, ${C.cta}, ${C.coral})`, boxShadow: `0 12px 32px ${C.cta}40` }}>
-              Check if it's legit  →
-            </button>
-            <button onClick={onPaths} style={{ cursor: "pointer", borderRadius: 999, padding: "15px 24px", fontSize: 16, fontWeight: 600, color: C.onLight, background: "#fff", border: `1px solid ${C.creamDim}`, fontFamily: FONT.body }}>
-              See real paths
-            </button>
-          </div>
+  const ctas = (
+    <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
+      <button onClick={onStart} style={{ cursor: "pointer", border: "none", borderRadius: 999, padding: "15px 26px", fontSize: 16, fontWeight: 600, color: "#fff", fontFamily: FONT.body, background: `linear-gradient(135deg, ${C.cta}, ${C.coral})`, boxShadow: `0 12px 32px ${C.cta}40` }}>
+        Check if it's legit  →
+      </button>
+      <button onClick={onPaths} style={{ cursor: "pointer", borderRadius: 999, padding: "15px 24px", fontSize: 16, fontWeight: 600, color: C.onLight, background: "#fff", border: `1px solid ${C.creamDim}`, fontFamily: FONT.body }}>
+        See real paths
+      </button>
+    </div>
+  );
 
-          <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginTop: 24 }}>
-            {TRUST.map((t) => (
-              <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 7, fontSize: 13, color: C.onLightDim }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" stroke={C.evergreen} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>{t}
-              </span>
-            ))}
-          </div>
+  const trust = (
+    <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginTop: 24 }}>
+      {TRUST.map((t) => (
+        <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 7, fontSize: 13, color: C.onLightDim }}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" stroke={C.evergreen} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>{t}
+        </span>
+      ))}
+    </div>
+  );
 
-          {total >= MIN_PUBLIC_COUNT && (
-            <div style={{ marginTop: 18, fontSize: 13, color: C.onLightDim }}>
-              <b style={{ color: C.onLight }}>{total.toLocaleString()}</b> checks run so far. Free, and no email required to use the tools.
-            </div>
-          )}
-        </div>
+  const counter = total >= MIN_PUBLIC_COUNT ? (
+    <div style={{ marginTop: 18, fontSize: 13, color: C.onLightDim }}>
+      <b style={{ color: C.onLight }}>{total.toLocaleString()}</b> checks run so far. Free, and no email required to use the tools.
+    </div>
+  ) : null;
 
-        {/* RIGHT: contained animated panel holding the live tool */}
-        <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", padding: 16, background: C.ink, minHeight: 320 }}>
-          <FluidCanvas />
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 100% at 50% 0%, rgba(11,31,28,0) 50%, rgba(11,31,28,0.5) 100%)", pointerEvents: "none" }} />
-          <div style={{ position: "relative" }}>
-            <HomeHook onOpenReality={onOpenReality} />
-          </div>
-        </div>
+  const toolPanel = (
+    <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", padding: 16, background: C.ink, minHeight: isMobile ? 0 : 320 }}>
+      <FluidCanvas />
+      <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 100% at 50% 0%, rgba(11,31,28,0) 50%, rgba(11,31,28,0.5) 100%)", pointerEvents: "none" }} />
+      <div style={{ position: "relative" }}>
+        <HomeHook onOpenReality={onOpenReality} />
       </div>
+    </div>
+  );
+
+  return (
+    <section style={{ background: C.cream, color: C.onLight, fontFamily: FONT.body, padding: isMobile ? "24px 20px 44px" : "40px 24px 56px" }}>
+      {isMobile ? (
+        /* MOBILE: headline -> live tool (above the fold) -> supporting copy */
+        <div style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gap: 20 }}>
+          <div>
+            {badge}
+            {headline}
+          </div>
+          {toolPanel}
+          <div>
+            {copy}
+            {ctas}
+            {trust}
+            {counter}
+          </div>
+        </div>
+      ) : (
+        /* DESKTOP: unchanged two-column layout */
+        <div style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gap: 36, gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", alignItems: "center" }}>
+          <div>
+            {badge}
+            {headline}
+            {copy}
+            {ctas}
+            {trust}
+            {counter}
+          </div>
+          {toolPanel}
+        </div>
+      )}
 
       <style>{`
         @keyframes fpRise { from { transform: translateY(110%); } to { transform: translateY(0); } }

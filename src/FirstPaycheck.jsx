@@ -10,7 +10,7 @@ import RateCalculator from "./RateCalculator.jsx";
 import EmailCapture from "./EmailCapture.jsx";
 import HomeHook from "./HomeHook.jsx";
 import Quiz from "./Quiz.jsx";
-import { getStats } from "./track.js";
+import { getStats, initScrollDepth } from "./track.js";
 import { RECENT_POSTS } from "./blogData.js";
 
 /* The three core surfaces, in the order the search data says people want them
@@ -163,6 +163,7 @@ export default function FirstPaycheck() {
   };
 
   useEffect(() => { getStats().then((s) => s && setStats(s)); }, []);
+  useEffect(() => { initScrollDepth(); }, []);
   useEffect(() => {
     if (view === "home" && pendingNewsletter) {
       focusNewsletter();

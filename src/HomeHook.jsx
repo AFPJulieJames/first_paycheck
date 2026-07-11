@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { C, FONT } from "./brand.js";
 import { OPPORTUNITIES, VERDICT, FEATURED, matchOpportunity } from "./opportunities.js";
+import { trackEvent } from "./track.js";
 
 /* Interactive hook for the homepage. Instant, local, no API: tap a trending
    fad and get a real verdict in place, then a nudge into the full Reality
@@ -12,6 +13,9 @@ export default function HomeHook({ onOpenReality }) {
   const choose = (name) => {
     const seed = matchOpportunity(name);
     setPick(seed || null);
+    // This tap is the first real interaction most visitors have. It was
+    // invisible in GA before, which also meant it never counted as engagement.
+    trackEvent("tool_run", { tool: "home_hook", pick: name });
   };
   const v = pick ? VERDICT[pick.verdict] : null;
 
