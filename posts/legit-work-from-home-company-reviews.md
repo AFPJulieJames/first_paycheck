@@ -45,6 +45,8 @@ Remote phone, chat, and support work — mostly independent-contractor roles. Se
 
 Every platform here is legitimate, but "legit" is the floor, not the goal. The best-rated options (DataAnnotation.tech, Outlier AI, Alignerr, Working Solutions) tend to pay more reliably; the lower-rated ones are real but come with bigger catches. Whatever you try, confirm the pay terms in writing before you start, and remember the rule: a real job never asks you to pay first. When in doubt, run the offer through the free [Reality Check](/#reality) and [Scam Smell Test](/#scam).
 
+Want only the options that cost you nothing to start? See our list of [work-from-home jobs with no scams and no fees](/blog/work-from-home-jobs-no-scams-no-fees), which separates the genuinely free platforms from the ones that quietly charge you.
+
 ## Frequently asked questions
 
 ### Are these work-from-home companies legit or scams?
