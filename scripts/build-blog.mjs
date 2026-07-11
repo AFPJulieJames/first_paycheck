@@ -407,6 +407,8 @@ const today = new Date().toISOString().slice(0, 10);
 const urlEntries = [
   { loc: `${SITE}/`, lastmod: today, priority: "1.0" },
   { loc: `${SITE}/blog`, lastmod: today, priority: "0.9" },
+  // Dedicated scam-check landing page (Facebook traffic + "is this a scam" search intent).
+  { loc: `${SITE}/is-it-a-scam`, lastmod: today, priority: "0.9" },
   { loc: `${SITE}/partners`, lastmod: today, priority: "0.5" },
   ...pageMetas.map((p) => ({ loc: `${SITE}/${p.slug}`, lastmod: today, priority: "0.4" })),
   ...posts.map((p) => ({ loc: `${SITE}/blog/${p.slug}`, lastmod: p.date || today, priority: "0.7" })),

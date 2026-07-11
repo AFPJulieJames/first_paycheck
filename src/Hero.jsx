@@ -11,13 +11,20 @@ import HomeHook from "./HomeHook.jsx";
    on mobile (text first, tool below).
    ============================================================ */
 
-function FluidCanvas() {
+/* animate=false renders a single static frame and never starts the rAF loop.
+   We do that on mobile: a permanently running loop under a CSS blur forces
+   software rendering and makes the GPU touch every pixel each frame, which is
+   the single most expensive thing on the page for a mid-range phone. The blur
+   radius is also dialled down on mobile for the same reason. The panel pauses
+   itself when scrolled out of view, not just when the tab is hidden. */
+function FluidCanvas({ animate = true }) {
   const ref = useRef(null);
   useEffect(() => {
     const canvas = ref.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const still = reduce || !animate;
     const RES = 160; let w = RES, h = RES;
     const blobs = [
       { col: C.coral, r: 0.62, ax: 0.26, ay: 0.20, sx: 0.11, sy: 0.08, px: 0.0, py: 1.2, cx: 0.32, cy: 0.36 },
@@ -28,9 +35,15 @@ function FluidCanvas() {
     ];
     const resize = () => { const ratio = canvas.clientWidth / Math.max(1, canvas.clientHeight); w = RES; h = Math.round(RES / Math.max(0.5, Math.min(2.2, ratio))); canvas.width = w; canvas.height = h; };
     resize(); window.addEventListener("resize", resize);
-    let raf, t = 0, paused = false;
-    const onVis = () => { paused = document.hidden; if (!paused) loop(); };
+    let raf, t = 0, paused = false, offscreen = false;
+    const onVis = () => { paused = document.hidden; if (!paused && !offscreen && !still) loop(); };
     document.addEventListener("visibilitychange", onVis);
+    // Stop burning frames once the hero scrolls away.
+    const io = new IntersectionObserver(([e]) => {
+      offscreen = !e.isIntersecting;
+      if (!offscreen && !paused && !still) loop();
+    }, { threshold: 0 });
+    io.observe(canvas);
     const frame = (time) => {
       ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = C.ink; ctx.fillRect(0, 0, w, h);
       ctx.globalCompositeOperation = "lighter";
@@ -44,14 +57,41 @@ function FluidCanvas() {
       }
       ctx.globalCompositeOperation = "source-over";
     };
-    const loop = () => { if (paused) return; t += 0.0042; frame(t); raf = requestAnimationFrame(loop); };
-    if (reduce) frame(0.8); else loop();
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); document.removeEventListener("visibilitychange", onVis); };
-  }, []);
-  return <canvas ref={ref} aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(40px) saturate(120%)", transform: "scale(1.15)" }} />;
+    const loop = () => {
+      if (paused || offscreen || still) return;
+      cancelAnimationFrame(raf);
+      t += 0.0042; frame(t); raf = requestAnimationFrame(loop);
+    };
+    if (still) frame(0.8); else loop();
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+      window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, [animate]);
+  return (
+    <canvas
+      ref={ref}
+      aria-hidden="true"
+      style={{
+        position: "absolute", inset: 0, width: "100%", height: "100%",
+        // A 160px-wide canvas upscaled to full width is already soft, so mobile
+        // needs far less blur to get the same look at a fraction of the cost.
+        filter: animate ? "blur(40px) saturate(120%)" : "blur(18px) saturate(120%)",
+        transform: "scale(1.15)",
+      }}
+    />
+  );
 }
 
-function Kinetic({ text, delay = 0, color }) {
+/* The rise-in effect starts each word at translateY(110%) inside an
+   overflow:hidden box, so the headline is INVISIBLE at first paint and only
+   finishes arriving ~1.1s later. The h1 is the hero's largest element, i.e.
+   almost certainly the LCP element, so on mobile we skip the animation
+   entirely and paint the text immediately. Desktop keeps the polish. */
+function Kinetic({ text, delay = 0, color, animate = true }) {
+  if (!animate) return <span style={{ color }}>{text}</span>;
   const words = text.split(" ");
   return (
     <span style={{ color }}>
@@ -88,8 +128,11 @@ export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
   const total = stats ? (stats.checks || 0) + (stats.scams || 0) + (stats.paths || 0) : 0;
   const MIN_PUBLIC_COUNT = 500; // hide the social-proof count until it's a number that helps, not hurts
 
+  // On mobile nothing is gated behind a fade: content paints on first frame.
+  const anim = !isMobile;
+
   const badge = (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${C.creamDim}`, borderRadius: 999, padding: "6px 14px", fontSize: 12.5, color: C.onLightDim, background: "#fff", opacity: m ? 1 : 0, transition: "opacity .8s ease" }}>
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${C.creamDim}`, borderRadius: 999, padding: "6px 14px", fontSize: 12.5, color: C.onLightDim, background: "#fff", opacity: anim ? (m ? 1 : 0) : 1, transition: anim ? "opacity .8s ease" : "none" }}>
       <span style={{ width: 7, height: 7, borderRadius: 99, background: C.evergreen }} />
       Legitimate, flexible work-from-home jobs
     </div>
@@ -97,13 +140,13 @@ export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
 
   const headline = (
     <h1 style={{ fontFamily: FONT.display, fontWeight: 600, margin: "18px 0 0", fontSize: "clamp(38px, 6.5vw, 66px)", lineHeight: 1.04, letterSpacing: "-0.02em", color: C.onLight }}>
-      <Kinetic text="Know what's real" delay={0.1} />
-      <span style={{ display: "block" }}><Kinetic text="before you spend a dime." delay={0.34} color="#C2410C" /></span>
+      <Kinetic text="Know what's real" delay={0.1} animate={anim} />
+      <span style={{ display: "block" }}><Kinetic text="before you spend a dime." delay={0.34} color="#C2410C" animate={anim} /></span>
     </h1>
   );
 
   const copy = (
-    <p style={{ maxWidth: 480, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.55, color: C.onLightDim, margin: "20px 0 0", opacity: m ? 1 : 0, transform: m ? "none" : "translateY(8px)", transition: "opacity .8s ease .5s, transform .8s ease .5s" }}>
+    <p style={{ maxWidth: 480, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.55, color: C.onLightDim, margin: "20px 0 0", opacity: anim ? (m ? 1 : 0) : 1, transform: anim && !m ? "translateY(8px)" : "none", transition: anim ? "opacity .8s ease .5s, transform .8s ease .5s" : "none" }}>
       The honest work-from-home guide. See if a path is legit, how much you can really make, and the exact steps to your first paycheck, with no experience needed.
     </p>
   );
@@ -137,7 +180,7 @@ export default function Hero({ onStart, onPaths, onOpenReality, stats }) {
 
   const toolPanel = (
     <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", padding: 16, background: C.ink, minHeight: isMobile ? 0 : 320 }}>
-      <FluidCanvas />
+      <FluidCanvas animate={!isMobile} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 100% at 50% 0%, rgba(11,31,28,0) 50%, rgba(11,31,28,0.5) 100%)", pointerEvents: "none" }} />
       <div style={{ position: "relative" }}>
         <HomeHook onOpenReality={onOpenReality} />
