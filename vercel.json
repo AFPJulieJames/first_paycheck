@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.firstpaycheck.co"
+        }
+      ],
+      "destination": "https://firstpaycheck.co/:path*",
+      "permanent": true
+    },
+    {
       "source": "/blog/work-from-home-jobs-no-experience",
       "destination": "/blog/legit-work-from-home-jobs-no-experience-big-list",
       "permanent": true
