@@ -64,7 +64,7 @@ None of that makes it a scam. It does make it less reliable than steadier option
 
 Remotasks itself is real and pays for completed work. As with every platform in this niche, the real danger is **impersonation**.
 
-Scammers pose as "Remotasks recruiters" on WhatsApp, Telegram, or text. The tell is always the same: the real platform **never charges you to join** and **never asks you to deposit a check and send money back**. If a "recruiter" does either, you are not talking to Remotasks — you are talking to a [fake-check scammer](/blog/fake-check-job-scams).
+Scammers pose as "Remotasks recruiters" on WhatsApp, Telegram, or text. The tell is always the same: the real platform **never charges you to join** and **never asks you to deposit a check and send money back**. If a "recruiter" does either, you are not talking to Remotasks — you are talking to a [fake-check scammer](/blog/fake-check-job-scams). The unsolicited-text version of this has its own playbook: [task scams and fake job texts](/blog/task-scams-and-fake-job-texts).
 
 Two rules keep you safe:
 
@@ -82,6 +82,7 @@ Not sure about a message you received? Paste it into our free [Scam Smell Test](
 
 **Skip it if:**
 - You need reliable, predictable earnings.
+- You are only after small, low-effort payouts — in that case read [are online surveys worth it?](/blog/are-online-surveys-worth-it) before you spend an evening on either.
 - You write or code well — [DataAnnotation.tech](/blog/is-dataannotation-tech-legit) and [Outlier AI](/blog/is-outlier-ai-legit) typically pay meaningfully better for skilled work.
 - You are in a region where availability has been unstable.
 

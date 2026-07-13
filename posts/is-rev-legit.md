@@ -34,6 +34,8 @@ Rev pays its freelancers, and there is no fee to join, so it does not trip any o
 
 Rev is a reasonable place to **start** transcription, build speed, and learn the craft with no upfront cost. Once you are fast, you can move toward higher-paying transcription niches (legal, medical) or other platforms. For the bigger picture, see our guide to [legit transcription jobs from home](/blog/legit-transcription-jobs-from-home), and use the Worth-It Tracker in [Real Paths](/#paths) to see your true hourly rate as your speed improves.
 
+If you have a good ear for language but transcription's per-minute rates wear you down, [online proofreading jobs for beginners](/blog/online-proofreading-jobs-for-beginners) use a similar skill set and pay per project instead.
+
 **Comparing options?** See other transcription platforms in [legit transcription jobs from home](/blog/legit-transcription-jobs-from-home), and every company we've checked in our [legit work-from-home company reviews](/blog/legit-work-from-home-company-reviews).
 
 ## Frequently asked questions

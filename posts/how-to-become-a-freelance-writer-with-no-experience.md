@@ -13,6 +13,8 @@ You do not need a degree, a certificate, or a paid course to start freelance wri
 
 "I write anything" is a weak pitch. "I write blog posts for bookkeepers" gets hired. Pick a topic you know something about or genuinely want to learn. A narrow focus makes you easier to remember and easier to pay well.
 
+Writing is not the only way to get paid for words and ideas. If you are more comfortable on camera than on the page, [is being a UGC creator worth it?](/blog/is-being-a-ugc-creator-worth-it) covers what that work actually pays. If you would rather fix prose than produce it, look at [online proofreading jobs for beginners](/blog/online-proofreading-jobs-for-beginners).
+
 ## Step 2: Create three to five samples
 
 You do not need paid work to have samples. Write three to five strong pieces in your chosen niche and put them somewhere shareable (a free Google Doc, a simple portfolio site, or Medium). These are your proof. Make them as good as you can; they are doing the selling.

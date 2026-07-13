@@ -17,6 +17,8 @@ Virtual assistant work is one of the strongest legitimate work-from-home on-ramp
 
 Anyone promising "$10,000 a month in your first month" is selling something. Real VAs build up to good money over months, not days.
 
+If you are still working out whether the job suits you, start with [what a virtual assistant actually does](/blog/what-does-a-virtual-assistant-do) — the day-to-day is less glamorous and more learnable than most people expect.
+
 ## How long until your first paycheck
 
 For most people who treat it seriously, the first paying client lands in **two to six weeks**. The slow part is not the work, it is getting noticed and trusted at the start. Once you have one happy client and a testimonial, the next ones come faster.
@@ -25,7 +27,7 @@ For most people who treat it seriously, the first paying client lands in **two t
 
 Generalist VAs earn the base rates. The way up is to specialize:
 
-- **Bookkeeping and invoicing** support for small businesses.
+- **Bookkeeping and invoicing** support for small businesses. It pays well enough to be worth its own path — see [how much beginner bookkeepers make](/blog/how-much-do-beginner-bookkeepers-make).
 - **Inbox and calendar management** for busy founders and executives.
 - **Social media and content scheduling.**
 - **AI-augmented work**, where you use tools to do more for each client. This is the fastest-growing and best-paid corner of VA work right now.
@@ -37,7 +39,7 @@ A specialized VA who saves a client real time can command double a generalist's 
 Stick to platforms that vet clients and never charge you to join:
 
 - **Belay** and **Boldly** for higher-end, ongoing roles.
-- **The Mom Project** and **HireMyMom** for flexible, family-friendly work.
+- **The Mom Project** and **HireMyMom** for flexible, family-friendly work. We reviewed the first one here: [is The Mom Project legit?](/blog/is-the-mom-project-legit)
 - **Time Etc** for a structured way to start.
 
 If a "VA agency" asks you to pay a fee to get matched, walk away. That is not how legitimate platforms work.

@@ -15,8 +15,8 @@ Weekly and fast pay is most common in entry-level and contractor roles, because 
 
 - **Customer service and chat support.** Many staffing-style employers run weekly or biweekly payroll. See our guide to [customer service jobs with no experience](/blog/customer-service-jobs-from-home-no-experience).
 - **Data entry and microtasks.** Some platforms pay out weekly or on demand once you hit a minimum. Read [legit data entry jobs with no fee](/blog/legit-data-entry-jobs-from-home-no-fee) first.
-- **Content moderation.** Contractor moderation work often runs on weekly cycles.
-- **Freelance gigs you invoice.** Writing, virtual assistant work, and tutoring let you set your own terms, so you can invoice weekly if your client agrees.
+- **Content moderation.** Contractor moderation work often runs on weekly cycles. If you would rather stay off the phone entirely, [online chat jobs with no phone](/blog/online-chat-jobs-no-phone-no-experience) cover similar ground.
+- **Freelance gigs you invoice.** Writing, virtual assistant work, and [online tutoring with no degree](/blog/online-tutoring-jobs-no-degree) let you set your own terms, so you can invoice weekly if your client agrees.
 
 Companies like LiveWorld, ModSquad, and Working Solutions regularly hire no-experience remote workers in these categories.
 
@@ -24,7 +24,7 @@ Companies like LiveWorld, ModSquad, and Working Solutions regularly hire no-expe
 
 Let's keep the numbers real. Most entry-level remote jobs pay about $10 to $20 an hour. At part-time hours, that is often $100 to $500 a week. At full-time hours, more. That is a solid, honest start, and it adds up. What it is not is the "$1,800 to $3,400 a week, no experience" figure some ads wave around. Those numbers are the hook, not the norm.
 
-If you want a realistic sense of the ceiling, our piece on [how much you can make working from home](/blog/how-much-can-you-make-working-from-home) lays it out without the hype.
+If you want a realistic sense of the ceiling, our piece on [how much you can make working from home](/blog/how-much-can-you-make-working-from-home) lays it out without the hype. And if you want a concrete target to aim at rather than a range, [how to make $1,000 a month from home](/blog/how-to-make-1000-a-month-from-home) breaks it down hour by hour.
 
 ## Why the "weekly pay, no experience" niche attracts scams
 
@@ -40,7 +40,9 @@ If a weekly-pay listing trips any of these, walk through our [scam red flags](/b
 
 ## How to find the real ones
 
-Filter for the boring, trustworthy stuff. Use reputable job boards, search the employer's name with "review," and confirm the pay schedule in writing before you start, not after. Our roundup of the [best sites for legitimate remote jobs](/blog/best-sites-for-legitimate-remote-jobs) is a good place to begin, and it keeps you away from the texted "opportunities" that are almost always fake.
+Filter for the boring, trustworthy stuff. Use reputable job boards, search the employer's name with "review," and confirm the pay schedule in writing before you start, not after. Our roundup of the [best sites for legitimate remote jobs](/blog/best-sites-for-legitimate-remote-jobs) is a good place to begin, and it keeps you away from the texted "opportunities" that are almost always fake — we break those down in [task scams and fake job texts](/blog/task-scams-and-fake-job-texts).
+
+If you are fitting work around school hours, [remote jobs for stay-at-home moms](/blog/remote-jobs-for-stay-at-home-moms) and [work-from-home jobs for moms with no degree](/blog/work-from-home-jobs-for-moms-no-degree) cover the same weekly-pay roles with flexibility in mind.
 
 ## The bottom line
 

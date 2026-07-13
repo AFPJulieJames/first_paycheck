@@ -27,7 +27,9 @@ We go deeper on these in our [work-from-home scam red flags](/blog/work-from-hom
 
 ## The new twist: the text and chat-app trap
 
-The fastest growing version skips the job board entirely. You get an unexpected text, WhatsApp, or Telegram message about a job you never applied for. The newest move is not even a link to click. Instead they ask you to reply "YES" or "INTERESTED" to confirm you are a live person, then move you into a chat-app conversation where the real pressure starts. Real employers do not recruit by random text. Ignore and delete.
+The fastest growing version skips the job board entirely. You get an unexpected text, WhatsApp, or Telegram message about a job you never applied for. The newest move is not even a link to click. Instead they ask you to reply "YES" or "INTERESTED" to confirm you are a live person, then move you into a chat-app conversation where the real pressure starts. Real employers do not recruit by random text. Ignore and delete. We walk through exactly how these play out in [task scams and fake job texts](/blog/task-scams-and-fake-job-texts).
+
+The same pitch runs on social platforms, where a "hiring manager" DMs you out of nowhere. See [work-from-home scams on Facebook](/blog/work-from-home-scams-on-facebook) for what those messages look like.
 
 ## Ghost jobs are real too
 
@@ -38,11 +40,11 @@ Not every fake listing is a scam in the criminal sense. Some are "ghost jobs," r
 Before you apply, do this quick pass:
 
 - Search the company name plus the words "scam" and "review."
-- Find the role on the company's own official careers page. If it is not there, be cautious.
+- Find the role on the company's own official careers page. If it is not there, be cautious. Scammers lean hardest on the biggest names — our look at whether [Amazon work-from-home jobs are legit](/blog/are-amazon-work-from-home-jobs-legit) shows how brand impersonation works.
 - Confirm the recruiter's email is a real company domain, not a free Gmail or Outlook address.
 - Never hand over your Social Security number, bank details, or a copy of your ID before a real interview.
 
-Stick to reputable boards and verify the employer directly. Our list of the [best sites for legitimate remote jobs](/blog/best-sites-for-legitimate-remote-jobs) is a safer place to start than a link someone texted you.
+Stick to reputable boards and verify the employer directly. Our list of the [best sites for legitimate remote jobs](/blog/best-sites-for-legitimate-remote-jobs) is a safer place to start than a link someone texted you. If you do most of your job hunting on social platforms, [finding legit work-from-home jobs on Pinterest](/blog/find-legit-work-from-home-jobs-on-pinterest) explains how to separate the real pins from the funnels.
 
 ## The bottom line
 
